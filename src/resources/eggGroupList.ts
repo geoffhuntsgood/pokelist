@@ -1,11 +1,10 @@
-import { EggGroupName } from "../classes";
+import { EggGroup } from "../classes";
 import { EggGroupName } from "../enums";
 
-export const eggGroupList: EggGroupName[] = [
+export const eggGroupList: EggGroup[] = [
   {
     name: EggGroupName.Monster,
-    description:
-      "Pokémon in this group are saurian/kaiju-like in appearance and nature."
+    description: "Pokémon in this group are saurian/kaiju-like in appearance and nature."
   },
   {
     name: EggGroupName.Water1,

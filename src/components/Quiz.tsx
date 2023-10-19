@@ -37,7 +37,7 @@ export const Quiz = ({ type, headers, getItems, getCategoryString }: { type: str
 
   const getInputText = (input: string) => {
     const sanitized = sanitizeInput(input);
-    if (data.find((move) => move.name === sanitized) && !showItems.includes(sanitized)) {
+    if ((data as any[]).find((item: Pokemon | Move | Ability) => item.name === sanitized) && !showItems.includes(sanitized)) {
       setShowItems(showItems.concat(sanitized));
       setInput("");
     } else {

@@ -56,7 +56,7 @@ export const QuizSetup = () => {
         </p>
         <p>
           If you like to hyperfixate on things in this way and one of those things is <i>not</i> Pokémon,
-          then go check out <a href="jetpunk.com">JetPunk</a> - it's a website with lots of quizzes on many
+          then go check out <a href="https://jetpunk.com">JetPunk</a> - it's a website with lots of quizzes on many
           topics, and it inspired this generator. They do lots of good things like plant trees with their
           ad revenue too.
         </p>
