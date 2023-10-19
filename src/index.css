@@ -1,0 +1,162 @@
+:root {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #192A3D;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  text-align: center;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+.form {
+  width: 30vw;
+}
+
+.timer {
+  padding: 20px;
+}
+
+.buttons {
+  padding: 35px 20px 0 0;
+}
+
+.loading-box {
+  padding-top: 20%;
+  padding-left: 45%;
+}
+
+.header-grid {
+  height: 100px;
+}
+
+.header-bottom {
+  margin-bottom: 60px !important;
+}
+
+.header-string {
+  font-size: 0.8rem;
+  color: #4EABE9;
+  margin-left: -20px;
+}
+
+.text-field {
+  width: 100%;
+  margin: 50px 20px !important;
+  background-color: #1A2F44;
+  border: 3px solid #4EABE9;
+}
+
+.text-field:disabled {
+  color: gray;
+  border-color: gray;
+  background-color: #1A2F44;
+}
+
+.text-field-modal {
+  width: 90%;
+}
+
+.dialog {
+  background-color: #192A3D;
+}
+
+.dialog-text {
+  color: white;
+  font-size: 3rem;
+}
+
+.dialog-content-text {
+  color: white;
+}
+
+.red {
+  color: red;
+}
+
+.dropdown {
+  color: lightskyblue !important;
+  background-color: #1A2F44 !important;
+}
+
+.input-label {
+  color: lightskyblue !important;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th {
+  padding: 10px;
+  background-color: #2E86C1;
+  border: 1px solid #2E86C1;
+  position: sticky;
+  top: 0;
+}
+
+td {
+  line-height: 2rem;
+  border: 1px solid #2E86C1;
+}
+
+.big-table-item {
+  width: 45%;
+}
+
+.med-table-item {
+  width: 30%;
+}
+
+.quiz-table {
+  height: 70vh;
+  overflow: auto;
+}
+
+.overlay {
+  position: absolute;
+  width: 95vw;
+  height: 75vh;
+  top: 50;
+  left: 0;
+  z-index: 999999;
+  background-color: #192A3D;
+}
+
+.paused-message {
+  margin: 50%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1A2F44;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lightskyblue;
+}
