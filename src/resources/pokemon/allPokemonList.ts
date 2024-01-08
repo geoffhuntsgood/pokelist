@@ -1,4 +1,4 @@
-import { Pokemon } from "../../classes";
+import { Pokemon } from "../../classes/Pokemon";
 import { gen1Pokemon } from "./gen1Pokemon";
 import { gen2Pokemon } from "./gen2Pokemon";
 import { gen3Pokemon } from "./gen3Pokemon";
@@ -8,6 +8,7 @@ import { gen6Pokemon } from "./gen6Pokemon";
 import { gen7Pokemon } from "./gen7Pokemon";
 import { gen8Pokemon } from "./gen8Pokemon";
 import { gen9Pokemon } from "./gen9Pokemon";
+
 export const allPokemonList: Pokemon[] = [
   ...gen1Pokemon,
   ...gen2Pokemon,

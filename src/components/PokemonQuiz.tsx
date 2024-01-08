@@ -116,11 +116,9 @@ export const PokemonQuiz = () => {
               onChange={(event) => getInputText(event.target.value)}
             />
           </Grid>
-          {best &&
-            <Grid item xs={2}>
-              <Typography sx={styles.best}>Your best: {best}</Typography>
-            </Grid>
-          }
+          <Grid item xs={2}>
+            <Typography sx={styles.best}>Your best: {best || <i>Not attempted yet</i>}</Typography>
+          </Grid>
           {timedOut &&
             <Grid item xs={2}>
               <Button sx={styles.button} onClick={() => navigate("/")}>Try again!</Button>

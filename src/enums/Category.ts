@@ -4,5 +4,5 @@ export enum Category {
   Mythical = "Mythical",
   Paradox = "Paradox",
   Starter = "Starter",
-  UltraBeast = "Ultra Beast"
+  UltraBeast = "UltraBeast"
 }

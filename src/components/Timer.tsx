@@ -1,10 +1,11 @@
-import CloseIcon from '@mui/icons-material/Close';
-import PauseIcon from '@mui/icons-material/Pause';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import CloseIcon from "@mui/icons-material/Close";
+import PauseIcon from "@mui/icons-material/Pause";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { Button, ButtonGroup, Dialog, DialogContent, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
+import Confetti from "react-confetti";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import { displayTime } from '../utils/utils';
+import { displayTime } from "../utils/utils";
 
 export const Timer = ({
   setTimedOut,
@@ -26,6 +27,7 @@ export const Timer = ({
   const [final, setFinal] = useState(0);
   const [remaining, setRemaining] = useState(3599);
   const [giveUpSure, setGiveUpSure] = useState(false);
+  const [newBest, setNewBest] = useState(false);
 
   useEffect(() => {
     const bestTime = parseInt(localStorage.getItem(displayText) || "0");
@@ -33,6 +35,13 @@ export const Timer = ({
       setBest(displayTime(bestTime));
     }
   }, []);
+
+  useEffect(() => {
+    const bestTime = parseInt(localStorage.getItem(displayText) || "0");
+    if (bestTime && bestTime !== 0) {
+      setBest(displayTime(bestTime));
+    }
+  }, [newBest]);
 
   useEffect(() => {
     const initialTime = Math.max(itemCount * 5, 900);
@@ -51,6 +60,7 @@ export const Timer = ({
       const bestTime = parseInt(localStorage.getItem(displayText) || "0");
       if (timeLeft < bestTime || bestTime === 0) {
         localStorage.setItem(displayText, `${timeLeft}`);
+        setNewBest(true);
       }
     }
   }, [remaining, done]);
@@ -114,6 +124,7 @@ export const Timer = ({
 
   return (
     <>
+      {newBest && <Confetti />}
       <Grid container>
         <Grid item xs={7} sx={styles.timer} className="timer">
           <CountdownCircleTimer
@@ -158,6 +169,12 @@ export const Timer = ({
           <p>Are you sure you want to give up?</p>
           <Button sx={styles.button} onClick={giveUp}>Yeah</Button>
           <Button sx={styles.button} onClick={() => setGiveUpSure(false)}>Nah</Button>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={newBest} maxWidth="lg" fullWidth>
+        <DialogContent sx={styles.dialog}>
+          <p>New Best Time! Congrats!</p>
+          <Button sx={styles.button} onClick={() => setNewBest(false)}>Yay!</Button>
         </DialogContent>
       </Dialog>
     </>
