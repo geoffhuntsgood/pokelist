@@ -1,99 +1,123 @@
-import { Button, ButtonGroup, Dialog, DialogContent, DialogTitle, Grid, TextField } from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
+import PauseIcon from '@mui/icons-material/Pause';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import { Button, ButtonGroup, Dialog, DialogContent, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import { displayTime } from '../utils/utils';
 
 export const Timer = ({
-  timeLeft,
-  setTimeLeft,
-  itemCount,
-  category,
-  foundItems,
-  totalItems
+  setTimedOut,
+  setBest,
+  setPaused,
+  displayText,
+  done,
+  itemCount
 }: {
-  timeLeft: number,
-  setTimeLeft: Function,
-  itemCount: number,
-  category: string,
-  foundItems: number,
-  totalItems: number,
+  setTimedOut: Function,
+  setBest: Function,
+  setPaused: Function,
+  displayText: string,
+  done: boolean,
+  itemCount: number
 }) => {
   const [running, setRunning] = useState(true);
+  const [initial, setInitial] = useState(3599);
+  const [final, setFinal] = useState(0);
   const [remaining, setRemaining] = useState(3599);
   const [giveUpSure, setGiveUpSure] = useState(false);
-  const [newBestTime, setNewBestTime] = useState(false);
-  const [bestTimeName, setBestTimeName] = useState("");
-
-  const totalTime = itemCount > 700
-    ? 3599
-    : itemCount > 500
-      ? 1800
-      : itemCount > 300
-        ? 1200
-        : itemCount > 100
-          ? 900
-          : 600;
 
   useEffect(() => {
-    setTimeLeft(totalTime);
+    const bestTime = parseInt(localStorage.getItem(displayText) || "0");
+    if (bestTime && bestTime !== 0) {
+      setBest(displayTime(bestTime));
+    }
+  }, []);
+
+  useEffect(() => {
+    const initialTime = Math.max(itemCount * 5, 900);
+    setInitial(initialTime);
+    setRemaining(initialTime);
   }, [itemCount]);
 
   useEffect(() => {
-    setRunning(running && timeLeft > 0);
-  }, [timeLeft]);
-
-  useEffect(() => {
-    if (foundItems === totalItems) {
-      setTimeLeft(0);
-      setRunning(false);
-      const currentHighScore = localStorage.getItem(category);
-      if (!currentHighScore || parseInt(currentHighScore.split("by")[0].replace(":", "")) > totalTime - remaining) {
-        setNewBestTime(true);
+    if (remaining <= 0) {
+      setTimedOut(true);
+    }
+    if (done) {
+      setRemaining(0);
+      setTimedOut(true);
+      const timeLeft = initial - final;
+      const bestTime = parseInt(localStorage.getItem(displayText) || "0");
+      if (timeLeft < bestTime || bestTime === 0) {
+        localStorage.setItem(displayText, `${timeLeft}`);
       }
     }
-  }, [foundItems]);
+  }, [remaining, done]);
 
-  const displayTime = (remainingTime: number) => {
+  useEffect(() => {
+    setPaused(!running);
+  }, [running]);
+
+  const showTime = (remainingTime: number) => {
     if (remainingTime <= 0) return "Time's up!";
-    const hours = Math.floor(remainingTime / 3600);
-    const minutes = Math.floor((remainingTime % 3600) / 60);
-    const seconds = remainingTime % 60;
-    return `${hours > 0 ? `${hours}:` : ""}${minutes}:${seconds.toString().padStart(2, "0")}`;
-  };
-
-  const getHighScore = () => {
-    const highScore = localStorage.getItem(category);
-    if (highScore) {
-      return `Best: ${highScore}`;
-    }
-    return "No high score";
-  };
-
-  const saveBest = () => {
-    setNewBestTime(false);
-    localStorage.setItem(category, `${displayTime(Math.abs(remaining))} by ${bestTimeName}`);
+    else return displayTime(remainingTime);
   };
 
   const giveUp = () => {
     setGiveUpSure(false);
-    setTimeLeft(0);
+    setRemaining(-10);
   };
 
   const styles = {
     button: {
+      fontWeight: "bold",
+      backgroundColor: "goldenrod",
+      color: "darkslateblue",
+      border: "2px solid darkslateblue",
       "&:disabled": {
         color: "gray",
         borderColor: "gray",
         backgroundColor: "#1A2F44",
       },
+      "&:hover": {
+        backgroundColor: "deepskyblue",
+        border: "2px solid darkslateblue"
+      }
     },
+    buttons: {
+      paddingTop: "35px"
+    },
+    timer: {
+      marginTop: "20px",
+      marginRight: "0",
+      backgroundColor: "midnightblue",
+      borderRadius: "50px"
+    },
+    dialog: {
+      backgroundColor: "#192A3D",
+      color: "white",
+      fontSize: "2rem",
+      zIndex: "999"
+    },
+    overlay: {
+      backgroundColor: "#03045E",
+      color: "white",
+      zIndex: "99",
+      position: "absolute",
+      width: "100vw",
+      height: "75vh",
+      top: "50",
+      left: "0"
+    }
   };
 
   return (
     <>
       <Grid container>
-        <Grid item xs={4} className="timer">
+        <Grid item xs={7} sx={styles.timer} className="timer">
           <CountdownCircleTimer
-            duration={timeLeft}
+            duration={remaining}
             colors={["#2E86C1", "#1ABC9C", "#F4D03F", "#E67E22", "#C0392B"]}
             colorsTime={[3599, 1800, 900, 600, 300]}
             isPlaying={running}
@@ -103,53 +127,37 @@ export const Timer = ({
             strokeWidth={8}
           >
             {({ remainingTime }) => {
-              useEffect(() => {
-                setRemaining(remainingTime);
-              });
-              return displayTime(remainingTime);
+              if (done) {
+                setFinal(remainingTime);
+              }
+              return showTime(remainingTime);
             }}
           </CountdownCircleTimer>
         </Grid>
-        <Grid item xs={6}>
-          <ButtonGroup className="buttons" orientation="vertical">
-            <Button sx={styles.button} variant="outlined" onClick={() => setRunning(!running)} disabled={timeLeft <= 0}>
-              {running ? "Pause" : "Resume"}
+        <Grid item xs={1}></Grid>
+        <Grid item xs={4} sx={styles.buttons}>
+          <ButtonGroup orientation="vertical">
+            <Button sx={styles.button} onClick={() => setRunning(!running)} disabled={remaining <= 0}>
+              {running ? <PauseIcon /> : <PlayArrowIcon />}
             </Button>
-            <Button sx={styles.button} variant="outlined" onClick={() => setGiveUpSure(true)} disabled={timeLeft <= 0}>
-              Give up?
+            <Button sx={styles.button} onClick={() => setGiveUpSure(true)} disabled={remaining <= 0}>
+              <CloseIcon />
             </Button>
           </ButtonGroup>
-          <div className="header-string">{getHighScore()}</div>
         </Grid>
       </Grid>
-      {!running && timeLeft > 0 &&
-        <Grid container className="overlay">
+      {!running && remaining > 0 &&
+        <Grid container sx={styles.overlay}>
+          <Grid item xs={12}></Grid>
           <Grid item xs={5}></Grid>
-          <Grid item className="paused-message">Paused...no cheating! :)</Grid>
+          <Grid item>Paused...no cheating! :)</Grid>
         </Grid>
       }
       <Dialog open={giveUpSure} maxWidth="sm" fullWidth>
-        <DialogTitle className="dialog dialog-text">Give up?</DialogTitle>
-        <DialogContent className="dialog">
-          <p className="dialog-content-text">Are you sure you want to give up?</p>
-          <ButtonGroup className="buttons">
-            <Button variant="contained" onClick={giveUp}>Yeah</Button>
-            <Button variant="contained" onClick={() => setGiveUpSure(false)}>Nah</Button>
-          </ButtonGroup>
-        </DialogContent>
-      </Dialog>
-      <Dialog open={newBestTime} maxWidth="sm" fullWidth>
-        <DialogTitle className="dialog dialog-text">New Best Time!!</DialogTitle>
-        <DialogContent className="dialog">
-          <TextField
-            className="text-field text-field-modal"
-            label="Enter your name! (For the love of God be reasonable)"
-            value={bestTimeName}
-            InputLabelProps={{ sx: { color: "lightskyblue" } }}
-            inputProps={{ maxLength: 10, sx: { color: "lightskyblue" } }}
-            onChange={(event) => setBestTimeName(event.target.value)}
-          />
-          <Button variant="contained" onClick={saveBest}>Register</Button>
+        <DialogContent sx={styles.dialog}>
+          <p>Are you sure you want to give up?</p>
+          <Button sx={styles.button} onClick={giveUp}>Yeah</Button>
+          <Button sx={styles.button} onClick={() => setGiveUpSure(false)}>Nah</Button>
         </DialogContent>
       </Dialog>
     </>

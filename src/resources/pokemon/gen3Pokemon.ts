@@ -1,5 +1,5 @@
-import { Pokemon } from "../../classes";
-import { AbilityName, Category, EggGroupName, TypeName } from "../../enums";
+import { Pokemon } from "../../classes/Pokemon";
+import { Category, EggGroup, TypeName } from "../../enums";
 
 export const gen3Pokemon: Pokemon[] = [
   {
@@ -10,15 +10,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Grass,
     category: Category.Starter,
     eggGroups: {
-      group1: EggGroupName.Monster,
-      group2: EggGroupName.Dragon,
+      group1: EggGroup.Monster,
+      group2: EggGroup.Dragon,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Overgrow,
-      second: AbilityName.NA,
-      hidden: AbilityName.Unburden
-    }
   },
   {
     name: "grovyle",
@@ -28,15 +23,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Grass,
     category: Category.Starter,
     eggGroups: {
-      group1: EggGroupName.Monster,
-      group2: EggGroupName.Dragon,
+      group1: EggGroup.Monster,
+      group2: EggGroup.Dragon,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Overgrow,
-      second: AbilityName.NA,
-      hidden: AbilityName.Unburden
-    }
   },
   {
     name: "sceptile",
@@ -46,15 +36,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Grass,
     category: Category.Starter,
     eggGroups: {
-      group1: EggGroupName.Monster,
-      group2: EggGroupName.Dragon,
+      group1: EggGroup.Monster,
+      group2: EggGroup.Dragon,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Overgrow,
-      second: AbilityName.NA,
-      hidden: AbilityName.Unburden
-    }
   },
   {
     name: "torchic",
@@ -64,14 +49,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Fire,
     category: Category.Starter,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Blaze,
-      second: AbilityName.NA,
-      hidden: AbilityName.SpeedBoost
-    }
   },
   {
     name: "combusken",
@@ -82,14 +62,9 @@ export const gen3Pokemon: Pokemon[] = [
     type2: TypeName.Fighting,
     category: Category.Starter,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Blaze,
-      second: AbilityName.NA,
-      hidden: AbilityName.SpeedBoost
-    }
   },
   {
     name: "blaziken",
@@ -100,14 +75,9 @@ export const gen3Pokemon: Pokemon[] = [
     type2: TypeName.Fighting,
     category: Category.Starter,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Blaze,
-      second: AbilityName.NA,
-      hidden: AbilityName.SpeedBoost
-    }
   },
   {
     name: "mudkip",
@@ -117,15 +87,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Water,
     category: Category.Starter,
     eggGroups: {
-      group1: EggGroupName.Monster,
-      group2: EggGroupName.Water1,
+      group1: EggGroup.Monster,
+      group2: EggGroup.Water1,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Torrent,
-      second: AbilityName.NA,
-      hidden: AbilityName.Damp
-    }
   },
   {
     name: "marshtomp",
@@ -136,15 +101,10 @@ export const gen3Pokemon: Pokemon[] = [
     type2: TypeName.Ground,
     category: Category.Starter,
     eggGroups: {
-      group1: EggGroupName.Monster,
-      group2: EggGroupName.Water1,
+      group1: EggGroup.Monster,
+      group2: EggGroup.Water1,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Torrent,
-      second: AbilityName.NA,
-      hidden: AbilityName.Damp
-    }
   },
   {
     name: "swampert",
@@ -155,15 +115,10 @@ export const gen3Pokemon: Pokemon[] = [
     type2: TypeName.Ground,
     category: Category.Starter,
     eggGroups: {
-      group1: EggGroupName.Monster,
-      group2: EggGroupName.Water1,
+      group1: EggGroup.Monster,
+      group2: EggGroup.Water1,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Torrent,
-      second: AbilityName.NA,
-      hidden: AbilityName.Damp
-    }
   },
   {
     name: "poochyena",
@@ -172,14 +127,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Dark,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.RunAway,
-      second: AbilityName.QuickFeet,
-      hidden: AbilityName.Rattled
-    }
   },
   {
     name: "mightyena",
@@ -188,14 +138,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Dark,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.Intimidate,
-      second: AbilityName.QuickFeet,
-      hidden: AbilityName.Moxie
-    }
   },
   {
     name: "zigzagoon",
@@ -204,14 +149,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Normal,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.Pickup,
-      second: AbilityName.Gluttony,
-      hidden: AbilityName.QuickFeet
-    }
   },
   {
     name: "linoone",
@@ -220,14 +160,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Normal,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.Pickup,
-      second: AbilityName.Gluttony,
-      hidden: AbilityName.QuickFeet
-    }
   },
   {
     name: "wurmple",
@@ -236,14 +171,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Bug,
     eggGroups: {
-      group1: EggGroupName.Bug,
+      group1: EggGroup.Bug,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.ShieldDust,
-      second: AbilityName.NA,
-      hidden: AbilityName.RunAway
-    }
   },
   {
     name: "silcoon",
@@ -252,14 +182,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Bug,
     eggGroups: {
-      group1: EggGroupName.Bug,
+      group1: EggGroup.Bug,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.ShedSkin,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "beautifly",
@@ -269,14 +194,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Bug,
     type2: TypeName.Flying,
     eggGroups: {
-      group1: EggGroupName.Bug,
+      group1: EggGroup.Bug,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.Swarm,
-      second: AbilityName.NA,
-      hidden: AbilityName.Rivalry
-    }
   },
   {
     name: "cascoon",
@@ -285,14 +205,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Bug,
     eggGroups: {
-      group1: EggGroupName.Bug,
+      group1: EggGroup.Bug,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.ShedSkin,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "dustox",
@@ -302,14 +217,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Bug,
     type2: TypeName.Poison,
     eggGroups: {
-      group1: EggGroupName.Bug,
+      group1: EggGroup.Bug,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.ShieldDust,
-      second: AbilityName.NA,
-      hidden: AbilityName.CompoundEyes
-    }
   },
   {
     name: "lotad",
@@ -319,15 +229,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Water,
     type2: TypeName.Grass,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Grass,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Grass,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.SwiftSwim,
-      second: AbilityName.RainDish,
-      hidden: AbilityName.OwnTempo
-    }
   },
   {
     name: "lombre",
@@ -337,15 +242,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Water,
     type2: TypeName.Grass,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Grass,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Grass,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.SwiftSwim,
-      second: AbilityName.RainDish,
-      hidden: AbilityName.OwnTempo
-    }
   },
   {
     name: "ludicolo",
@@ -355,15 +255,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Water,
     type2: TypeName.Grass,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Grass,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Grass,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.SwiftSwim,
-      second: AbilityName.RainDish,
-      hidden: AbilityName.OwnTempo
-    }
   },
   {
     name: "seedot",
@@ -372,15 +267,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Grass,
     eggGroups: {
-      group1: EggGroupName.Field,
-      group2: EggGroupName.Grass,
+      group1: EggGroup.Field,
+      group2: EggGroup.Grass,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.Chlorophyll,
-      second: AbilityName.EarlyBird,
-      hidden: AbilityName.Pickpocket
-    }
   },
   {
     name: "nuzleaf",
@@ -390,15 +280,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Grass,
     type2: TypeName.Dark,
     eggGroups: {
-      group1: EggGroupName.Field,
-      group2: EggGroupName.Grass,
+      group1: EggGroup.Field,
+      group2: EggGroup.Grass,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.Chlorophyll,
-      second: AbilityName.EarlyBird,
-      hidden: AbilityName.Pickpocket
-    }
   },
   {
     name: "shiftry",
@@ -408,15 +293,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Grass,
     type2: TypeName.Dark,
     eggGroups: {
-      group1: EggGroupName.Field,
-      group2: EggGroupName.Grass,
+      group1: EggGroup.Field,
+      group2: EggGroup.Grass,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.Chlorophyll,
-      second: AbilityName.EarlyBird,
-      hidden: AbilityName.Pickpocket
-    }
   },
   {
     name: "taillow",
@@ -426,14 +306,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Normal,
     type2: TypeName.Flying,
     eggGroups: {
-      group1: EggGroupName.Flying,
+      group1: EggGroup.Flying,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.Guts,
-      second: AbilityName.NA,
-      hidden: AbilityName.Scrappy
-    }
   },
   {
     name: "swellow",
@@ -443,14 +318,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Normal,
     type2: TypeName.Flying,
     eggGroups: {
-      group1: EggGroupName.Flying,
+      group1: EggGroup.Flying,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.Guts,
-      second: AbilityName.NA,
-      hidden: AbilityName.Scrappy
-    }
   },
   {
     name: "wingull",
@@ -460,15 +330,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Water,
     type2: TypeName.Flying,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Flying,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Flying,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.KeenEye,
-      second: AbilityName.Hydration,
-      hidden: AbilityName.RainDish
-    }
   },
   {
     name: "pelipper",
@@ -478,15 +343,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Water,
     type2: TypeName.Flying,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Flying,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Flying,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.KeenEye,
-      second: AbilityName.Drizzle,
-      hidden: AbilityName.RainDish
-    }
   },
   {
     name: "ralts",
@@ -496,15 +356,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Psychic,
     type2: TypeName.Fairy,
     eggGroups: {
-      group1: EggGroupName.HumanLike,
-      group2: EggGroupName.Amorphous,
+      group1: EggGroup.HumanLike,
+      group2: EggGroup.Amorphous,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Synchronize,
-      second: AbilityName.Trace,
-      hidden: AbilityName.Telepathy
-    }
   },
   {
     name: "kirlia",
@@ -514,15 +369,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Psychic,
     type2: TypeName.Fairy,
     eggGroups: {
-      group1: EggGroupName.HumanLike,
-      group2: EggGroupName.Amorphous,
+      group1: EggGroup.HumanLike,
+      group2: EggGroup.Amorphous,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Synchronize,
-      second: AbilityName.Trace,
-      hidden: AbilityName.Telepathy
-    }
   },
   {
     name: "gardevoir",
@@ -532,15 +382,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Psychic,
     type2: TypeName.Fairy,
     eggGroups: {
-      group1: EggGroupName.HumanLike,
-      group2: EggGroupName.Amorphous,
+      group1: EggGroup.HumanLike,
+      group2: EggGroup.Amorphous,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Synchronize,
-      second: AbilityName.Trace,
-      hidden: AbilityName.Telepathy
-    }
   },
   {
     name: "surskit",
@@ -550,15 +395,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Bug,
     type2: TypeName.Water,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Bug,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Bug,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.SwiftSwim,
-      second: AbilityName.NA,
-      hidden: AbilityName.RainDish
-    }
   },
   {
     name: "masquerain",
@@ -568,15 +408,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Bug,
     type2: TypeName.Flying,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Bug,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Bug,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.Intimidate,
-      second: AbilityName.NA,
-      hidden: AbilityName.Unnerve
-    }
   },
   {
     name: "shroomish",
@@ -585,15 +420,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Grass,
     eggGroups: {
-      group1: EggGroupName.Fairy,
-      group2: EggGroupName.Grass,
+      group1: EggGroup.Fairy,
+      group2: EggGroup.Grass,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.EffectSpore,
-      second: AbilityName.PoisonHeal,
-      hidden: AbilityName.QuickFeet
-    }
   },
   {
     name: "breloom",
@@ -603,15 +433,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Grass,
     type2: TypeName.Fighting,
     eggGroups: {
-      group1: EggGroupName.Fairy,
-      group2: EggGroupName.Grass,
+      group1: EggGroup.Fairy,
+      group2: EggGroup.Grass,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.EffectSpore,
-      second: AbilityName.PoisonHeal,
-      hidden: AbilityName.Technician
-    }
   },
   {
     name: "slakoth",
@@ -620,14 +445,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Normal,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.Truant,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "vigoroth",
@@ -636,14 +456,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Normal,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.VitalSpirit,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "slaking",
@@ -652,14 +467,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Normal,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.Truant,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "nincada",
@@ -669,14 +479,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Bug,
     type2: TypeName.Ground,
     eggGroups: {
-      group1: EggGroupName.Bug,
+      group1: EggGroup.Bug,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.CompoundEyes,
-      second: AbilityName.NA,
-      hidden: AbilityName.RunAway
-    }
   },
   {
     name: "ninjask",
@@ -686,14 +491,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Bug,
     type2: TypeName.Flying,
     eggGroups: {
-      group1: EggGroupName.Bug,
+      group1: EggGroup.Bug,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.SpeedBoost,
-      second: AbilityName.NA,
-      hidden: AbilityName.Infiltrator
-    }
   },
   {
     name: "shedinja",
@@ -703,14 +503,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Bug,
     type2: TypeName.Ghost,
     eggGroups: {
-      group1: EggGroupName.Mineral,
+      group1: EggGroup.Mineral,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.WonderGuard,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "whismur",
@@ -719,15 +514,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Normal,
     eggGroups: {
-      group1: EggGroupName.Monster,
-      group2: EggGroupName.Field,
+      group1: EggGroup.Monster,
+      group2: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Soundproof,
-      second: AbilityName.NA,
-      hidden: AbilityName.Rattled
-    }
   },
   {
     name: "loudred",
@@ -736,15 +526,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Normal,
     eggGroups: {
-      group1: EggGroupName.Monster,
-      group2: EggGroupName.Field,
+      group1: EggGroup.Monster,
+      group2: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Soundproof,
-      second: AbilityName.NA,
-      hidden: AbilityName.Scrappy
-    }
   },
   {
     name: "exploud",
@@ -753,15 +538,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Normal,
     eggGroups: {
-      group1: EggGroupName.Monster,
-      group2: EggGroupName.Field,
+      group1: EggGroup.Monster,
+      group2: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Soundproof,
-      second: AbilityName.NA,
-      hidden: AbilityName.Scrappy
-    }
   },
   {
     name: "makuhita",
@@ -770,14 +550,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Fighting,
     eggGroups: {
-      group1: EggGroupName.HumanLike,
+      group1: EggGroup.HumanLike,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.ThickFat,
-      second: AbilityName.Guts,
-      hidden: AbilityName.SheerForce
-    }
   },
   {
     name: "hariyama",
@@ -786,14 +561,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Fighting,
     eggGroups: {
-      group1: EggGroupName.HumanLike,
+      group1: EggGroup.HumanLike,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.ThickFat,
-      second: AbilityName.Guts,
-      hidden: AbilityName.SheerForce
-    }
   },
   {
     name: "azurill",
@@ -803,14 +573,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Normal,
     type2: TypeName.Fairy,
     eggGroups: {
-      group1: EggGroupName.NoEggs,
+      group1: EggGroup.NoEggs,
       cycles: 10
     },
-    abilities: {
-      first: AbilityName.ThickFat,
-      second: AbilityName.HugePower,
-      hidden: AbilityName.SapSipper
-    }
   },
   {
     name: "nosepass",
@@ -819,14 +584,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Rock,
     eggGroups: {
-      group1: EggGroupName.Mineral,
+      group1: EggGroup.Mineral,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Sturdy,
-      second: AbilityName.MagnetPull,
-      hidden: AbilityName.SandForce
-    }
   },
   {
     name: "skitty",
@@ -835,15 +595,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Normal,
     eggGroups: {
-      group1: EggGroupName.Field,
-      group2: EggGroupName.Fairy,
+      group1: EggGroup.Field,
+      group2: EggGroup.Fairy,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.CuteCharm,
-      second: AbilityName.Normalize,
-      hidden: AbilityName.WonderSkin
-    }
   },
   {
     name: "delcatty",
@@ -852,15 +607,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Normal,
     eggGroups: {
-      group1: EggGroupName.Field,
-      group2: EggGroupName.Fairy,
+      group1: EggGroup.Field,
+      group2: EggGroup.Fairy,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.CuteCharm,
-      second: AbilityName.Normalize,
-      hidden: AbilityName.WonderSkin
-    }
   },
   {
     name: "sableye",
@@ -870,14 +620,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Dark,
     type2: TypeName.Ghost,
     eggGroups: {
-      group1: EggGroupName.HumanLike,
+      group1: EggGroup.HumanLike,
       cycles: 25
     },
-    abilities: {
-      first: AbilityName.KeenEye,
-      second: AbilityName.Stall,
-      hidden: AbilityName.Prankster
-    }
   },
   {
     name: "mawile",
@@ -887,15 +632,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Steel,
     type2: TypeName.Fairy,
     eggGroups: {
-      group1: EggGroupName.Field,
-      group2: EggGroupName.Fairy,
+      group1: EggGroup.Field,
+      group2: EggGroup.Fairy,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.HyperCutter,
-      second: AbilityName.Intimidate,
-      hidden: AbilityName.SheerForce
-    }
   },
   {
     name: "aron",
@@ -905,14 +645,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Steel,
     type2: TypeName.Rock,
     eggGroups: {
-      group1: EggGroupName.Monster,
+      group1: EggGroup.Monster,
       cycles: 35
     },
-    abilities: {
-      first: AbilityName.Sturdy,
-      second: AbilityName.RockHead,
-      hidden: AbilityName.HeavyMetal
-    }
   },
   {
     name: "lairon",
@@ -922,14 +657,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Steel,
     type2: TypeName.Rock,
     eggGroups: {
-      group1: EggGroupName.Monster,
+      group1: EggGroup.Monster,
       cycles: 35
     },
-    abilities: {
-      first: AbilityName.Sturdy,
-      second: AbilityName.RockHead,
-      hidden: AbilityName.HeavyMetal
-    }
   },
   {
     name: "aggron",
@@ -939,14 +669,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Steel,
     type2: TypeName.Rock,
     eggGroups: {
-      group1: EggGroupName.Monster,
+      group1: EggGroup.Monster,
       cycles: 35
     },
-    abilities: {
-      first: AbilityName.Sturdy,
-      second: AbilityName.RockHead,
-      hidden: AbilityName.HeavyMetal
-    }
   },
   {
     name: "meditite",
@@ -956,14 +681,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Fighting,
     type2: TypeName.Psychic,
     eggGroups: {
-      group1: EggGroupName.HumanLike,
+      group1: EggGroup.HumanLike,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.PurePower,
-      second: AbilityName.NA,
-      hidden: AbilityName.Telepathy
-    }
   },
   {
     name: "medicham",
@@ -973,14 +693,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Fighting,
     type2: TypeName.Psychic,
     eggGroups: {
-      group1: EggGroupName.HumanLike,
+      group1: EggGroup.HumanLike,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.PurePower,
-      second: AbilityName.NA,
-      hidden: AbilityName.Telepathy
-    }
   },
   {
     name: "electrike",
@@ -989,14 +704,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Electric,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Static,
-      second: AbilityName.LightningRod,
-      hidden: AbilityName.Minus
-    }
   },
   {
     name: "manectric",
@@ -1005,14 +715,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Electric,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Static,
-      second: AbilityName.LightningRod,
-      hidden: AbilityName.Minus
-    }
   },
   {
     name: "plusle",
@@ -1021,14 +726,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Electric,
     eggGroups: {
-      group1: EggGroupName.Fairy,
+      group1: EggGroup.Fairy,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Plus,
-      second: AbilityName.NA,
-      hidden: AbilityName.LightningRod
-    }
   },
   {
     name: "minun",
@@ -1037,14 +737,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Electric,
     eggGroups: {
-      group1: EggGroupName.Fairy,
+      group1: EggGroup.Fairy,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Minus,
-      second: AbilityName.NA,
-      hidden: AbilityName.VoltAbsorb
-    }
   },
   {
     name: "volbeat",
@@ -1053,15 +748,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Bug,
     eggGroups: {
-      group1: EggGroupName.Bug,
-      group2: EggGroupName.HumanLike,
+      group1: EggGroup.Bug,
+      group2: EggGroup.HumanLike,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.Illuminate,
-      second: AbilityName.Swarm,
-      hidden: AbilityName.Prankster
-    }
   },
   {
     name: "illumise",
@@ -1070,15 +760,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Bug,
     eggGroups: {
-      group1: EggGroupName.Bug,
-      group2: EggGroupName.HumanLike,
+      group1: EggGroup.Bug,
+      group2: EggGroup.HumanLike,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.Oblivious,
-      second: AbilityName.TintedLens,
-      hidden: AbilityName.Prankster
-    }
   },
   {
     name: "roselia",
@@ -1088,15 +773,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Grass,
     type2: TypeName.Poison,
     eggGroups: {
-      group1: EggGroupName.Fairy,
-      group2: EggGroupName.Grass,
+      group1: EggGroup.Fairy,
+      group2: EggGroup.Grass,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.NaturalCure,
-      second: AbilityName.PoisonPoint,
-      hidden: AbilityName.LeafGuard
-    }
   },
   {
     name: "gulpin",
@@ -1105,14 +785,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Poison,
     eggGroups: {
-      group1: EggGroupName.Amorphous,
+      group1: EggGroup.Amorphous,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.LiquidOoze,
-      second: AbilityName.StickyHold,
-      hidden: AbilityName.Gluttony
-    }
   },
   {
     name: "swalot",
@@ -1121,14 +796,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Poison,
     eggGroups: {
-      group1: EggGroupName.Amorphous,
+      group1: EggGroup.Amorphous,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.LiquidOoze,
-      second: AbilityName.StickyHold,
-      hidden: AbilityName.Gluttony
-    }
   },
   {
     name: "carvanha",
@@ -1138,14 +808,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Water,
     type2: TypeName.Dark,
     eggGroups: {
-      group1: EggGroupName.Water2,
+      group1: EggGroup.Water2,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.RoughSkin,
-      second: AbilityName.NA,
-      hidden: AbilityName.SpeedBoost
-    }
   },
   {
     name: "sharpedo",
@@ -1155,14 +820,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Water,
     type2: TypeName.Dark,
     eggGroups: {
-      group1: EggGroupName.Water2,
+      group1: EggGroup.Water2,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.RoughSkin,
-      second: AbilityName.NA,
-      hidden: AbilityName.SpeedBoost
-    }
   },
   {
     name: "wailmer",
@@ -1171,15 +831,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Water,
     eggGroups: {
-      group1: EggGroupName.Field,
-      group2: EggGroupName.Water2,
+      group1: EggGroup.Field,
+      group2: EggGroup.Water2,
       cycles: 40
     },
-    abilities: {
-      first: AbilityName.WaterVeil,
-      second: AbilityName.Oblivious,
-      hidden: AbilityName.Pressure
-    }
   },
   {
     name: "wailord",
@@ -1188,15 +843,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Water,
     eggGroups: {
-      group1: EggGroupName.Field,
-      group2: EggGroupName.Water2,
+      group1: EggGroup.Field,
+      group2: EggGroup.Water2,
       cycles: 40
     },
-    abilities: {
-      first: AbilityName.WaterVeil,
-      second: AbilityName.Oblivious,
-      hidden: AbilityName.Pressure
-    }
   },
   {
     name: "numel",
@@ -1206,14 +856,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Fire,
     type2: TypeName.Ground,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Oblivious,
-      second: AbilityName.Simple,
-      hidden: AbilityName.OwnTempo
-    }
   },
   {
     name: "camerupt",
@@ -1223,14 +868,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Fire,
     type2: TypeName.Ground,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.MagmaArmor,
-      second: AbilityName.SolidRock,
-      hidden: AbilityName.AngerPoint
-    }
   },
   {
     name: "torkoal",
@@ -1239,14 +879,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Fire,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.WhiteSmoke,
-      second: AbilityName.Drought,
-      hidden: AbilityName.ShellArmor
-    }
   },
   {
     name: "spoink",
@@ -1255,14 +890,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Psychic,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.ThickFat,
-      second: AbilityName.OwnTempo,
-      hidden: AbilityName.Gluttony
-    }
   },
   {
     name: "grumpig",
@@ -1271,14 +901,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Psychic,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.ThickFat,
-      second: AbilityName.OwnTempo,
-      hidden: AbilityName.Gluttony
-    }
   },
   {
     name: "spinda",
@@ -1287,15 +912,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Normal,
     eggGroups: {
-      group1: EggGroupName.Field,
-      group2: EggGroupName.HumanLike,
+      group1: EggGroup.Field,
+      group2: EggGroup.HumanLike,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.OwnTempo,
-      second: AbilityName.TangledFeet,
-      hidden: AbilityName.Gluttony
-    }
   },
   {
     name: "trapinch",
@@ -1304,15 +924,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Ground,
     eggGroups: {
-      group1: EggGroupName.Bug,
-      group2: EggGroupName.Dragon,
+      group1: EggGroup.Bug,
+      group2: EggGroup.Dragon,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.HyperCutter,
-      second: AbilityName.ArenaTrap,
-      hidden: AbilityName.SheerForce
-    }
   },
   {
     name: "vibrava",
@@ -1322,15 +937,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Ground,
     type2: TypeName.Dragon,
     eggGroups: {
-      group1: EggGroupName.Bug,
-      group2: EggGroupName.Dragon,
+      group1: EggGroup.Bug,
+      group2: EggGroup.Dragon,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Levitate,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "flygon",
@@ -1340,15 +950,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Ground,
     type2: TypeName.Dragon,
     eggGroups: {
-      group1: EggGroupName.Bug,
-      group2: EggGroupName.Dragon,
+      group1: EggGroup.Bug,
+      group2: EggGroup.Dragon,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Levitate,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "cacnea",
@@ -1357,15 +962,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Grass,
     eggGroups: {
-      group1: EggGroupName.Grass,
-      group2: EggGroupName.HumanLike,
+      group1: EggGroup.Grass,
+      group2: EggGroup.HumanLike,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.SandVeil,
-      second: AbilityName.NA,
-      hidden: AbilityName.WaterAbsorb
-    }
   },
   {
     name: "cacturne",
@@ -1375,15 +975,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Grass,
     type2: TypeName.Dark,
     eggGroups: {
-      group1: EggGroupName.Grass,
-      group2: EggGroupName.HumanLike,
+      group1: EggGroup.Grass,
+      group2: EggGroup.HumanLike,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.SandVeil,
-      second: AbilityName.NA,
-      hidden: AbilityName.WaterAbsorb
-    }
   },
   {
     name: "swablu",
@@ -1393,15 +988,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Normal,
     type2: TypeName.Flying,
     eggGroups: {
-      group1: EggGroupName.Flying,
-      group2: EggGroupName.Dragon,
+      group1: EggGroup.Flying,
+      group2: EggGroup.Dragon,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.NaturalCure,
-      second: AbilityName.NA,
-      hidden: AbilityName.CloudNine
-    }
   },
   {
     name: "altaria",
@@ -1411,15 +1001,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Dragon,
     type2: TypeName.Flying,
     eggGroups: {
-      group1: EggGroupName.Flying,
-      group2: EggGroupName.Dragon,
+      group1: EggGroup.Flying,
+      group2: EggGroup.Dragon,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.NaturalCure,
-      second: AbilityName.NA,
-      hidden: AbilityName.CloudNine
-    }
   },
   {
     name: "zangoose",
@@ -1428,14 +1013,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Normal,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Immunity,
-      second: AbilityName.NA,
-      hidden: AbilityName.ToxicBoost
-    }
   },
   {
     name: "seviper",
@@ -1444,15 +1024,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Poison,
     eggGroups: {
-      group1: EggGroupName.Field,
-      group2: EggGroupName.Dragon,
+      group1: EggGroup.Field,
+      group2: EggGroup.Dragon,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.ShedSkin,
-      second: AbilityName.NA,
-      hidden: AbilityName.Infiltrator
-    }
   },
   {
     name: "lunatone",
@@ -1462,14 +1037,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Rock,
     type2: TypeName.Psychic,
     eggGroups: {
-      group1: EggGroupName.Mineral,
+      group1: EggGroup.Mineral,
       cycles: 25
     },
-    abilities: {
-      first: AbilityName.Levitate,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "solrock",
@@ -1479,14 +1049,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Rock,
     type2: TypeName.Psychic,
     eggGroups: {
-      group1: EggGroupName.Mineral,
+      group1: EggGroup.Mineral,
       cycles: 25
     },
-    abilities: {
-      first: AbilityName.Levitate,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "barboach",
@@ -1496,14 +1061,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Water,
     type2: TypeName.Ground,
     eggGroups: {
-      group1: EggGroupName.Water2,
+      group1: EggGroup.Water2,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Oblivious,
-      second: AbilityName.Anticipation,
-      hidden: AbilityName.Hydration
-    }
   },
   {
     name: "whiscash",
@@ -1513,14 +1073,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Water,
     type2: TypeName.Ground,
     eggGroups: {
-      group1: EggGroupName.Water2,
+      group1: EggGroup.Water2,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Oblivious,
-      second: AbilityName.Anticipation,
-      hidden: AbilityName.Hydration
-    }
   },
   {
     name: "corphish",
@@ -1529,15 +1084,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Water,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Water3,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Water3,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.HyperCutter,
-      second: AbilityName.ShellArmor,
-      hidden: AbilityName.Adaptability
-    }
   },
   {
     name: "crawdaunt",
@@ -1547,15 +1097,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Water,
     type2: TypeName.Dark,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Water3,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Water3,
       cycles: 15
     },
-    abilities: {
-      first: AbilityName.HyperCutter,
-      second: AbilityName.ShellArmor,
-      hidden: AbilityName.Adaptability
-    }
   },
   {
     name: "baltoy",
@@ -1565,14 +1110,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Ground,
     type2: TypeName.Psychic,
     eggGroups: {
-      group1: EggGroupName.Mineral,
+      group1: EggGroup.Mineral,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Levitate,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "claydol",
@@ -1582,14 +1122,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Ground,
     type2: TypeName.Psychic,
     eggGroups: {
-      group1: EggGroupName.Mineral,
+      group1: EggGroup.Mineral,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.Levitate,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "lileep",
@@ -1600,14 +1135,9 @@ export const gen3Pokemon: Pokemon[] = [
     type2: TypeName.Grass,
     category: Category.Fossil,
     eggGroups: {
-      group1: EggGroupName.Water3,
+      group1: EggGroup.Water3,
       cycles: 30
     },
-    abilities: {
-      first: AbilityName.SuctionCups,
-      second: AbilityName.NA,
-      hidden: AbilityName.StormDrain
-    }
   },
   {
     name: "cradily",
@@ -1618,14 +1148,9 @@ export const gen3Pokemon: Pokemon[] = [
     type2: TypeName.Grass,
     category: Category.Fossil,
     eggGroups: {
-      group1: EggGroupName.Water3,
+      group1: EggGroup.Water3,
       cycles: 30
     },
-    abilities: {
-      first: AbilityName.SuctionCups,
-      second: AbilityName.NA,
-      hidden: AbilityName.StormDrain
-    }
   },
   {
     name: "anorith",
@@ -1636,14 +1161,9 @@ export const gen3Pokemon: Pokemon[] = [
     type2: TypeName.Bug,
     category: Category.Fossil,
     eggGroups: {
-      group1: EggGroupName.Water3,
+      group1: EggGroup.Water3,
       cycles: 30
     },
-    abilities: {
-      first: AbilityName.BattleArmor,
-      second: AbilityName.NA,
-      hidden: AbilityName.SwiftSwim
-    }
   },
   {
     name: "armaldo",
@@ -1654,14 +1174,9 @@ export const gen3Pokemon: Pokemon[] = [
     type2: TypeName.Bug,
     category: Category.Fossil,
     eggGroups: {
-      group1: EggGroupName.Water3,
+      group1: EggGroup.Water3,
       cycles: 30
     },
-    abilities: {
-      first: AbilityName.BattleArmor,
-      second: AbilityName.NA,
-      hidden: AbilityName.SwiftSwim
-    }
   },
   {
     name: "feebas",
@@ -1670,15 +1185,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Water,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Dragon,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Dragon,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.SwiftSwim,
-      second: AbilityName.Oblivious,
-      hidden: AbilityName.Adaptability
-    }
   },
   {
     name: "milotic",
@@ -1687,32 +1197,23 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Water,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Dragon,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Dragon,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.MarvelScale,
-      second: AbilityName.Competitive,
-      hidden: AbilityName.CuteCharm
-    }
   },
   {
     name: "castform",
     displayName: "Castform",
     dexNumber: 351,
     generation: 3,
-    type: [TypeName.Normal, TypeName.Fire, TypeName.Water, TypeName.Ice],
+    type: TypeName.Normal,
+    formTypes: [TypeName.Fire, TypeName.Water, TypeName.Ice],
     eggGroups: {
-      group1: EggGroupName.Fairy,
-      group2: EggGroupName.Amorphous,
+      group1: EggGroup.Fairy,
+      group2: EggGroup.Amorphous,
       cycles: 25
     },
-    abilities: {
-      first: AbilityName.Forecast,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "kecleon",
@@ -1721,14 +1222,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Normal,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.ColorChange,
-      second: AbilityName.NA,
-      hidden: AbilityName.Protean
-    }
   },
   {
     name: "shuppet",
@@ -1737,14 +1233,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Ghost,
     eggGroups: {
-      group1: EggGroupName.Amorphous,
+      group1: EggGroup.Amorphous,
       cycles: 25
     },
-    abilities: {
-      first: AbilityName.Insomnia,
-      second: AbilityName.Frisk,
-      hidden: AbilityName.CursedBody
-    }
   },
   {
     name: "banette",
@@ -1753,14 +1244,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Ghost,
     eggGroups: {
-      group1: EggGroupName.Amorphous,
+      group1: EggGroup.Amorphous,
       cycles: 25
     },
-    abilities: {
-      first: AbilityName.Insomnia,
-      second: AbilityName.Frisk,
-      hidden: AbilityName.CursedBody
-    }
   },
   {
     name: "duskull",
@@ -1769,14 +1255,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Ghost,
     eggGroups: {
-      group1: EggGroupName.Amorphous,
+      group1: EggGroup.Amorphous,
       cycles: 25
     },
-    abilities: {
-      first: AbilityName.Levitate,
-      second: AbilityName.NA,
-      hidden: AbilityName.Frisk
-    }
   },
   {
     name: "dusclops",
@@ -1785,14 +1266,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Ghost,
     eggGroups: {
-      group1: EggGroupName.Amorphous,
+      group1: EggGroup.Amorphous,
       cycles: 25
     },
-    abilities: {
-      first: AbilityName.Pressure,
-      second: AbilityName.NA,
-      hidden: AbilityName.Frisk
-    }
   },
   {
     name: "tropius",
@@ -1802,15 +1278,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Grass,
     type2: TypeName.Flying,
     eggGroups: {
-      group1: EggGroupName.Monster,
-      group2: EggGroupName.Grass,
+      group1: EggGroup.Monster,
+      group2: EggGroup.Grass,
       cycles: 25
     },
-    abilities: {
-      first: AbilityName.Chlorophyll,
-      second: AbilityName.SolarPower,
-      hidden: AbilityName.Harvest
-    }
   },
   {
     name: "chimecho",
@@ -1819,14 +1290,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Psychic,
     eggGroups: {
-      group1: EggGroupName.Amorphous,
+      group1: EggGroup.Amorphous,
       cycles: 25
     },
-    abilities: {
-      first: AbilityName.Levitate,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "absol",
@@ -1835,14 +1301,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Dark,
     eggGroups: {
-      group1: EggGroupName.Field,
+      group1: EggGroup.Field,
       cycles: 25
     },
-    abilities: {
-      first: AbilityName.Pressure,
-      second: AbilityName.SuperLuck,
-      hidden: AbilityName.Justified
-    }
   },
   {
     name: "wynaut",
@@ -1851,14 +1312,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Psychic,
     eggGroups: {
-      group1: EggGroupName.NoEggs,
+      group1: EggGroup.NoEggs,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.ShadowTag,
-      second: AbilityName.NA,
-      hidden: AbilityName.Telepathy
-    }
   },
   {
     name: "snorunt",
@@ -1867,15 +1323,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Ice,
     eggGroups: {
-      group1: EggGroupName.Fairy,
-      group2: EggGroupName.Mineral,
+      group1: EggGroup.Fairy,
+      group2: EggGroup.Mineral,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.InnerFocus,
-      second: AbilityName.IceBody,
-      hidden: AbilityName.Moody
-    }
   },
   {
     name: "glalie",
@@ -1884,15 +1335,10 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Ice,
     eggGroups: {
-      group1: EggGroupName.Fairy,
-      group2: EggGroupName.Mineral,
+      group1: EggGroup.Fairy,
+      group2: EggGroup.Mineral,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.InnerFocus,
-      second: AbilityName.IceBody,
-      hidden: AbilityName.Moody
-    }
   },
   {
     name: "spheal",
@@ -1902,15 +1348,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Ice,
     type2: TypeName.Water,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Field,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.ThickFat,
-      second: AbilityName.IceBody,
-      hidden: AbilityName.Oblivious
-    }
   },
   {
     name: "sealeo",
@@ -1920,15 +1361,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Ice,
     type2: TypeName.Water,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Field,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.ThickFat,
-      second: AbilityName.IceBody,
-      hidden: AbilityName.Oblivious
-    }
   },
   {
     name: "walrein",
@@ -1938,15 +1374,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Ice,
     type2: TypeName.Water,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Field,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Field,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.ThickFat,
-      second: AbilityName.IceBody,
-      hidden: AbilityName.Oblivious
-    }
   },
   {
     name: "clamperl",
@@ -1955,14 +1386,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Water,
     eggGroups: {
-      group1: EggGroupName.Water1,
+      group1: EggGroup.Water1,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.ShellArmor,
-      second: AbilityName.NA,
-      hidden: AbilityName.Rattled
-    }
   },
   {
     name: "huntail",
@@ -1971,14 +1397,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Water,
     eggGroups: {
-      group1: EggGroupName.Water1,
+      group1: EggGroup.Water1,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.SwiftSwim,
-      second: AbilityName.NA,
-      hidden: AbilityName.WaterVeil
-    }
   },
   {
     name: "gorebyss",
@@ -1987,14 +1408,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Water,
     eggGroups: {
-      group1: EggGroupName.Water1,
+      group1: EggGroup.Water1,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.SwiftSwim,
-      second: AbilityName.NA,
-      hidden: AbilityName.Hydration
-    }
   },
   {
     name: "relicanth",
@@ -2004,15 +1420,10 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Water,
     type2: TypeName.Rock,
     eggGroups: {
-      group1: EggGroupName.Water1,
-      group2: EggGroupName.Water2,
+      group1: EggGroup.Water1,
+      group2: EggGroup.Water2,
       cycles: 40
     },
-    abilities: {
-      first: AbilityName.SwiftSwim,
-      second: AbilityName.RockHead,
-      hidden: AbilityName.Sturdy
-    }
   },
   {
     name: "luvdisc",
@@ -2021,14 +1432,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Water,
     eggGroups: {
-      group1: EggGroupName.Water2,
+      group1: EggGroup.Water2,
       cycles: 20
     },
-    abilities: {
-      first: AbilityName.SwiftSwim,
-      second: AbilityName.NA,
-      hidden: AbilityName.Hydration
-    }
   },
   {
     name: "bagon",
@@ -2037,14 +1443,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Dragon,
     eggGroups: {
-      group1: EggGroupName.Dragon,
+      group1: EggGroup.Dragon,
       cycles: 40
     },
-    abilities: {
-      first: AbilityName.RockHead,
-      second: AbilityName.NA,
-      hidden: AbilityName.SheerForce
-    }
   },
   {
     name: "shelgon",
@@ -2053,14 +1454,9 @@ export const gen3Pokemon: Pokemon[] = [
     generation: 3,
     type: TypeName.Dragon,
     eggGroups: {
-      group1: EggGroupName.Dragon,
+      group1: EggGroup.Dragon,
       cycles: 40
     },
-    abilities: {
-      first: AbilityName.RockHead,
-      second: AbilityName.NA,
-      hidden: AbilityName.Overcoat
-    }
   },
   {
     name: "salamence",
@@ -2070,14 +1466,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Dragon,
     type2: TypeName.Flying,
     eggGroups: {
-      group1: EggGroupName.Dragon,
+      group1: EggGroup.Dragon,
       cycles: 40
     },
-    abilities: {
-      first: AbilityName.Intimidate,
-      second: AbilityName.NA,
-      hidden: AbilityName.Moxie
-    }
   },
   {
     name: "beldum",
@@ -2087,14 +1478,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Steel,
     type2: TypeName.Psychic,
     eggGroups: {
-      group1: EggGroupName.Mineral,
+      group1: EggGroup.Mineral,
       cycles: 40
     },
-    abilities: {
-      first: AbilityName.ClearBody,
-      second: AbilityName.NA,
-      hidden: AbilityName.LightMetal
-    }
   },
   {
     name: "metang",
@@ -2104,14 +1490,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Steel,
     type2: TypeName.Psychic,
     eggGroups: {
-      group1: EggGroupName.Mineral,
+      group1: EggGroup.Mineral,
       cycles: 40
     },
-    abilities: {
-      first: AbilityName.ClearBody,
-      second: AbilityName.NA,
-      hidden: AbilityName.LightMetal
-    }
   },
   {
     name: "metagross",
@@ -2121,14 +1502,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Steel,
     type2: TypeName.Psychic,
     eggGroups: {
-      group1: EggGroupName.Mineral,
+      group1: EggGroup.Mineral,
       cycles: 40
     },
-    abilities: {
-      first: AbilityName.ClearBody,
-      second: AbilityName.NA,
-      hidden: AbilityName.LightMetal
-    }
   },
   {
     name: "regirock",
@@ -2138,14 +1514,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Rock,
     category: Category.Legendary,
     eggGroups: {
-      group1: EggGroupName.NoEggs,
+      group1: EggGroup.NoEggs,
       cycles: 80
     },
-    abilities: {
-      first: AbilityName.ClearBody,
-      second: AbilityName.NA,
-      hidden: AbilityName.Sturdy
-    }
   },
   {
     name: "regice",
@@ -2155,14 +1526,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Ice,
     category: Category.Legendary,
     eggGroups: {
-      group1: EggGroupName.NoEggs,
+      group1: EggGroup.NoEggs,
       cycles: 80
     },
-    abilities: {
-      first: AbilityName.ClearBody,
-      second: AbilityName.NA,
-      hidden: AbilityName.IceBody
-    }
   },
   {
     name: "registeel",
@@ -2172,14 +1538,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Steel,
     category: Category.Legendary,
     eggGroups: {
-      group1: EggGroupName.NoEggs,
+      group1: EggGroup.NoEggs,
       cycles: 80
     },
-    abilities: {
-      first: AbilityName.ClearBody,
-      second: AbilityName.NA,
-      hidden: AbilityName.LightMetal
-    }
   },
   {
     name: "latias",
@@ -2190,14 +1551,9 @@ export const gen3Pokemon: Pokemon[] = [
     type2: TypeName.Flying,
     category: Category.Legendary,
     eggGroups: {
-      group1: EggGroupName.NoEggs,
+      group1: EggGroup.NoEggs,
       cycles: 120
     },
-    abilities: {
-      first: AbilityName.Levitate,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "latios",
@@ -2208,14 +1564,9 @@ export const gen3Pokemon: Pokemon[] = [
     type2: TypeName.Flying,
     category: Category.Legendary,
     eggGroups: {
-      group1: EggGroupName.NoEggs,
+      group1: EggGroup.NoEggs,
       cycles: 120
     },
-    abilities: {
-      first: AbilityName.Levitate,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "kyogre",
@@ -2225,14 +1576,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Water,
     category: Category.Legendary,
     eggGroups: {
-      group1: EggGroupName.NoEggs,
+      group1: EggGroup.NoEggs,
       cycles: 120
     },
-    abilities: {
-      first: AbilityName.Drizzle,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "groudon",
@@ -2242,14 +1588,9 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Ground,
     category: Category.Legendary,
     eggGroups: {
-      group1: EggGroupName.NoEggs,
+      group1: EggGroup.NoEggs,
       cycles: 120
     },
-    abilities: {
-      first: AbilityName.Drought,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "rayquaza",
@@ -2260,14 +1601,9 @@ export const gen3Pokemon: Pokemon[] = [
     type2: TypeName.Flying,
     category: Category.Legendary,
     eggGroups: {
-      group1: EggGroupName.NoEggs,
+      group1: EggGroup.NoEggs,
       cycles: 120
     },
-    abilities: {
-      first: AbilityName.AirLock,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "jirachi",
@@ -2278,14 +1614,9 @@ export const gen3Pokemon: Pokemon[] = [
     type2: TypeName.Psychic,
     category: Category.Mythical,
     eggGroups: {
-      group1: EggGroupName.NoEggs,
+      group1: EggGroup.NoEggs,
       cycles: 120
     },
-    abilities: {
-      first: AbilityName.SereneGrace,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   },
   {
     name: "deoxys",
@@ -2295,13 +1626,8 @@ export const gen3Pokemon: Pokemon[] = [
     type: TypeName.Psychic,
     category: Category.Mythical,
     eggGroups: {
-      group1: EggGroupName.NoEggs,
+      group1: EggGroup.NoEggs,
       cycles: 120
     },
-    abilities: {
-      first: AbilityName.Pressure,
-      second: AbilityName.NA,
-      hidden: AbilityName.NA
-    }
   }
 ];

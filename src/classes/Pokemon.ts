@@ -1,5 +1,4 @@
-import { PokemonAbilities, PokemonEggGroups } from ".";
-import { Category, TypeName } from "../enums";
+import { Category, EggGroup, TypeName } from "../enums";
 
 export class Pokemon {
   constructor(
@@ -7,10 +6,14 @@ export class Pokemon {
     public displayName: string,
     public dexNumber: number,
     public generation: number,
-    public type: TypeName | TypeName[],
-    public eggGroups: PokemonEggGroups,
-    public abilities: PokemonAbilities,
-    public type2?: TypeName | TypeName[],
-    public category?: Category
+    public type: TypeName,
+    public eggGroups: {
+      group1: EggGroup,
+      cycles: number,
+      group2?: EggGroup,
+    },
+    public type2?: TypeName,
+    public formTypes?: TypeName[],
+    public category?: Category,
   ) {}
 }
