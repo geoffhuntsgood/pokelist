@@ -5,9 +5,9 @@ export const QuizButtons = ({
   onChangeFunc,
   options
 }: {
-  value: string,
-  onChangeFunc: Function,
-  options: { value: string, name: string }[]
+  value: string;
+  onChangeFunc: (value: string) => void;
+  options: { value: string; name: string }[];
 }) => {
   const styles = {
     button: {
@@ -16,10 +16,10 @@ export const QuizButtons = ({
       border: "2px solid darkslateblue"
     },
     buttonOff: {
-      backgroundColor: "goldenrod",
+      backgroundColor: "goldenrod"
     },
     buttonOn: {
-      backgroundColor: "deepskyblue",
+      backgroundColor: "deepskyblue"
     }
   };
 
@@ -33,7 +33,8 @@ export const QuizButtons = ({
               ...(value === option.value ? styles.buttonOn : styles.buttonOff)
             }}
             key={option.value}
-            onClick={() => onChangeFunc(option.value)}>
+            onClick={() => onChangeFunc(option.value)}
+          >
             {option.name}
           </Button>
         ))}

@@ -1,23 +1,30 @@
-import { Box, Button, Grid } from "@mui/material";
+import { Box, Button, Checkbox, FormControlLabel, Grid } from "@mui/material";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/img/logo.png";
 import tagLine from "../assets/img/catchemall.png";
+import logo from "../assets/img/logo.png";
 import { Pokemon } from "../classes/Pokemon";
 import { Category, EggGroup, TypeName } from "../enums";
-import { allPokemonList } from "../resources/pokemon/allPokemonList";
+import {
+  allPokemonList,
+  getNonEvolvers,
+  getPokemonByGen
+} from "../resources/pokemon/pokemonLists";
 import { QuizButtons } from "./QuizButtons";
 
 export const QuizSetup = () => {
   const navigate = useNavigate();
   const [category, setCategory] = useState("");
   const [subCategory, setSubCategory] = useState("");
-  const [options, setOptions] = useState([] as { value: string, name: string }[]);
+  const [options, setOptions] = useState(
+    [] as { value: string; name: string }[]
+  );
+  const [includeOtherCategories, setIncludeOtherCategories] = useState(false);
 
   const startQuiz = () => {
-    let pokemon: Pokemon[];
-    let displayText: string;
+    let pokemon: Pokemon[] = [];
+    let displayText = "";
 
     switch (category) {
       case "all":
@@ -25,38 +32,45 @@ export const QuizSetup = () => {
         displayText = "Gotta name 'em all!";
         break;
       case "category":
-        pokemon = allPokemonList.filter((pokemon) => pokemon.category === subCategory as Category);
+        if (subCategory === Category.NonEvolve) {
+          pokemon = getNonEvolvers(includeOtherCategories);
+        } else {
+          pokemon = allPokemonList.filter((pokemon: Pokemon) => {
+            return (
+              pokemon.category === subCategory ||
+              pokemon.category?.includes(subCategory as Category)
+            );
+          });
+        }
         displayText = `Name the ${subCategory} Pokémon!`;
         break;
       case "generation":
-        pokemon = allPokemonList.filter((pokemon) => pokemon.generation === parseInt(subCategory));
+        pokemon = getPokemonByGen(parseInt(subCategory));
         displayText = `Name the Generation ${subCategory} Pokémon!`;
         break;
       case "type":
         pokemon = allPokemonList.filter((pokemon) => {
-          const type = subCategory as TypeName;
-          return pokemon.type === type || pokemon.type2 === type;
+          return pokemon.type === subCategory || pokemon.type2 === subCategory;
         });
         displayText = `Name the ${subCategory}-Type Pokémon!`;
         break;
       case "eggGroup":
         pokemon = allPokemonList.filter((pokemon) => {
-          const eggGroup = subCategory as EggGroup;
-          return pokemon.eggGroups.group1 === eggGroup || pokemon.eggGroups.group2 === eggGroup;
+          return pokemon.eggGroups.includes(subCategory as EggGroup);
         });
         displayText = `Name Pokémon in the ${subCategory} Egg Group!`;
-        break;
-      default:
-        pokemon = [];
-        displayText = "";
         break;
     }
     navigate("/quiz/pokemon", { state: { pokemon, displayText } });
   };
 
-  const setQuizCategory = (value: string) => {
+  const setQuizCategory = (value: string): void => {
     setSubCategory("");
     setCategory(value);
+  };
+
+  const setOtherCategories = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    setIncludeOtherCategories(event.target.checked);
   };
 
   const baseOptions = [
@@ -70,20 +84,40 @@ export const QuizSetup = () => {
   useEffect(() => {
     switch (category) {
       case "category":
-        setOptions(Object.entries(Category).map((value) => ({ value: value[0], name: value[1] })));
+        setOptions(
+          Object.entries(Category).map((value: [string, Category]) => ({
+            value: value[1],
+            name: value[1]
+          }))
+        );
         break;
       case "generation":
-        setOptions(["1", "2", "3", "4", "5", "6", "7", "8", "9"].map((gen: string) => ({ value: gen, name: gen })));
+        setOptions(
+          ["1", "2", "3", "4", "5", "6", "7", "8", "9"].map((gen: string) => ({
+            value: gen,
+            name: gen
+          }))
+        );
         break;
       case "type":
-        setOptions(Object.keys(TypeName).map((key: string) => ({ value: key, name: key })));
+        setOptions(
+          Object.keys(TypeName).map((key: string) => ({
+            value: key,
+            name: key
+          }))
+        );
         break;
       case "eggGroup":
-        setOptions(Object.entries(EggGroup).map((value) => ({ value: value[0], name: value[1] })));
+        setOptions(
+          Object.entries(EggGroup).map((value: [string, EggGroup]) => ({
+            value: value[0],
+            name: value[1]
+          }))
+        );
         break;
       default:
         setOptions([]);
-    };
+    }
   }, [category]);
 
   const pageMotion = {
@@ -99,6 +133,13 @@ export const QuizSetup = () => {
       color: "darkslateblue",
       border: "2px solid darkslateblue"
     },
+    checkbox: {
+      fontWeight: "bold",
+      padding: "4px",
+      "&.Mui-checked": {
+        color: "darkslateblue"
+      }
+    },
     background: {
       height: "90vh",
       width: "90vw",
@@ -111,10 +152,17 @@ export const QuizSetup = () => {
 
   return (
     <Box sx={styles.background}>
-      <motion.div initial="initial" animate="animate" exit="exit" variants={pageMotion}>
+      <motion.div
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageMotion}
+      >
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <div><img src={logo} /></div>
+            <div>
+              <img src={logo} />
+            </div>
             <img src={tagLine} width={500} height={100} />
           </Grid>
 
@@ -124,7 +172,7 @@ export const QuizSetup = () => {
             options={baseOptions}
           />
 
-          {options.length > 9 &&
+          {options.length > 9 && (
             <>
               <QuizButtons
                 value={subCategory}
@@ -137,24 +185,42 @@ export const QuizSetup = () => {
                 options={options.slice(options.length / 2, options.length)}
               />
             </>
-          }
-          {options.length <= 9 &&
+          )}
+          {options.length <= 9 && (
             <QuizButtons
               value={subCategory}
               onChangeFunc={setSubCategory}
               options={options}
             />
-          }
+          )}
 
-          {(category === "all" || (category !== null && subCategory !== "")) &&
-            <Grid item xs={12}>
-              <Button sx={styles.button} variant="contained" onClick={startQuiz}>
-                Let's Go!
-              </Button>
-            </Grid>
-          }
+          {(category === "all" ||
+            (category !== null && subCategory !== "")) && (
+              <Grid item xs={12}>
+                {subCategory === Category.NonEvolve && (
+                  <FormControlLabel
+                    label="Include other categories? (Legendaries, Mythicals, etc.)"
+                    sx={{ ...styles.button, ...styles.checkbox }}
+                    control={
+                      <Checkbox
+                        sx={styles.checkbox}
+                        checked={includeOtherCategories}
+                        onChange={setOtherCategories}
+                      />
+                    }
+                  />
+                )}
+                <Button
+                  sx={styles.button}
+                  variant="contained"
+                  onClick={startQuiz}
+                >
+                  Let's Go!
+                </Button>
+              </Grid>
+            )}
         </Grid>
       </motion.div>
     </Box>
-  )
-}
+  );
+};

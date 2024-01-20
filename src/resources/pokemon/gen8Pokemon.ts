@@ -1,1168 +1,1163 @@
 import { Pokemon } from "../../classes/Pokemon";
-import { Category, EggGroup, TypeName } from "../../enums";
+import {
+  Ability,
+  Category,
+  EggGroup,
+  PokemonName,
+  TypeName
+} from "../../enums";
 
 export const gen8Pokemon: Pokemon[] = [
-  {
-    name: "grookey",
-    displayName: "Grookey",
-    dexNumber: 810,
-    generation: 8,
+  new Pokemon({
+    name: PokemonName.Grookey,
+    dex: 810,
     type: TypeName.Grass,
     category: Category.Starter,
-    eggGroups: {
-      group1: EggGroup.Field,
-      group2: EggGroup.Grass,
-      cycles: 20
+    abilities: {
+      first: Ability.Overgrow,
+      hidden: Ability.GrassySurge
     },
-  },
-  {
-    name: "thwackey",
-    displayName: "Thwackey",
-    dexNumber: 811,
-    generation: 8,
+    eggGroups: [EggGroup.Field, EggGroup.Grass]
+  }),
+  new Pokemon({
+    name: PokemonName.Thwackey,
+    dex: 811,
     type: TypeName.Grass,
     category: Category.Starter,
-    eggGroups: {
-      group1: EggGroup.Field,
-      group2: EggGroup.Grass,
-      cycles: 20
+    abilities: {
+      first: Ability.Overgrow,
+      hidden: Ability.GrassySurge
     },
-  },
-  {
-    name: "rillaboom",
-    displayName: "Rillaboom",
-    dexNumber: 812,
-    generation: 8,
+    eggGroups: [EggGroup.Field, EggGroup.Grass]
+  }),
+  new Pokemon({
+    name: PokemonName.Rillaboom,
+    dex: 812,
     type: TypeName.Grass,
     category: Category.Starter,
-    eggGroups: {
-      group1: EggGroup.Field,
-      group2: EggGroup.Grass,
-      cycles: 20
+    abilities: {
+      first: Ability.Overgrow,
+      hidden: Ability.GrassySurge
     },
-  },
-  {
-    name: "scorbunny",
-    displayName: "Scorbunny",
-    dexNumber: 813,
-    generation: 8,
+    eggGroups: [EggGroup.Field, EggGroup.Grass]
+  }),
+  new Pokemon({
+    name: PokemonName.Scorbunny,
+    dex: 813,
     type: TypeName.Fire,
     category: Category.Starter,
-    eggGroups: {
-      group1: EggGroup.Field,
-      group2: EggGroup.HumanLike,
-      cycles: 20
+    abilities: {
+      first: Ability.Blaze,
+      hidden: Ability.Libero
     },
-  },
-  {
-    name: "raboot",
-    displayName: "Raboot",
-    dexNumber: 814,
-    generation: 8,
+    eggGroups: [EggGroup.Field, EggGroup.HumanLike]
+  }),
+  new Pokemon({
+    name: PokemonName.Raboot,
+    dex: 814,
     type: TypeName.Fire,
     category: Category.Starter,
-    eggGroups: {
-      group1: EggGroup.Field,
-      group2: EggGroup.HumanLike,
-      cycles: 20
+    abilities: {
+      first: Ability.Blaze,
+      hidden: Ability.Libero
     },
-  },
-  {
-    name: "cinderace",
-    displayName: "Cinderace",
-    dexNumber: 815,
-    generation: 8,
+    eggGroups: [EggGroup.Field, EggGroup.HumanLike]
+  }),
+  new Pokemon({
+    name: PokemonName.Cinderace,
+    dex: 815,
     type: TypeName.Fire,
     category: Category.Starter,
-    eggGroups: {
-      group1: EggGroup.Field,
-      group2: EggGroup.HumanLike,
-      cycles: 20
+    abilities: {
+      first: Ability.Blaze,
+      hidden: Ability.Libero
     },
-  },
-  {
-    name: "sobble",
-    displayName: "Sobble",
-    dexNumber: 816,
-    generation: 8,
+    eggGroups: [EggGroup.Field, EggGroup.HumanLike]
+  }),
+  new Pokemon({
+    name: PokemonName.Sobble,
+    dex: 816,
     type: TypeName.Water,
     category: Category.Starter,
-    eggGroups: {
-      group1: EggGroup.Water1,
-      group2: EggGroup.Field,
-      cycles: 20
+    abilities: {
+      first: Ability.Torrent,
+      hidden: Ability.Sniper
     },
-  },
-  {
-    name: "drizzile",
-    displayName: "Drizzile",
-    dexNumber: 817,
-    generation: 8,
+    eggGroups: [EggGroup.Water1, EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Drizzile,
+    dex: 817,
     type: TypeName.Water,
     category: Category.Starter,
-    eggGroups: {
-      group1: EggGroup.Water1,
-      group2: EggGroup.Field,
-      cycles: 20
+    abilities: {
+      first: Ability.Torrent,
+      hidden: Ability.Sniper
     },
-  },
-  {
-    name: "inteleon",
-    displayName: "Inteleon",
-    dexNumber: 818,
-    generation: 8,
+    eggGroups: [EggGroup.Water1, EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Inteleon,
+    dex: 818,
     type: TypeName.Water,
     category: Category.Starter,
-    eggGroups: {
-      group1: EggGroup.Water1,
-      group2: EggGroup.Field,
-      cycles: 20
+    abilities: {
+      first: Ability.Torrent,
+      hidden: Ability.Sniper
     },
-  },
-  {
-    name: "skwovet",
-    displayName: "Skwovet",
-    dexNumber: 819,
-    generation: 8,
+    eggGroups: [EggGroup.Water1, EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Skwovet,
+    dex: 819,
     type: TypeName.Normal,
-    eggGroups: {
-      group1: EggGroup.Field,
-      cycles: 20
+    abilities: {
+      first: Ability.CheekPouch,
+      hidden: Ability.Gluttony
     },
-  },
-  {
-    name: "greedent",
-    displayName: "Greedent",
-    dexNumber: 820,
-    generation: 8,
+    eggGroups: [EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Greedent,
+    dex: 820,
     type: TypeName.Normal,
-    eggGroups: {
-      group1: EggGroup.Field,
-      cycles: 20
+    abilities: {
+      first: Ability.CheekPouch,
+      hidden: Ability.Gluttony
     },
-  },
-  {
-    name: "rookidee",
-    displayName: "Rookidee",
-    dexNumber: 821,
-    generation: 8,
+    eggGroups: [EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Rookidee,
+    dex: 821,
     type: TypeName.Flying,
-    eggGroups: {
-      group1: EggGroup.Flying,
-      cycles: 15
+    abilities: {
+      first: Ability.KeenEye,
+      second: Ability.Unnerve,
+      hidden: Ability.BigPecks
     },
-  },
-  {
-    name: "corvisquire",
-    displayName: "Corvisquire",
-    dexNumber: 822,
-    generation: 8,
+    eggGroups: [EggGroup.Flying]
+  }),
+  new Pokemon({
+    name: PokemonName.Corvisquire,
+    dex: 822,
     type: TypeName.Flying,
-    eggGroups: {
-      group1: EggGroup.Flying,
-      cycles: 15
+    abilities: {
+      first: Ability.KeenEye,
+      second: Ability.Unnerve,
+      hidden: Ability.BigPecks
     },
-  },
-  {
-    name: "corviknight",
-    displayName: "Corviknight",
-    dexNumber: 823,
-    generation: 8,
+    eggGroups: [EggGroup.Flying]
+  }),
+  new Pokemon({
+    name: PokemonName.Corviknight,
+    dex: 823,
     type: TypeName.Flying,
     type2: TypeName.Steel,
-    eggGroups: {
-      group1: EggGroup.Flying,
-      cycles: 15
+    abilities: {
+      first: Ability.Pressure,
+      second: Ability.Unnerve,
+      hidden: Ability.MirrorArmor
     },
-  },
-  {
-    name: "blipbug",
-    displayName: "Blipbug",
-    dexNumber: 824,
-    generation: 8,
+    eggGroups: [EggGroup.Flying]
+  }),
+  new Pokemon({
+    name: PokemonName.Blipbug,
+    dex: 824,
     type: TypeName.Bug,
-    eggGroups: {
-      group1: EggGroup.Bug,
-      cycles: 15
+    abilities: {
+      first: Ability.Swarm,
+      second: Ability.CompoundEyes,
+      hidden: Ability.Telepathy
     },
-  },
-  {
-    name: "dottler",
-    displayName: "Dottler",
-    dexNumber: 825,
-    generation: 8,
-    type: TypeName.Bug,
-    type2: TypeName.Psychic,
-    eggGroups: {
-      group1: EggGroup.Bug,
-      cycles: 15
-    },
-  },
-  {
-    name: "orbeetle",
-    displayName: "Orbeetle",
-    dexNumber: 826,
-    generation: 8,
+    eggGroups: [EggGroup.Bug]
+  }),
+  new Pokemon({
+    name: PokemonName.Dottler,
+    dex: 825,
     type: TypeName.Bug,
     type2: TypeName.Psychic,
-    eggGroups: {
-      group1: EggGroup.Bug,
-      cycles: 15
+    abilities: {
+      first: Ability.Swarm,
+      second: Ability.CompoundEyes,
+      hidden: Ability.Telepathy
     },
-  },
-  {
-    name: "nickit",
-    displayName: "Nickit",
-    dexNumber: 827,
-    generation: 8,
+    eggGroups: [EggGroup.Bug]
+  }),
+  new Pokemon({
+    name: PokemonName.Orbeetle,
+    dex: 826,
+    type: TypeName.Bug,
+    type2: TypeName.Psychic,
+    abilities: {
+      first: Ability.Swarm,
+      second: Ability.Frisk,
+      hidden: Ability.Telepathy
+    },
+    eggGroups: [EggGroup.Bug]
+  }),
+  new Pokemon({
+    name: PokemonName.Nickit,
+    dex: 827,
     type: TypeName.Dark,
-    eggGroups: {
-      group1: EggGroup.Field,
-      cycles: 15
+    abilities: {
+      first: Ability.RunAway,
+      second: Ability.Unburden,
+      hidden: Ability.Stakeout
     },
-  },
-  {
-    name: "thievul",
-    displayName: "Thievul",
-    dexNumber: 828,
-    generation: 8,
+    eggGroups: [EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Thievul,
+    dex: 828,
     type: TypeName.Dark,
-    eggGroups: {
-      group1: EggGroup.Field,
-      cycles: 15
+    abilities: {
+      first: Ability.RunAway,
+      second: Ability.Unburden,
+      hidden: Ability.Stakeout
     },
-  },
-  {
-    name: "gossifleur",
-    displayName: "Gossifleur",
-    dexNumber: 829,
-    generation: 8,
+    eggGroups: [EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Gossifleur,
+    dex: 829,
     type: TypeName.Grass,
-    eggGroups: {
-      group1: EggGroup.Grass,
-      cycles: 20
+    abilities: {
+      first: Ability.CottonDown,
+      second: Ability.Regenerator,
+      hidden: Ability.EffectSpore
     },
-  },
-  {
-    name: "eldegoss",
-    displayName: "Eldegoss",
-    dexNumber: 830,
-    generation: 8,
+    eggGroups: [EggGroup.Grass]
+  }),
+  new Pokemon({
+    name: PokemonName.Eldegoss,
+    dex: 830,
     type: TypeName.Grass,
-    eggGroups: {
-      group1: EggGroup.Grass,
-      cycles: 20
+    abilities: {
+      first: Ability.CottonDown,
+      second: Ability.Regenerator,
+      hidden: Ability.EffectSpore
     },
-  },
-  {
-    name: "wooloo",
-    displayName: "Wooloo",
-    dexNumber: 831,
-    generation: 8,
+    eggGroups: [EggGroup.Grass]
+  }),
+  new Pokemon({
+    name: PokemonName.Wooloo,
+    dex: 831,
     type: TypeName.Normal,
-    eggGroups: {
-      group1: EggGroup.Field,
-      cycles: 15
+    abilities: {
+      first: Ability.Fluffy,
+      second: Ability.RunAway,
+      hidden: Ability.Bulletproof
     },
-  },
-  {
-    name: "dubwool",
-    displayName: "Dubwool",
-    dexNumber: 832,
-    generation: 8,
+    eggGroups: [EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Dubwool,
+    dex: 832,
     type: TypeName.Normal,
-    eggGroups: {
-      group1: EggGroup.Field,
-      cycles: 15
+    abilities: {
+      first: Ability.Fluffy,
+      second: Ability.Steadfast,
+      hidden: Ability.Bulletproof
     },
-  },
-  {
-    name: "chewtle",
-    displayName: "Chewtle",
-    dexNumber: 833,
-    generation: 8,
+    eggGroups: [EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Chewtle,
+    dex: 833,
     type: TypeName.Water,
-    eggGroups: {
-      group1: EggGroup.Monster,
-      group2: EggGroup.Water1,
-      cycles: 20
+    abilities: {
+      first: Ability.StrongJaw,
+      second: Ability.ShellArmor,
+      hidden: Ability.SwiftSwim
     },
-  },
-  {
-    name: "drednaw",
-    displayName: "Drednaw",
-    dexNumber: 834,
-    generation: 8,
+    eggGroups: [EggGroup.Monster, EggGroup.Water1]
+  }),
+  new Pokemon({
+    name: PokemonName.Drednaw,
+    dex: 834,
     type: TypeName.Water,
     type2: TypeName.Rock,
-    eggGroups: {
-      group1: EggGroup.Monster,
-      group2: EggGroup.Water1,
-      cycles: 20
+    abilities: {
+      first: Ability.StrongJaw,
+      second: Ability.ShellArmor,
+      hidden: Ability.SwiftSwim
     },
-  },
-  {
-    name: "yamper",
-    displayName: "Yamper",
-    dexNumber: 835,
-    generation: 8,
+    eggGroups: [EggGroup.Monster, EggGroup.Water1]
+  }),
+  new Pokemon({
+    name: PokemonName.Yamper,
+    dex: 835,
     type: TypeName.Electric,
-    eggGroups: {
-      group1: EggGroup.Field,
-      cycles: 20
+    abilities: {
+      first: Ability.BallFetch,
+      hidden: Ability.Rattled
     },
-  },
-  {
-    name: "boltund",
-    displayName: "Boltund",
-    dexNumber: 836,
-    generation: 8,
+    eggGroups: [EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Boltund,
+    dex: 836,
     type: TypeName.Electric,
-    eggGroups: {
-      group1: EggGroup.Field,
-      cycles: 20
+    abilities: {
+      first: Ability.StrongJaw,
+      hidden: Ability.Competitive
     },
-  },
-  {
-    name: "rolycoly",
-    displayName: "Rolycoly",
-    dexNumber: 837,
-    generation: 8,
+    eggGroups: [EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Rolycoly,
+    dex: 837,
     type: TypeName.Rock,
-    eggGroups: {
-      group1: EggGroup.Mineral,
-      cycles: 15
+    abilities: {
+      first: Ability.SteamEngine,
+      second: Ability.Heatproof,
+      hidden: Ability.FlashFire
     },
-  },
-  {
-    name: "carkol",
-    displayName: "Carkol",
-    dexNumber: 838,
-    generation: 8,
+    eggGroups: [EggGroup.Mineral]
+  }),
+  new Pokemon({
+    name: PokemonName.Carkol,
+    dex: 838,
     type: TypeName.Rock,
     type2: TypeName.Fire,
-    eggGroups: {
-      group1: EggGroup.Mineral,
-      cycles: 15
+    abilities: {
+      first: Ability.SteamEngine,
+      second: Ability.FlameBody,
+      hidden: Ability.FlashFire
     },
-  },
-  {
-    name: "coalossal",
-    displayName: "Coalossal",
-    dexNumber: 839,
-    generation: 8,
+    eggGroups: [EggGroup.Mineral]
+  }),
+  new Pokemon({
+    name: PokemonName.Coalossal,
+    dex: 839,
     type: TypeName.Rock,
     type2: TypeName.Fire,
-    eggGroups: {
-      group1: EggGroup.Mineral,
-      cycles: 15
+    abilities: {
+      first: Ability.SteamEngine,
+      second: Ability.FlameBody,
+      hidden: Ability.FlashFire
     },
-  },
-  {
-    name: "applin",
-    displayName: "Applin",
-    dexNumber: 840,
-    generation: 8,
+    eggGroups: [EggGroup.Mineral]
+  }),
+  new Pokemon({
+    name: PokemonName.Applin,
+    dex: 840,
     type: TypeName.Grass,
     type2: TypeName.Dragon,
-    eggGroups: {
-      group1: EggGroup.Grass,
-      group2: EggGroup.Dragon,
-      cycles: 20
+    abilities: {
+      first: Ability.Ripen,
+      second: Ability.Gluttony,
+      hidden: Ability.Bulletproof
     },
-  },
-  {
-    name: "flapple",
-    displayName: "Flapple",
-    dexNumber: 841,
-    generation: 8,
+    eggGroups: [EggGroup.Grass, EggGroup.Dragon]
+  }),
+  new Pokemon({
+    name: PokemonName.Flapple,
+    dex: 841,
     type: TypeName.Grass,
     type2: TypeName.Dragon,
-    eggGroups: {
-      group1: EggGroup.Grass,
-      group2: EggGroup.Dragon,
-      cycles: 20
+    abilities: {
+      first: Ability.Ripen,
+      second: Ability.Gluttony,
+      hidden: Ability.Hustle
     },
-  },
-  {
-    name: "appletun",
-    displayName: "Appletun",
-    dexNumber: 842,
-    generation: 8,
+    eggGroups: [EggGroup.Grass, EggGroup.Dragon]
+  }),
+  new Pokemon({
+    name: PokemonName.Appletun,
+    dex: 842,
     type: TypeName.Grass,
     type2: TypeName.Dragon,
-    eggGroups: {
-      group1: EggGroup.Grass,
-      group2: EggGroup.Dragon,
-      cycles: 20
+    abilities: {
+      first: Ability.Ripen,
+      second: Ability.Gluttony,
+      hidden: Ability.ThickFat
     },
-  },
-  {
-    name: "silicobra",
-    displayName: "Silicobra",
-    dexNumber: 843,
-    generation: 8,
+    eggGroups: [EggGroup.Grass, EggGroup.Dragon]
+  }),
+  new Pokemon({
+    name: PokemonName.Silicobra,
+    dex: 843,
     type: TypeName.Ground,
-    eggGroups: {
-      group1: EggGroup.Field,
-      group2: EggGroup.Dragon,
-      cycles: 20
+    abilities: {
+      first: Ability.SandSpit,
+      second: Ability.ShedSkin,
+      hidden: Ability.SandVeil
     },
-  },
-  {
-    name: "sandaconda",
-    displayName: "Sandaconda",
-    dexNumber: 844,
-    generation: 8,
+    eggGroups: [EggGroup.Field, EggGroup.Dragon]
+  }),
+  new Pokemon({
+    name: PokemonName.Sandaconda,
+    dex: 844,
     type: TypeName.Ground,
-    eggGroups: {
-      group1: EggGroup.Field,
-      group2: EggGroup.Dragon,
-      cycles: 20
+    abilities: {
+      first: Ability.SandSpit,
+      second: Ability.ShedSkin,
+      hidden: Ability.SandVeil
     },
-  },
-  {
-    name: "cramorant",
-    displayName: "Cramorant",
-    dexNumber: 845,
-    generation: 8,
+    eggGroups: [EggGroup.Field, EggGroup.Dragon]
+  }),
+  new Pokemon({
+    name: PokemonName.Cramorant,
+    dex: 845,
     type: TypeName.Flying,
     type2: TypeName.Water,
-    eggGroups: {
-      group1: EggGroup.Water1,
-      group2: EggGroup.Flying,
-      cycles: 20
+    category: Category.NonEvolve,
+    abilities: {
+      first: Ability.GulpMissile
     },
-  },
-  {
-    name: "arrokuda",
-    displayName: "Arrokuda",
-    dexNumber: 846,
-    generation: 8,
+    eggGroups: [EggGroup.Water1, EggGroup.Flying]
+  }),
+  new Pokemon({
+    name: PokemonName.Arrokuda,
+    dex: 846,
     type: TypeName.Water,
-    eggGroups: {
-      group1: EggGroup.Water2,
-      cycles: 20
+    abilities: {
+      first: Ability.SwiftSwim,
+      hidden: Ability.PropellerTail
     },
-  },
-  {
-    name: "barraskewda",
-    displayName: "Barraskewda",
-    dexNumber: 847,
-    generation: 8,
+    eggGroups: [EggGroup.Water2]
+  }),
+  new Pokemon({
+    name: PokemonName.Barraskewda,
+    dex: 847,
     type: TypeName.Water,
-    eggGroups: {
-      group1: EggGroup.Water2,
-      cycles: 20
+    abilities: {
+      first: Ability.SwiftSwim,
+      hidden: Ability.PropellerTail
     },
-  },
-  {
-    name: "toxel",
-    displayName: "Toxel",
-    dexNumber: 848,
-    generation: 8,
+    eggGroups: [EggGroup.Water2]
+  }),
+  new Pokemon({
+    name: PokemonName.Toxel,
+    dex: 848,
     type: TypeName.Electric,
     type2: TypeName.Poison,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 25
+    category: Category.Baby,
+    abilities: {
+      first: Ability.Rattled,
+      second: Ability.Static,
+      hidden: Ability.Klutz
     },
-  },
-  {
-    name: "toxtricity",
-    displayName: "Toxtricity",
-    dexNumber: 849,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs]
+  }),
+  new Pokemon({
+    name: PokemonName.Toxtricity,
+    dex: 849,
     type: TypeName.Electric,
     type2: TypeName.Poison,
-    eggGroups: {
-      group1: EggGroup.HumanLike,
-      cycles: 25
+    abilities: {
+      first: Ability.PunkRock,
+      second: Ability.Plus,
+      hidden: Ability.Technician
     },
-  },
-  {
-    name: "sizzlipede",
-    displayName: "Sizzlipede",
-    dexNumber: 850,
-    generation: 8,
+    eggGroups: [EggGroup.HumanLike],
+    defaultForm: PokemonName.ToxtricityAmped,
+    forms: [
+      {
+        formName: PokemonName.ToxtricityLowKey,
+        abilities: {
+          first: Ability.PunkRock,
+          second: Ability.Minus,
+          hidden: Ability.Technician
+        }
+      }
+    ]
+  }),
+  new Pokemon({
+    name: PokemonName.Sizzlipede,
+    dex: 850,
     type: TypeName.Fire,
     type2: TypeName.Bug,
-    eggGroups: {
-      group1: EggGroup.Bug,
-      cycles: 20
+    abilities: {
+      first: Ability.FlashFire,
+      second: Ability.WhiteSmoke,
+      hidden: Ability.FlameBody
     },
-  },
-  {
-    name: "centiskorch",
-    displayName: "Centiskorch",
-    dexNumber: 851,
-    generation: 8,
+    eggGroups: [EggGroup.Bug]
+  }),
+  new Pokemon({
+    name: PokemonName.Centiskorch,
+    dex: 851,
     type: TypeName.Fire,
     type2: TypeName.Bug,
-    eggGroups: {
-      group1: EggGroup.Bug,
-      cycles: 20
+    abilities: {
+      first: Ability.FlashFire,
+      second: Ability.WhiteSmoke,
+      hidden: Ability.FlameBody
     },
-  },
-  {
-    name: "clobbopus",
-    displayName: "Clobbopus",
-    dexNumber: 852,
-    generation: 8,
+    eggGroups: [EggGroup.Bug]
+  }),
+  new Pokemon({
+    name: PokemonName.Clobbopus,
+    dex: 852,
     type: TypeName.Fighting,
-    eggGroups: {
-      group1: EggGroup.Water1,
-      group2: EggGroup.HumanLike,
-      cycles: 25
+    abilities: {
+      first: Ability.Limber,
+      hidden: Ability.Technician
     },
-  },
-  {
-    name: "grapploct",
-    displayName: "Grapploct",
-    dexNumber: 853,
-    generation: 8,
+    eggGroups: [EggGroup.Water1, EggGroup.HumanLike]
+  }),
+  new Pokemon({
+    name: PokemonName.Grapploct,
+    dex: 853,
     type: TypeName.Fighting,
-    eggGroups: {
-      group1: EggGroup.Water1,
-      group2: EggGroup.HumanLike,
-      cycles: 25
+    abilities: {
+      first: Ability.Limber,
+      hidden: Ability.Technician
     },
-  },
-  {
-    name: "sinistea",
-    displayName: "Sinistea",
-    dexNumber: 854,
-    generation: 8,
+    eggGroups: [EggGroup.Water1, EggGroup.HumanLike]
+  }),
+  new Pokemon({
+    name: PokemonName.Sinistea,
+    dex: 854,
     type: TypeName.Ghost,
-    eggGroups: {
-      group1: EggGroup.Mineral,
-      group2: EggGroup.Amorphous,
-      cycles: 20
+    abilities: {
+      first: Ability.WeakArmor,
+      hidden: Ability.CursedBody
     },
-  },
-  {
-    name: "polteageist",
-    displayName: "Polteageist",
-    dexNumber: 855,
-    generation: 8,
+    eggGroups: [EggGroup.Mineral, EggGroup.Amorphous]
+  }),
+  new Pokemon({
+    name: PokemonName.Polteageist,
+    dex: 855,
     type: TypeName.Ghost,
-    eggGroups: {
-      group1: EggGroup.Mineral,
-      group2: EggGroup.Amorphous,
-      cycles: 20
+    abilities: {
+      first: Ability.WeakArmor,
+      hidden: Ability.CursedBody
     },
-  },
-  {
-    name: "hatenna",
-    displayName: "Hatenna",
-    dexNumber: 856,
-    generation: 8,
+    eggGroups: [EggGroup.Mineral, EggGroup.Amorphous]
+  }),
+  new Pokemon({
+    name: PokemonName.Hatenna,
+    dex: 856,
     type: TypeName.Psychic,
-    eggGroups: {
-      group1: EggGroup.Fairy,
-      cycles: 20
+    abilities: {
+      first: Ability.Healer,
+      second: Ability.Anticipation,
+      hidden: Ability.MagicBounce
     },
-  },
-  {
-    name: "hattrem",
-    displayName: "Hattrem",
-    dexNumber: 857,
-    generation: 8,
+    eggGroups: [EggGroup.Fairy]
+  }),
+  new Pokemon({
+    name: PokemonName.Hattrem,
+    dex: 857,
     type: TypeName.Psychic,
-    eggGroups: {
-      group1: EggGroup.Fairy,
-      cycles: 20
+    abilities: {
+      first: Ability.Healer,
+      second: Ability.Anticipation,
+      hidden: Ability.MagicBounce
     },
-  },
-  {
-    name: "hatterene",
-    displayName: "Hatterene",
-    dexNumber: 858,
-    generation: 8,
+    eggGroups: [EggGroup.Fairy]
+  }),
+  new Pokemon({
+    name: PokemonName.Hatterene,
+    dex: 858,
     type: TypeName.Psychic,
     type2: TypeName.Fairy,
-    eggGroups: {
-      group1: EggGroup.Fairy,
-      cycles: 20
+    abilities: {
+      first: Ability.Healer,
+      second: Ability.Anticipation,
+      hidden: Ability.MagicBounce
     },
-  },
-  {
-    name: "impidimp",
-    displayName: "Impidimp",
-    dexNumber: 859,
-    generation: 8,
+    eggGroups: [EggGroup.Fairy]
+  }),
+  new Pokemon({
+    name: PokemonName.Impidimp,
+    dex: 859,
     type: TypeName.Dark,
     type2: TypeName.Fairy,
-    eggGroups: {
-      group1: EggGroup.Fairy,
-      group2: EggGroup.HumanLike,
-      cycles: 20
+    abilities: {
+      first: Ability.Prankster,
+      second: Ability.Frisk,
+      hidden: Ability.Pickpocket
     },
-  },
-  {
-    name: "morgrem",
-    displayName: "Morgrem",
-    dexNumber: 860,
-    generation: 8,
+    eggGroups: [EggGroup.Fairy, EggGroup.HumanLike]
+  }),
+  new Pokemon({
+    name: PokemonName.Morgrem,
+    dex: 860,
     type: TypeName.Dark,
     type2: TypeName.Fairy,
-    eggGroups: {
-      group1: EggGroup.Fairy,
-      group2: EggGroup.HumanLike,
-      cycles: 20
+    abilities: {
+      first: Ability.Prankster,
+      second: Ability.Frisk,
+      hidden: Ability.Pickpocket
     },
-  },
-  {
-    name: "grimmsnarl",
-    displayName: "Grimmsnarl",
-    dexNumber: 861,
-    generation: 8,
+    eggGroups: [EggGroup.Fairy, EggGroup.HumanLike]
+  }),
+  new Pokemon({
+    name: PokemonName.Grimmsnarl,
+    dex: 861,
     type: TypeName.Dark,
     type2: TypeName.Fairy,
-    eggGroups: {
-      group1: EggGroup.Fairy,
-      group2: EggGroup.HumanLike,
-      cycles: 20
+    abilities: {
+      first: Ability.Prankster,
+      second: Ability.Frisk,
+      hidden: Ability.Pickpocket
     },
-  },
-  {
-    name: "obstagoon",
-    displayName: "Obstagoon",
-    dexNumber: 862,
-    generation: 8,
+    eggGroups: [EggGroup.Fairy, EggGroup.HumanLike]
+  }),
+  new Pokemon({
+    name: PokemonName.Obstagoon,
+    dex: 862,
     type: TypeName.Dark,
     type2: TypeName.Normal,
-    eggGroups: {
-      group1: EggGroup.Field,
-      cycles: 15
+    abilities: {
+      first: Ability.Reckless,
+      second: Ability.Guts,
+      hidden: Ability.Defiant
     },
-  },
-  {
-    name: "perrserker",
-    displayName: "Perrserker",
-    dexNumber: 863,
-    generation: 8,
+    eggGroups: [EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Perrserker,
+    dex: 863,
     type: TypeName.Steel,
-    eggGroups: {
-      group1: EggGroup.Field,
-      cycles: 20
+    abilities: {
+      first: Ability.BattleArmor,
+      second: Ability.ToughClaws,
+      hidden: Ability.SteelySpirit
     },
-  },
-  {
-    name: "cursola",
-    displayName: "Cursola",
-    dexNumber: 864,
-    generation: 8,
+    eggGroups: [EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Cursola,
+    dex: 864,
     type: TypeName.Ghost,
-    eggGroups: {
-      group1: EggGroup.Water1,
-      group2: EggGroup.Water3,
-      cycles: 20
+    abilities: {
+      first: Ability.WeakArmor,
+      hidden: Ability.PerishBody
     },
-  },
-  {
-    name: "sirfetchd",
-    displayName: "Sirfetchd",
-    dexNumber: 865,
-    generation: 8,
+    eggGroups: [EggGroup.Water1, EggGroup.Water3]
+  }),
+  new Pokemon({
+    name: PokemonName.Sirfetchd,
+    dex: 865,
     type: TypeName.Fighting,
-    eggGroups: {
-      group1: EggGroup.Flying,
-      group2: EggGroup.Field,
-      cycles: 20
+    abilities: {
+      first: Ability.Steadfast,
+      hidden: Ability.Scrappy
     },
-  },
-  {
-    name: "mrrime",
-    displayName: "Mr. Rime",
-    dexNumber: 866,
-    generation: 8,
+    eggGroups: [EggGroup.Flying, EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.MrRime,
+    dex: 866,
     type: TypeName.Ice,
     type2: TypeName.Psychic,
-    eggGroups: {
-      group1: EggGroup.HumanLike,
-      cycles: 25
+    abilities: {
+      first: Ability.TangledFeet,
+      second: Ability.ScreenCleaner,
+      hidden: Ability.IceBody
     },
-  },
-  {
-    name: "runerigus",
-    displayName: "Runerigus",
-    dexNumber: 867,
-    generation: 8,
+    eggGroups: [EggGroup.HumanLike]
+  }),
+  new Pokemon({
+    name: PokemonName.Runerigus,
+    dex: 867,
     type: TypeName.Ground,
     type2: TypeName.Ghost,
-    eggGroups: {
-      group1: EggGroup.Mineral,
-      group2: EggGroup.Amorphous,
-      cycles: 25
+    abilities: {
+      first: Ability.WanderingSpirit
     },
-  },
-  {
-    name: "milcery",
-    displayName: "Milcery",
-    dexNumber: 868,
-    generation: 8,
+    eggGroups: [EggGroup.Mineral, EggGroup.Amorphous]
+  }),
+  new Pokemon({
+    name: PokemonName.Milcery,
+    dex: 868,
     type: TypeName.Fairy,
-    eggGroups: {
-      group1: EggGroup.Fairy,
-      group2: EggGroup.Amorphous,
-      cycles: 20
+    abilities: {
+      first: Ability.SweetVeil,
+      hidden: Ability.AromaVeil
     },
-  },
-  {
-    name: "alcremie",
-    displayName: "Alcremie",
-    dexNumber: 869,
-    generation: 8,
+    eggGroups: [EggGroup.Fairy, EggGroup.Amorphous]
+  }),
+  new Pokemon({
+    name: PokemonName.Alcremie,
+    dex: 869,
     type: TypeName.Fairy,
-    eggGroups: {
-      group1: EggGroup.Fairy,
-      group2: EggGroup.Amorphous,
-      cycles: 20
+    abilities: {
+      first: Ability.SweetVeil,
+      hidden: Ability.AromaVeil
     },
-  },
-  {
-    name: "falinks",
-    displayName: "Falinks",
-    dexNumber: 870,
-    generation: 8,
+    eggGroups: [EggGroup.Fairy, EggGroup.Amorphous]
+  }),
+  new Pokemon({
+    name: PokemonName.Falinks,
+    dex: 870,
     type: TypeName.Fighting,
-    eggGroups: {
-      group1: EggGroup.Fairy,
-      group2: EggGroup.Mineral,
-      cycles: 25
+    category: Category.NonEvolve,
+    abilities: {
+      first: Ability.BattleArmor,
+      hidden: Ability.Defiant
     },
-  },
-  {
-    name: "pincurchin",
-    displayName: "Pincurchin",
-    dexNumber: 871,
-    generation: 8,
+    eggGroups: [EggGroup.Fairy, EggGroup.Mineral]
+  }),
+  new Pokemon({
+    name: PokemonName.Pincurchin,
+    dex: 871,
     type: TypeName.Electric,
-    eggGroups: {
-      group1: EggGroup.Water1,
-      group2: EggGroup.Amorphous,
-      cycles: 20
+    category: Category.NonEvolve,
+    abilities: {
+      first: Ability.LightningRod,
+      hidden: Ability.ElectricSurge
     },
-  },
-  {
-    name: "snom",
-    displayName: "Snom",
-    dexNumber: 872,
-    generation: 8,
+    eggGroups: [EggGroup.Water1, EggGroup.Amorphous]
+  }),
+  new Pokemon({
+    name: PokemonName.Snom,
+    dex: 872,
     type: TypeName.Ice,
     type2: TypeName.Bug,
-    eggGroups: {
-      group1: EggGroup.Bug,
-      cycles: 20
+    abilities: {
+      first: Ability.ShieldDust,
+      hidden: Ability.IceScales
     },
-  },
-  {
-    name: "frosmoth",
-    displayName: "Frosmoth",
-    dexNumber: 873,
-    generation: 8,
+    eggGroups: [EggGroup.Bug]
+  }),
+  new Pokemon({
+    name: PokemonName.Frosmoth,
+    dex: 873,
     type: TypeName.Ice,
     type2: TypeName.Bug,
-    eggGroups: {
-      group1: EggGroup.Bug,
-      cycles: 20
+    abilities: {
+      first: Ability.ShieldDust,
+      hidden: Ability.IceScales
     },
-  },
-  {
-    name: "stonjourner",
-    displayName: "Stonjourner",
-    dexNumber: 874,
-    generation: 8,
+    eggGroups: [EggGroup.Bug]
+  }),
+  new Pokemon({
+    name: PokemonName.Stonjourner,
+    dex: 874,
     type: TypeName.Rock,
-    eggGroups: {
-      group1: EggGroup.Mineral,
-      cycles: 25
+    category: Category.NonEvolve,
+    abilities: {
+      first: Ability.PowerSpot
     },
-  },
-  {
-    name: "eiscue",
-    displayName: "Eiscue",
-    dexNumber: 875,
-    generation: 8,
+    eggGroups: [EggGroup.Mineral]
+  }),
+  new Pokemon({
+    name: PokemonName.Eiscue,
+    dex: 875,
     type: TypeName.Ice,
-    eggGroups: {
-      group1: EggGroup.Water1,
-      group2: EggGroup.Field,
-      cycles: 25
+    category: Category.NonEvolve,
+    abilities: {
+      first: Ability.IceFace
     },
-  },
-  {
-    name: "indeedee",
-    displayName: "Indeedee",
-    dexNumber: 876,
-    generation: 8,
+    eggGroups: [EggGroup.Water1, EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Indeedee,
+    dex: 876,
     type: TypeName.Psychic,
     type2: TypeName.Normal,
-    eggGroups: {
-      group1: EggGroup.Fairy,
-      cycles: 40
+    category: Category.NonEvolve,
+    abilities: {
+      first: Ability.InnerFocus,
+      second: Ability.Synchronize,
+      hidden: Ability.PsychicSurge
     },
-  },
-  {
-    name: "morpeko",
-    displayName: "Morpeko",
-    dexNumber: 877,
-    generation: 8,
+    eggGroups: [EggGroup.Fairy],
+    defaultForm: PokemonName.IndeedeeMale,
+    forms: [
+      {
+        formName: PokemonName.IndeedeeFemale,
+        abilities: {
+          first: Ability.OwnTempo,
+          second: Ability.Synchronize,
+          hidden: Ability.PsychicSurge
+        }
+      }
+    ]
+  }),
+  new Pokemon({
+    name: PokemonName.Morpeko,
+    dex: 877,
     type: TypeName.Electric,
     type2: TypeName.Dark,
-    eggGroups: {
-      group1: EggGroup.Field,
-      group2: EggGroup.Fairy,
-      cycles: 10
+    category: Category.NonEvolve,
+    abilities: {
+      first: Ability.HungerSwitch
     },
-  },
-  {
-    name: "cufant",
-    displayName: "Cufant",
-    dexNumber: 878,
-    generation: 8,
+    eggGroups: [EggGroup.Field, EggGroup.Fairy]
+  }),
+  new Pokemon({
+    name: PokemonName.Cufant,
+    dex: 878,
     type: TypeName.Steel,
-    eggGroups: {
-      group1: EggGroup.Field,
-      group2: EggGroup.Mineral,
-      cycles: 25
+    abilities: {
+      first: Ability.SheerForce,
+      hidden: Ability.HeavyMetal
     },
-  },
-  {
-    name: "copperajah",
-    displayName: "Copperajah",
-    dexNumber: 879,
-    generation: 8,
+    eggGroups: [EggGroup.Field, EggGroup.Mineral]
+  }),
+  new Pokemon({
+    name: PokemonName.Copperajah,
+    dex: 879,
     type: TypeName.Steel,
-    eggGroups: {
-      group1: EggGroup.Field,
-      group2: EggGroup.Mineral,
-      cycles: 25
+    abilities: {
+      first: Ability.SheerForce,
+      hidden: Ability.HeavyMetal
     },
-  },
-  {
-    name: "dracozolt",
-    displayName: "Dracozolt",
-    dexNumber: 880,
-    generation: 8,
+    eggGroups: [EggGroup.Field, EggGroup.Mineral]
+  }),
+  new Pokemon({
+    name: PokemonName.Dracozolt,
+    dex: 880,
     type: TypeName.Electric,
     type2: TypeName.Dragon,
-    category: Category.Fossil,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 35
+    category: [Category.Fossil, Category.NonEvolve],
+    abilities: {
+      first: Ability.VoltAbsorb,
+      second: Ability.Hustle,
+      hidden: Ability.SandRush
     },
-  },
-  {
-    name: "arctozolt",
-    displayName: "Arctozolt",
-    dexNumber: 881,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs]
+  }),
+  new Pokemon({
+    name: PokemonName.Arctozolt,
+    dex: 881,
     type: TypeName.Electric,
     type2: TypeName.Ice,
-    category: Category.Fossil,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 35
+    category: [Category.Fossil, Category.NonEvolve],
+    abilities: {
+      first: Ability.VoltAbsorb,
+      second: Ability.Static,
+      hidden: Ability.SlushRush
     },
-  },
-  {
-    name: "dracovish",
-    displayName: "Dracovish",
-    dexNumber: 882,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs]
+  }),
+  new Pokemon({
+    name: PokemonName.Dracovish,
+    dex: 882,
     type: TypeName.Water,
     type2: TypeName.Dragon,
-    category: Category.Fossil,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 35
+    category: [Category.Fossil, Category.NonEvolve],
+    abilities: {
+      first: Ability.WaterAbsorb,
+      second: Ability.StrongJaw,
+      hidden: Ability.SandRush
     },
-  },
-  {
-    name: "arctovish",
-    displayName: "Arctovish",
-    dexNumber: 883,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs]
+  }),
+  new Pokemon({
+    name: PokemonName.Arctovish,
+    dex: 883,
     type: TypeName.Water,
     type2: TypeName.Ice,
-    category: Category.Fossil,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 35
+    category: [Category.Fossil, Category.NonEvolve],
+    abilities: {
+      first: Ability.WaterAbsorb,
+      second: Ability.IceBody,
+      hidden: Ability.SlushRush
     },
-  },
-  {
-    name: "duraludon",
-    displayName: "Duraludon",
-    dexNumber: 884,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs]
+  }),
+  new Pokemon({
+    name: PokemonName.Duraludon,
+    dex: 884,
     type: TypeName.Steel,
     type2: TypeName.Dragon,
-    eggGroups: {
-      group1: EggGroup.Mineral,
-      group2: EggGroup.Dragon,
-      cycles: 30
+    abilities: {
+      first: Ability.LightMetal,
+      second: Ability.HeavyMetal,
+      hidden: Ability.Stalwart
     },
-  },
-  {
-    name: "dreepy",
-    displayName: "Dreepy",
-    dexNumber: 885,
-    generation: 8,
+    eggGroups: [EggGroup.Mineral, EggGroup.Dragon]
+  }),
+  new Pokemon({
+    name: PokemonName.Dreepy,
+    dex: 885,
     type: TypeName.Dragon,
     type2: TypeName.Ghost,
-    eggGroups: {
-      group1: EggGroup.Amorphous,
-      group2: EggGroup.Dragon,
-      cycles: 40
+    abilities: {
+      first: Ability.ClearBody,
+      second: Ability.Infiltrator,
+      hidden: Ability.CursedBody
     },
-  },
-  {
-    name: "drakloak",
-    displayName: "Drakloak",
-    dexNumber: 886,
-    generation: 8,
+    eggGroups: [EggGroup.Amorphous, EggGroup.Dragon]
+  }),
+  new Pokemon({
+    name: PokemonName.Drakloak,
+    dex: 886,
     type: TypeName.Dragon,
     type2: TypeName.Ghost,
-    eggGroups: {
-      group1: EggGroup.Amorphous,
-      group2: EggGroup.Dragon,
-      cycles: 40
+    abilities: {
+      first: Ability.ClearBody,
+      second: Ability.Infiltrator,
+      hidden: Ability.CursedBody
     },
-  },
-  {
-    name: "dragapult",
-    displayName: "Dragapult",
-    dexNumber: 887,
-    generation: 8,
+    eggGroups: [EggGroup.Amorphous, EggGroup.Dragon]
+  }),
+  new Pokemon({
+    name: PokemonName.Dragapult,
+    dex: 887,
     type: TypeName.Dragon,
     type2: TypeName.Ghost,
-    eggGroups: {
-      group1: EggGroup.Amorphous,
-      group2: EggGroup.Dragon,
-      cycles: 40
+    abilities: {
+      first: Ability.ClearBody,
+      second: Ability.Infiltrator,
+      hidden: Ability.CursedBody
     },
-  },
-  {
-    name: "zacian",
-    displayName: "Zacian",
-    dexNumber: 888,
-    generation: 8,
+    eggGroups: [EggGroup.Amorphous, EggGroup.Dragon]
+  }),
+  new Pokemon({
+    name: PokemonName.Zacian,
+    dex: 888,
     type: TypeName.Fairy,
-    category: Category.Legendary,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 120
+    category: [Category.Legendary, Category.NonEvolve],
+    abilities: {
+      first: Ability.IntrepidSword
     },
-  },
-  {
-    name: "zamazenta",
-    displayName: "Zamazenta",
-    dexNumber: 889,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs],
+    defaultForm: PokemonName.ZacianHero,
+    forms: [
+      {
+        formName: PokemonName.ZacianCrown,
+        type: TypeName.Fairy,
+        type2: TypeName.Steel
+      }
+    ]
+  }),
+  new Pokemon({
+    name: PokemonName.Zamazenta,
+    dex: 889,
     type: TypeName.Fighting,
-    category: Category.Legendary,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 120
+    category: [Category.Legendary, Category.NonEvolve],
+    abilities: {
+      first: Ability.DauntlessShield
     },
-  },
-  {
-    name: "eternatus",
-    displayName: "Eternatus",
-    dexNumber: 890,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs],
+    defaultForm: PokemonName.ZamazentaHero,
+    forms: [
+      {
+        formName: PokemonName.ZamazentaCrown,
+        type: TypeName.Fighting,
+        type2: TypeName.Steel
+      }
+    ]
+  }),
+  new Pokemon({
+    name: PokemonName.Eternatus,
+    dex: 890,
     type: TypeName.Poison,
     type2: TypeName.Dragon,
-    category: Category.Legendary,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 120
+    category: [Category.Legendary, Category.NonEvolve],
+    abilities: {
+      first: Ability.Pressure
     },
-  },
-  {
-    name: "kubfu",
-    displayName: "Kubfu",
-    dexNumber: 891,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs]
+  }),
+  new Pokemon({
+    name: PokemonName.Kubfu,
+    dex: 891,
     type: TypeName.Fighting,
     category: Category.Legendary,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 120
+    abilities: {
+      first: Ability.InnerFocus
     },
-  },
-  {
-    name: "urshifu",
-    displayName: "Urshifu",
-    dexNumber: 892,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs]
+  }),
+  new Pokemon({
+    name: PokemonName.Urshifu,
+    dex: 892,
     type: TypeName.Fighting,
+    type2: TypeName.Dark,
     category: Category.Legendary,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 120
+    abilities: {
+      first: Ability.UnseenFist
     },
-  },
-  {
-    name: "zarude",
-    displayName: "Zarude",
-    dexNumber: 893,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs],
+    defaultForm: PokemonName.UrshifuSingle,
+    forms: [
+      {
+        formName: PokemonName.UrshifuRapid,
+        type: TypeName.Fighting,
+        type2: TypeName.Water
+      }
+    ]
+  }),
+  new Pokemon({
+    name: PokemonName.Zarude,
+    dex: 893,
     type: TypeName.Dark,
     type2: TypeName.Grass,
-    category: Category.Mythical,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 120
+    category: [Category.Mythical, Category.NonEvolve],
+    abilities: {
+      first: Ability.LeafGuard
     },
-  },
-  {
-    name: "regieleki",
-    displayName: "Regieleki",
-    dexNumber: 894,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs]
+  }),
+  new Pokemon({
+    name: PokemonName.Regieleki,
+    dex: 894,
     type: TypeName.Electric,
-    category: Category.Legendary,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 120
+    category: [Category.Legendary, Category.NonEvolve],
+    abilities: {
+      first: Ability.Transistor
     },
-  },
-  {
-    name: "regidrago",
-    displayName: "Regidrago",
-    dexNumber: 895,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs]
+  }),
+  new Pokemon({
+    name: PokemonName.Regidrago,
+    dex: 895,
     type: TypeName.Dragon,
-    category: Category.Legendary,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 120
+    category: [Category.Legendary, Category.NonEvolve],
+    abilities: {
+      first: Ability.DragonsMaw
     },
-  },
-  {
-    name: "glastrier",
-    displayName: "Glastrier",
-    dexNumber: 896,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs]
+  }),
+  new Pokemon({
+    name: PokemonName.Glastrier,
+    dex: 896,
     type: TypeName.Ice,
-    category: Category.Legendary,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 120
+    category: [Category.Legendary, Category.NonEvolve],
+    abilities: {
+      first: Ability.ChillingNeigh
     },
-  },
-  {
-    name: "spectrier",
-    displayName: "Spectrier",
-    dexNumber: 897,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs]
+  }),
+  new Pokemon({
+    name: PokemonName.Spectrier,
+    dex: 897,
     type: TypeName.Ghost,
-    category: Category.Legendary,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 120
+    category: [Category.Legendary, Category.NonEvolve],
+    abilities: {
+      first: Ability.GrimNeigh
     },
-  },
-  {
-    name: "calyrex",
-    displayName: "Calyrex",
-    dexNumber: 898,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs]
+  }),
+  new Pokemon({
+    name: PokemonName.Calyrex,
+    dex: 898,
     type: TypeName.Psychic,
     type2: TypeName.Grass,
-    category: Category.Legendary,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 120
+    category: [Category.Legendary, Category.NonEvolve],
+    abilities: {
+      first: Ability.Unnerve
     },
-  },
-  {
-    name: "wyrdeer",
-    displayName: "Wyrdeer",
-    dexNumber: 899,
-    generation: 8,
+    eggGroups: [EggGroup.NoEggs],
+    forms: [
+      {
+        formName: PokemonName.CalyrexIce,
+        type: TypeName.Psychic,
+        type2: TypeName.Ice,
+        abilities: {
+          first: Ability.AsOne
+        }
+      },
+      {
+        formName: PokemonName.CalyrexShadow,
+        type: TypeName.Psychic,
+        type2: TypeName.Ghost,
+        abilities: {
+          first: Ability.AsOne
+        }
+      }
+    ]
+  }),
+  new Pokemon({
+    name: PokemonName.Wyrdeer,
+    dex: 899,
     type: TypeName.Normal,
     type2: TypeName.Psychic,
-    eggGroups: {
-      group1: EggGroup.Field,
-      cycles: 20
+    abilities: {
+      first: Ability.Intimidate,
+      second: Ability.Frisk,
+      hidden: Ability.SapSipper
     },
-  },
-  {
-    name: "kleavor",
-    displayName: "Kleavor",
-    dexNumber: 900,
-    generation: 8,
+    eggGroups: [EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Kleavor,
+    dex: 900,
     type: TypeName.Bug,
     type2: TypeName.Rock,
-    eggGroups: {
-      group1: EggGroup.Bug,
-      cycles: 20
+    abilities: {
+      first: Ability.Swarm,
+      second: Ability.SheerForce,
+      hidden: Ability.Sharpness
     },
-  },
-  {
-    name: "ursaluna",
-    displayName: "Ursaluna",
-    dexNumber: 901,
-    generation: 8,
+    eggGroups: [EggGroup.Bug]
+  }),
+  new Pokemon({
+    name: PokemonName.Ursaluna,
+    dex: 901,
     type: TypeName.Ground,
     type2: TypeName.Normal,
-    eggGroups: {
-      group1: EggGroup.Field,
-      cycles: 20
+    abilities: {
+      first: Ability.Guts,
+      second: Ability.Bulletproof,
+      hidden: Ability.Unnerve
     },
-  },
-  {
-    name: "basculegion",
-    displayName: "Basculegion",
-    dexNumber: 902,
-    generation: 8,
+    eggGroups: [EggGroup.Field],
+    forms: [
+      {
+        formName: PokemonName.UrsalunaBloodmoon,
+        abilities: {
+          first: Ability.MindsEye
+        }
+      }
+    ]
+  }),
+  new Pokemon({
+    name: PokemonName.Basculegion,
+    dex: 902,
     type: TypeName.Water,
     type2: TypeName.Ghost,
-    eggGroups: {
-      group1: EggGroup.Water2,
-      cycles: 20
+    abilities: {
+      first: Ability.SwiftSwim,
+      second: Ability.Adaptability,
+      hidden: Ability.MoldBreaker
     },
-  },
-  {
-    name: "sneasler",
-    displayName: "Sneasler",
-    dexNumber: 903,
-    generation: 8,
+    eggGroups: [EggGroup.Water2]
+  }),
+  new Pokemon({
+    name: PokemonName.Sneasler,
+    dex: 903,
     type: TypeName.Fighting,
     type2: TypeName.Poison,
-    eggGroups: {
-      group1: EggGroup.Field,
-      cycles: 20
+    abilities: {
+      first: Ability.Pressure,
+      second: Ability.Unburden,
+      hidden: Ability.PoisonTouch
     },
-  },
-  {
-    name: "overqwil",
-    displayName: "Overqwil",
-    dexNumber: 904,
-    generation: 8,
+    eggGroups: [EggGroup.Field]
+  }),
+  new Pokemon({
+    name: PokemonName.Overqwil,
+    dex: 904,
     type: TypeName.Dark,
     type2: TypeName.Poison,
-    eggGroups: {
-      group1: EggGroup.Water2,
-      cycles: 20
+    abilities: {
+      first: Ability.PoisonPoint,
+      second: Ability.SwiftSwim,
+      hidden: Ability.Intimidate
     },
-  },
-  {
-    name: "enamorus",
-    displayName: "Enamorus",
-    dexNumber: 905,
-    generation: 8,
+    eggGroups: [EggGroup.Water2]
+  }),
+  new Pokemon({
+    name: PokemonName.Enamorus,
+    dex: 905,
     type: TypeName.Fairy,
     type2: TypeName.Flying,
-    category: Category.Legendary,
-    eggGroups: {
-      group1: EggGroup.NoEggs,
-      cycles: 120
+    category: [Category.Legendary, Category.NonEvolve],
+    abilities: {
+      first: Ability.CuteCharm,
+      hidden: Ability.Contrary
     },
-  }
+    eggGroups: [EggGroup.NoEggs],
+    defaultForm: PokemonName.EnamorusIncarnate,
+    forms: [
+      {
+        formName: PokemonName.EnamorusTherian,
+        abilities: {
+          first: Ability.Overcoat
+        }
+      }
+    ]
+  })
 ];

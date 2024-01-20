@@ -1,8 +1,14 @@
 import CloseIcon from "@mui/icons-material/Close";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import { Button, ButtonGroup, Dialog, DialogContent, Grid } from "@mui/material";
-import { useEffect, useState } from "react";
+import {
+  Button,
+  ButtonGroup,
+  Dialog,
+  DialogContent,
+  Grid
+} from "@mui/material";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Confetti from "react-confetti";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import { displayTime } from "../utils/utils";
@@ -15,12 +21,12 @@ export const Timer = ({
   done,
   itemCount
 }: {
-  setTimedOut: Function,
-  setBest: Function,
-  setPaused: Function,
-  displayText: string,
-  done: boolean,
-  itemCount: number
+  setTimedOut: Dispatch<SetStateAction<boolean>>;
+  setBest: Dispatch<SetStateAction<string>>;
+  setPaused: Dispatch<SetStateAction<boolean>>;
+  displayText: string;
+  done: boolean;
+  itemCount: number;
 }) => {
   const [running, setRunning] = useState(true);
   const [initial, setInitial] = useState(3599);
@@ -34,14 +40,14 @@ export const Timer = ({
     if (bestTime && bestTime !== 0) {
       setBest(displayTime(bestTime));
     }
-  }, []);
+  }, [displayText, setBest]);
 
   useEffect(() => {
     const bestTime = parseInt(localStorage.getItem(displayText) || "0");
-    if (bestTime && bestTime !== 0) {
+    if (bestTime && bestTime !== 0 && !newBest) {
       setBest(displayTime(bestTime));
     }
-  }, [newBest]);
+  }, [newBest, displayText, setBest]);
 
   useEffect(() => {
     const initialTime = Math.max(itemCount * 5, 900);
@@ -63,11 +69,11 @@ export const Timer = ({
         setNewBest(true);
       }
     }
-  }, [remaining, done]);
+  }, [remaining, done, displayText, final, initial, setTimedOut]);
 
   useEffect(() => {
     setPaused(!running);
-  }, [running]);
+  }, [running, setPaused]);
 
   const showTime = (remainingTime: number) => {
     if (remainingTime <= 0) return "Time's up!";
@@ -88,7 +94,7 @@ export const Timer = ({
       "&:disabled": {
         color: "gray",
         borderColor: "gray",
-        backgroundColor: "#1A2F44",
+        backgroundColor: "#1A2F44"
       },
       "&:hover": {
         backgroundColor: "deepskyblue",
@@ -137,7 +143,7 @@ export const Timer = ({
             strokeLinecap="butt"
             strokeWidth={8}
           >
-            {({ remainingTime }) => {
+            {({ remainingTime }: { remainingTime: number }) => {
               if (done) {
                 setFinal(remainingTime);
               }
@@ -148,35 +154,49 @@ export const Timer = ({
         <Grid item xs={1}></Grid>
         <Grid item xs={4} sx={styles.buttons}>
           <ButtonGroup orientation="vertical">
-            <Button sx={styles.button} onClick={() => setRunning(!running)} disabled={remaining <= 0}>
+            <Button
+              sx={styles.button}
+              onClick={() => setRunning(!running)}
+              disabled={remaining <= 0}
+            >
               {running ? <PauseIcon /> : <PlayArrowIcon />}
             </Button>
-            <Button sx={styles.button} onClick={() => setGiveUpSure(true)} disabled={remaining <= 0}>
+            <Button
+              sx={styles.button}
+              onClick={() => setGiveUpSure(true)}
+              disabled={remaining <= 0}
+            >
               <CloseIcon />
             </Button>
           </ButtonGroup>
         </Grid>
       </Grid>
-      {!running && remaining > 0 &&
+      {!running && remaining > 0 && (
         <Grid container sx={styles.overlay}>
           <Grid item xs={12}></Grid>
           <Grid item xs={5}></Grid>
           <Grid item>Paused...no cheating! :)</Grid>
         </Grid>
-      }
+      )}
       <Dialog open={giveUpSure} maxWidth="sm" fullWidth>
         <DialogContent sx={styles.dialog}>
           <p>Are you sure you want to give up?</p>
-          <Button sx={styles.button} onClick={giveUp}>Yeah</Button>
-          <Button sx={styles.button} onClick={() => setGiveUpSure(false)}>Nah</Button>
+          <Button sx={styles.button} onClick={giveUp}>
+            Yeah
+          </Button>
+          <Button sx={styles.button} onClick={() => setGiveUpSure(false)}>
+            Nah
+          </Button>
         </DialogContent>
       </Dialog>
-      <Dialog open={newBest} maxWidth="lg" fullWidth>
+      <Dialog open={newBest}>
         <DialogContent sx={styles.dialog}>
           <p>New Best Time! Congrats!</p>
-          <Button sx={styles.button} onClick={() => setNewBest(false)}>Yay!</Button>
+          <Button sx={styles.button} onClick={() => setNewBest(false)}>
+            Yay!
+          </Button>
         </DialogContent>
       </Dialog>
     </>
   );
-}
+};

@@ -9,5 +9,5 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <BrowserRouter basename={"/pokelist"}>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);

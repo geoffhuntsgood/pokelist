@@ -1,6 +1,12 @@
 import { TypeName } from "../enums";
 
-export const TypeBadge = ({ type1, type2 }: { type1: TypeName, type2?: TypeName }) => {
+export const TypeBadge = ({
+  type1,
+  type2
+}: {
+  type1: TypeName;
+  type2?: TypeName;
+}) => {
   const colors = {
     Bug: "#A8B81F",
     Dark: "#705848",
@@ -19,7 +25,7 @@ export const TypeBadge = ({ type1, type2 }: { type1: TypeName, type2?: TypeName 
     Psychic: "#F85988",
     Rock: "#B8A038",
     Steel: "#B9B7D0",
-    Water: "#6891F0",
+    Water: "#6891F0"
   };
 
   const styles = {
@@ -29,7 +35,7 @@ export const TypeBadge = ({ type1, type2 }: { type1: TypeName, type2?: TypeName 
       fontSize: "14px",
       padding: "2px 8px",
       margin: "0 2px",
-      width: "49%",
+      width: "49%"
     },
     primary: {
       backgroundColor: colors[type1]
@@ -42,7 +48,9 @@ export const TypeBadge = ({ type1, type2 }: { type1: TypeName, type2?: TypeName 
   return (
     <>
       <span style={{ ...styles.badge, ...styles.primary }}>{type1}</span>
-      {type2 && <span style={{ ...styles.badge, ...styles.secondary }}>{type2}</span>}
+      {type2 && (
+        <span style={{ ...styles.badge, ...styles.secondary }}>{type2}</span>
+      )}
     </>
   );
 };

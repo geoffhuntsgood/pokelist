@@ -5,14 +5,15 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Pokemon } from "../classes/Pokemon";
 import { QuizTable } from "./QuizTable";
 import { Timer } from "./Timer";
+import { sanitizeText } from "../utils/utils";
 
 export const PokemonQuiz = () => {
   const navigate = useNavigate();
-  const state = useLocation().state;
-  const pokemon = state.pokemon;
-  const displayText = state.displayText;
+  const location = useLocation();
 
-  const [divider, setDivider] = useState(0);
+  const pokemon = location.state.pokemon;
+  const displayText = location.state.displayText;
+
   const [showItems, setShowItems] = useState([] as string[]);
   const [input, setInput] = useState("");
   const [timedOut, setTimedOut] = useState(false);
@@ -20,19 +21,22 @@ export const PokemonQuiz = () => {
   const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    setDivider(Math.ceil(pokemon.length / 3));
-  }, []);
-
-  useEffect(() => {
     if (showItems.length === pokemon.length) {
       setTimedOut(true);
     }
-  }, [showItems]);
+  }, [showItems, pokemon.length]);
 
   const getInputText = (input: string) => {
-    const sanitized = input.replace("/^[a-zA-Z0-9]$/g", "").toLowerCase();
-    if (pokemon.find((item: Pokemon) => item.name === sanitized) && !showItems.includes(sanitized)) {
-      setShowItems(showItems.concat(sanitized));
+    const sanitized = sanitizeText(input);
+    if (
+      pokemon.find((item: Pokemon) => item.simpleName === sanitized) &&
+      !showItems.includes(sanitized)
+    ) {
+      setShowItems(
+        sanitized === "nidoran"
+          ? showItems.concat(sanitized).concat(sanitized)
+          : showItems.concat(sanitized)
+      );
       setInput("");
     } else {
       setInput(input);
@@ -45,7 +49,7 @@ export const PokemonQuiz = () => {
       backgroundColor: "midnightblue",
       margin: "0",
       paddingTop: "2px",
-      paddingLeft: "10px",
+      paddingLeft: "10px"
     },
     textField: {
       width: "100%",
@@ -89,7 +93,12 @@ export const PokemonQuiz = () => {
 
   return (
     <Box sx={styles.background}>
-      <motion.span initial="initial" animate="animate" exit="exit" variants={pageMotion}>
+      <motion.span
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageMotion}
+      >
         <Grid container spacing={0.5}>
           <Grid item xs={2}></Grid>
           <Grid item xs={1.5}>
@@ -99,7 +108,8 @@ export const PokemonQuiz = () => {
               setPaused={setPaused}
               displayText={displayText}
               done={showItems.length === pokemon.length}
-              itemCount={pokemon.length} />
+              itemCount={pokemon.length}
+            />
           </Grid>
           <Grid item xs={4}>
             <TextField
@@ -110,32 +120,38 @@ export const PokemonQuiz = () => {
               InputLabelProps={{ sx: { color: "lightskyblue" } }}
               InputProps={{ sx: { color: "lightskyblue" } }}
               FormHelperTextProps={{ sx: styles.helpText }}
-              disabled={showItems.length === pokemon.length || timedOut || paused}
+              disabled={
+                showItems.length === pokemon.length || timedOut || paused
+              }
               error={timedOut}
-              helperText={<span>{showItems.length} out of {pokemon.length} found</span>}
+              helperText={
+                <span>
+                  {showItems.length} out of {pokemon.length} found
+                </span>
+              }
               onChange={(event) => getInputText(event.target.value)}
             />
           </Grid>
           <Grid item xs={2}>
-            <Typography sx={styles.best}>Your best: {best || <i>Not attempted yet</i>}</Typography>
+            <Typography sx={styles.best}>
+              Your best: {best || <i>Not attempted yet</i>}
+            </Typography>
           </Grid>
-          {timedOut &&
+          {timedOut && (
             <Grid item xs={2}>
-              <Button sx={styles.button} onClick={() => navigate("/")}>Try again!</Button>
+              <Button sx={styles.button} onClick={() => navigate("/")}>
+                Try again!
+              </Button>
             </Grid>
-          }
+          )}
         </Grid>
 
         <QuizTable
           showItems={showItems}
           timedOut={timedOut}
-          data={{
-            data1: pokemon.slice(0, divider),
-            data2: pokemon.slice(divider, divider * 2),
-            data3: pokemon.slice(divider * 2, pokemon.length)
-          }}
+          data={pokemon}
         />
       </motion.span>
-    </Box >
+    </Box>
   );
 };

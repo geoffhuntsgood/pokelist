@@ -13,5 +13,5 @@ export enum EggGroup {
   NoEggs = "No Eggs Discovered",
   Water1 = "Water 1",
   Water2 = "Water 2",
-  Water3 = "Water 3"
+  Water3 = "Water 3",
 }
