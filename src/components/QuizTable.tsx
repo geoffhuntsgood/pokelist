@@ -37,10 +37,7 @@ const QuizTableSetup = ({
               )}
             </td>
             <td>
-              {!pokemon.type2 && <TypeBadge type1={pokemon.type} />}
-              {pokemon.type2 && (
-                <TypeBadge type1={pokemon.type} type2={pokemon.type2} />
-              )}
+              <TypeBadge type={pokemon.type} />
             </td>
           </tr>
         ))}

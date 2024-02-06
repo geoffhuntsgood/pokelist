@@ -1,1434 +1,975 @@
+import { mapNamesToPokemon } from "../../api/pokemonApi";
 import { Pokemon } from "../../classes/Pokemon";
-import {
-  Ability,
-  Category,
-  EggGroup,
-  PokemonName,
-  TypeName
-} from "../../enums";
+import { Category, EggGroup, PokemonName, Type } from "../../enums";
 
-export const gen9Pokemon: Pokemon[] = [
-  new Pokemon({
-    name: PokemonName.Sprigatito,
-    dex: 906,
-    type: TypeName.Grass,
-    category: Category.Starter,
-    abilities: {
-      first: Ability.Overgrow,
-      hidden: Ability.Protean
+export const gen9Pokemon = (): Pokemon[] =>
+  mapNamesToPokemon([
+    {
+      name: PokemonName.Sprigatito,
+      dex: 906,
+      type: Type.Grass,
+      category: Category.Starter,
+      eggGroup1: EggGroup.Field,
+      eggGroup2: EggGroup.Grass
     },
-    eggGroups: [EggGroup.Field, EggGroup.Grass]
-  }),
-  new Pokemon({
-    name: PokemonName.Floragato,
-    dex: 907,
-    type: TypeName.Grass,
-    category: Category.Starter,
-    abilities: {
-      first: Ability.Overgrow,
-      hidden: Ability.Protean
+    {
+      name: PokemonName.Floragato,
+      dex: 907,
+      type: Type.Grass,
+      category: Category.Starter,
+      eggGroup1: EggGroup.Field,
+      eggGroup2: EggGroup.Grass
     },
-    eggGroups: [EggGroup.Field, EggGroup.Grass]
-  }),
-  new Pokemon({
-    name: PokemonName.Meowscarada,
-    dex: 908,
-    type: TypeName.Grass,
-    type2: TypeName.Dark,
-    category: Category.Starter,
-    abilities: {
-      first: Ability.Overgrow,
-      hidden: Ability.Protean
+    {
+      name: PokemonName.Meowscarada,
+      dex: 908,
+      type: Type.Grass,
+      type2: Type.Dark,
+      category: Category.Starter,
+      eggGroup1: EggGroup.Field,
+      eggGroup2: EggGroup.Grass
     },
-    eggGroups: [EggGroup.Field, EggGroup.Grass]
-  }),
-  new Pokemon({
-    name: PokemonName.Fuecoco,
-    dex: 909,
-    type: TypeName.Fire,
-    category: Category.Starter,
-    abilities: {
-      first: Ability.Blaze,
-      hidden: Ability.Unaware
+    {
+      name: PokemonName.Fuecoco,
+      dex: 909,
+      type: Type.Fire,
+      category: Category.Starter,
+      eggGroup1: EggGroup.Field
     },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Crocalor,
-    dex: 910,
-    type: TypeName.Fire,
-    category: Category.Starter,
-    abilities: {
-      first: Ability.Blaze,
-      hidden: Ability.Unaware
+    {
+      name: PokemonName.Crocalor,
+      dex: 910,
+      type: Type.Fire,
+      category: Category.Starter,
+      eggGroup1: EggGroup.Field
     },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Skeledirge,
-    dex: 911,
-    type: TypeName.Fire,
-    type2: TypeName.Ghost,
-    category: Category.Starter,
-    abilities: {
-      first: Ability.Blaze,
-      hidden: Ability.Unaware
+    {
+      name: PokemonName.Skeledirge,
+      dex: 911,
+      type: Type.Fire,
+      type2: Type.Ghost,
+      category: Category.Starter,
+      eggGroup1: EggGroup.Field
     },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Quaxly,
-    dex: 912,
-    type: TypeName.Water,
-    category: Category.Starter,
-    abilities: {
-      first: Ability.Torrent,
-      hidden: Ability.Moxie
+    {
+      name: PokemonName.Quaxly,
+      dex: 912,
+      type: Type.Water,
+      category: Category.Starter,
+      eggGroup1: EggGroup.Flying,
+      eggGroup2: EggGroup.Water1
     },
-    eggGroups: [EggGroup.Flying, EggGroup.Water1]
-  }),
-  new Pokemon({
-    name: PokemonName.Quaxwell,
-    dex: 913,
-    type: TypeName.Water,
-    category: Category.Starter,
-    abilities: {
-      first: Ability.Torrent,
-      hidden: Ability.Moxie
+    {
+      name: PokemonName.Quaxwell,
+      dex: 913,
+      type: Type.Water,
+      category: Category.Starter,
+      eggGroup1: EggGroup.Flying,
+      eggGroup2: EggGroup.Water1
     },
-    eggGroups: [EggGroup.Flying, EggGroup.Water1]
-  }),
-  new Pokemon({
-    name: PokemonName.Quaquaval,
-    dex: 914,
-    type: TypeName.Water,
-    type2: TypeName.Fighting,
-    category: Category.Starter,
-    abilities: {
-      first: Ability.Torrent,
-      hidden: Ability.Moxie
+    {
+      name: PokemonName.Quaquaval,
+      dex: 914,
+      type: Type.Water,
+      type2: Type.Fighting,
+      category: Category.Starter,
+      eggGroup1: EggGroup.Flying,
+      eggGroup2: EggGroup.Water1
     },
-    eggGroups: [EggGroup.Flying, EggGroup.Water1]
-  }),
-  new Pokemon({
-    name: PokemonName.Lechonk,
-    dex: 915,
-    type: TypeName.Normal,
-    abilities: {
-      first: Ability.AromaVeil,
-      second: Ability.Gluttony,
-      hidden: Ability.ThickFat
+    {
+      name: PokemonName.Lechonk,
+      dex: 915,
+      type: Type.Normal,
+      eggGroup1: EggGroup.Field
     },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Oinkologne,
-    dex: 916,
-    type: TypeName.Normal,
-    abilities: {
-      first: Ability.LingeringAroma,
-      second: Ability.Gluttony,
-      hidden: Ability.ThickFat
-    },
-    eggGroups: [EggGroup.Field],
-    defaultForm: PokemonName.OinkologneMale,
-    forms: [
-      {
-        formName: PokemonName.OinkologneFemale,
-        abilities: {
-          first: Ability.AromaVeil,
-          second: Ability.Gluttony,
-          hidden: Ability.ThickFat
+    {
+      name: PokemonName.Oinkologne,
+      dex: 916,
+      type: Type.Normal,
+      eggGroup1: EggGroup.Field,
+      mustHaveForm: true,
+      alternateForms: [
+        {
+          name: PokemonName.OinkologneMale,
+          type: Type.Normal
+        },
+        {
+          name: PokemonName.OinkologneFemale,
+          type: Type.Normal
         }
-      }
-    ]
-  }),
-  new Pokemon({
-    name: PokemonName.Tarountula,
-    dex: 917,
-    type: TypeName.Bug,
-    abilities: {
-      first: Ability.Insomnia,
-      hidden: Ability.Stakeout
+      ]
     },
-    eggGroups: [EggGroup.Bug]
-  }),
-  new Pokemon({
-    name: PokemonName.Spidops,
-    dex: 918,
-    type: TypeName.Bug,
-    abilities: {
-      first: Ability.Insomnia,
-      hidden: Ability.Stakeout
+    {
+      name: PokemonName.Tarountula,
+      dex: 917,
+      type: Type.Bug,
+      eggGroup1: EggGroup.Bug
     },
-    eggGroups: [EggGroup.Bug]
-  }),
-  new Pokemon({
-    name: PokemonName.Nymble,
-    dex: 919,
-    type: TypeName.Bug,
-    abilities: {
-      first: Ability.Swarm,
-      hidden: Ability.TintedLens
+    {
+      name: PokemonName.Spidops,
+      dex: 918,
+      type: Type.Bug,
+      eggGroup1: EggGroup.Bug
     },
-    eggGroups: [EggGroup.Bug]
-  }),
-  new Pokemon({
-    name: PokemonName.Lokix,
-    dex: 920,
-    type: TypeName.Bug,
-    type2: TypeName.Dark,
-    abilities: {
-      first: Ability.Swarm,
-      hidden: Ability.TintedLens
+    {
+      name: PokemonName.Nymble,
+      dex: 919,
+      type: Type.Bug,
+      eggGroup1: EggGroup.Bug
     },
-    eggGroups: [EggGroup.Bug]
-  }),
-  new Pokemon({
-    name: PokemonName.Pawmi,
-    dex: 921,
-    type: TypeName.Electric,
-    abilities: {
-      first: Ability.Static,
-      second: Ability.NaturalCure,
-      hidden: Ability.IronFist
+    {
+      name: PokemonName.Lokix,
+      dex: 920,
+      type: Type.Bug,
+      type2: Type.Dark,
+      eggGroup1: EggGroup.Bug
     },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Pawmo,
-    dex: 922,
-    type: TypeName.Electric,
-    type2: TypeName.Fighting,
-    abilities: {
-      first: Ability.VoltAbsorb,
-      second: Ability.NaturalCure,
-      hidden: Ability.IronFist
+    {
+      name: PokemonName.Pawmi,
+      dex: 921,
+      type: Type.Electric,
+      eggGroup1: EggGroup.Field
     },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Pawmot,
-    dex: 923,
-    type: TypeName.Electric,
-    type2: TypeName.Fighting,
-    abilities: {
-      first: Ability.VoltAbsorb,
-      second: Ability.NaturalCure,
-      hidden: Ability.IronFist
+    {
+      name: PokemonName.Pawmo,
+      dex: 922,
+      type: Type.Electric,
+      type2: Type.Fighting,
+      eggGroup1: EggGroup.Field
     },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Tandemaus,
-    dex: 924,
-    type: TypeName.Normal,
-    abilities: {
-      first: Ability.RunAway,
-      second: Ability.Pickup,
-      hidden: Ability.OwnTempo
+    {
+      name: PokemonName.Pawmot,
+      dex: 923,
+      type: Type.Electric,
+      type2: Type.Fighting,
+      eggGroup1: EggGroup.Field
     },
-    eggGroups: [EggGroup.Field, EggGroup.Fairy]
-  }),
-  new Pokemon({
-    name: PokemonName.Maushold,
-    dex: 925,
-    type: TypeName.Normal,
-    abilities: {
-      first: Ability.FriendGuard,
-      second: Ability.CheekPouch,
-      hidden: Ability.Technician
+    {
+      name: PokemonName.Tandemaus,
+      dex: 924,
+      type: Type.Normal,
+      eggGroup1: EggGroup.Field,
+      eggGroup2: EggGroup.Fairy
     },
-    eggGroups: [EggGroup.Field, EggGroup.Fairy]
-  }),
-  new Pokemon({
-    name: PokemonName.Fidough,
-    dex: 926,
-    type: TypeName.Fairy,
-    abilities: {
-      first: Ability.OwnTempo,
-      hidden: Ability.Klutz
+    {
+      name: PokemonName.Maushold,
+      dex: 925,
+      type: Type.Normal,
+      eggGroup1: EggGroup.Field,
+      eggGroup2: EggGroup.Fairy
     },
-    eggGroups: [EggGroup.Field, EggGroup.Mineral]
-  }),
-  new Pokemon({
-    name: PokemonName.Dachsbun,
-    dex: 927,
-    type: TypeName.Fairy,
-    abilities: {
-      first: Ability.WellBakedBody,
-      hidden: Ability.AromaVeil
+    {
+      name: PokemonName.Fidough,
+      dex: 926,
+      type: Type.Fairy,
+      eggGroup1: EggGroup.Field,
+      eggGroup2: EggGroup.Mineral
     },
-    eggGroups: [EggGroup.Field, EggGroup.Mineral]
-  }),
-  new Pokemon({
-    name: PokemonName.Smoliv,
-    dex: 928,
-    type: TypeName.Grass,
-    type2: TypeName.Normal,
-    abilities: {
-      first: Ability.EarlyBird,
-      hidden: Ability.Harvest
+    {
+      name: PokemonName.Dachsbun,
+      dex: 927,
+      type: Type.Fairy,
+      eggGroup1: EggGroup.Field,
+      eggGroup2: EggGroup.Mineral
     },
-    eggGroups: [EggGroup.Grass]
-  }),
-  new Pokemon({
-    name: PokemonName.Dolliv,
-    dex: 929,
-    type: TypeName.Grass,
-    type2: TypeName.Normal,
-    abilities: {
-      first: Ability.EarlyBird,
-      hidden: Ability.Harvest
+    {
+      name: PokemonName.Smoliv,
+      dex: 928,
+      type: Type.Grass,
+      type2: Type.Normal,
+      eggGroup1: EggGroup.Grass
     },
-    eggGroups: [EggGroup.Grass]
-  }),
-  new Pokemon({
-    name: PokemonName.Arboliva,
-    dex: 930,
-    type: TypeName.Grass,
-    type2: TypeName.Normal,
-    abilities: {
-      first: Ability.SeedSower,
-      hidden: Ability.Harvest
+    {
+      name: PokemonName.Dolliv,
+      dex: 929,
+      type: Type.Grass,
+      type2: Type.Normal,
+      eggGroup1: EggGroup.Grass
     },
-    eggGroups: [EggGroup.Grass]
-  }),
-  new Pokemon({
-    name: PokemonName.Squawkabilly,
-    dex: 931,
-    type: TypeName.Normal,
-    type2: TypeName.Flying,
-    category: Category.NonEvolve,
-    abilities: {
-      first: Ability.Intimidate,
-      second: Ability.Hustle,
-      hidden: Ability.Guts
+    {
+      name: PokemonName.Arboliva,
+      dex: 930,
+      type: Type.Grass,
+      type2: Type.Normal,
+      eggGroup1: EggGroup.Grass
     },
-    eggGroups: [EggGroup.Flying],
-    defaultForm: PokemonName.SquawkabillyGreen,
-    forms: [
-      {
-        formName: PokemonName.SquawkabillyBlue,
-        abilities: {
-          first: Ability.Intimidate,
-          second: Ability.Hustle,
-          hidden: Ability.Guts
+    {
+      name: PokemonName.Squawkabilly,
+      dex: 931,
+      type: Type.Normal,
+      type2: Type.Flying,
+      category: Category.NonEvolving,
+      eggGroup1: EggGroup.Flying,
+      mustHaveForm: true,
+      alternateForms: [
+        {
+          name: PokemonName.SquawkabillyGreen,
+          type: Type.Normal,
+          type2: Type.Flying,
+          category: Category.NonEvolving
+        },
+        {
+          name: PokemonName.SquawkabillyBlue,
+          type: Type.Normal,
+          type2: Type.Flying,
+          category: Category.NonEvolving
+        },
+        {
+          name: PokemonName.SquawkabillyYellow,
+          type: Type.Normal,
+          type2: Type.Flying,
+          category: Category.NonEvolving
+        },
+        {
+          name: PokemonName.SquawkabillyWhite,
+          type: Type.Normal,
+          type2: Type.Flying,
+          category: Category.NonEvolving
         }
-      },
-      {
-        formName: PokemonName.SquawkabillyYellow,
-        abilities: {
-          first: Ability.Intimidate,
-          second: Ability.Hustle,
-          hidden: Ability.SheerForce
+      ]
+    },
+    {
+      name: PokemonName.Nacli,
+      dex: 932,
+      type: Type.Rock,
+      eggGroup1: EggGroup.Mineral
+    },
+    {
+      name: PokemonName.Naclstack,
+      dex: 933,
+      type: Type.Rock,
+      eggGroup1: EggGroup.Mineral
+    },
+    {
+      name: PokemonName.Garganacl,
+      dex: 934,
+      type: Type.Rock,
+      eggGroup1: EggGroup.Mineral
+    },
+    {
+      name: PokemonName.Charcadet,
+      dex: 935,
+      type: Type.Fire,
+      eggGroup1: EggGroup.HumanLike
+    },
+    {
+      name: PokemonName.Armarouge,
+      dex: 936,
+      type: Type.Fire,
+      type2: Type.Psychic,
+      eggGroup1: EggGroup.HumanLike
+    },
+    {
+      name: PokemonName.Ceruledge,
+      dex: 937,
+      type: Type.Fire,
+      type2: Type.Ghost,
+      eggGroup1: EggGroup.HumanLike
+    },
+    {
+      name: PokemonName.Tadbulb,
+      dex: 938,
+      type: Type.Electric,
+      eggGroup1: EggGroup.Water1
+    },
+    {
+      name: PokemonName.Bellibolt,
+      dex: 939,
+      type: Type.Electric,
+      eggGroup1: EggGroup.Water1
+    },
+    {
+      name: PokemonName.Wattrel,
+      dex: 940,
+      type: Type.Electric,
+      type2: Type.Flying,
+      eggGroup1: EggGroup.Water1,
+      eggGroup2: EggGroup.Flying
+    },
+    {
+      name: PokemonName.Kilowattrel,
+      dex: 941,
+      type: Type.Electric,
+      type2: Type.Flying,
+      eggGroup1: EggGroup.Water1,
+      eggGroup2: EggGroup.Flying
+    },
+    {
+      name: PokemonName.Maschiff,
+      dex: 942,
+      type: Type.Dark,
+      eggGroup1: EggGroup.Field
+    },
+    {
+      name: PokemonName.Mabosstiff,
+      dex: 943,
+      type: Type.Dark,
+      eggGroup1: EggGroup.Field
+    },
+    {
+      name: PokemonName.Shroodle,
+      dex: 944,
+      type: Type.Poison,
+      type2: Type.Normal,
+      eggGroup1: EggGroup.Field
+    },
+    {
+      name: PokemonName.Grafaiai,
+      dex: 945,
+      type: Type.Poison,
+      type2: Type.Normal,
+      eggGroup1: EggGroup.Field
+    },
+    {
+      name: PokemonName.Bramblin,
+      dex: 946,
+      type: Type.Grass,
+      type2: Type.Ghost,
+      eggGroup1: EggGroup.Grass
+    },
+    {
+      name: PokemonName.Brambleghast,
+      dex: 947,
+      type: Type.Grass,
+      type2: Type.Ghost,
+      eggGroup1: EggGroup.Grass
+    },
+    {
+      name: PokemonName.Toedscool,
+      dex: 948,
+      type: Type.Ground,
+      type2: Type.Grass,
+
+      eggGroup1: EggGroup.Grass
+    },
+    {
+      name: PokemonName.Toedscruel,
+      dex: 949,
+      type: Type.Ground,
+      type2: Type.Grass,
+
+      eggGroup1: EggGroup.Grass
+    },
+    {
+      name: PokemonName.Klawf,
+      dex: 950,
+      type: Type.Rock,
+      category: Category.NonEvolving,
+      eggGroup1: EggGroup.Water3
+    },
+    {
+      name: PokemonName.Capsakid,
+      dex: 951,
+      type: Type.Grass,
+      eggGroup1: EggGroup.Grass
+    },
+    {
+      name: PokemonName.Scovillain,
+      dex: 952,
+      type: Type.Grass,
+      type2: Type.Fire,
+      eggGroup1: EggGroup.Grass
+    },
+    {
+      name: PokemonName.Rellor,
+      dex: 953,
+      type: Type.Bug,
+      eggGroup1: EggGroup.Bug
+    },
+    {
+      name: PokemonName.Rabsca,
+      dex: 954,
+      type: Type.Bug,
+      type2: Type.Psychic,
+      eggGroup1: EggGroup.Bug
+    },
+    {
+      name: PokemonName.Flittle,
+      dex: 955,
+      type: Type.Psychic,
+      eggGroup1: EggGroup.Flying
+    },
+    {
+      name: PokemonName.Espathra,
+      dex: 956,
+      type: Type.Psychic,
+      eggGroup1: EggGroup.Flying
+    },
+    {
+      name: PokemonName.Tinkatink,
+      dex: 957,
+      type: Type.Fairy,
+      type2: Type.Steel,
+      eggGroup1: EggGroup.Fairy
+    },
+    {
+      name: PokemonName.Tinkatuff,
+      dex: 958,
+      type: Type.Fairy,
+      type2: Type.Steel,
+      eggGroup1: EggGroup.Fairy
+    },
+    {
+      name: PokemonName.Tinkaton,
+      dex: 959,
+      type: Type.Fairy,
+      type2: Type.Steel,
+      eggGroup1: EggGroup.Fairy
+    },
+    {
+      name: PokemonName.Wiglett,
+      dex: 960,
+      type: Type.Water,
+      eggGroup1: EggGroup.Water3
+    },
+    {
+      name: PokemonName.Wugtrio,
+      dex: 961,
+      type: Type.Water,
+      eggGroup1: EggGroup.Water3
+    },
+    {
+      name: PokemonName.Bombirdier,
+      dex: 962,
+      type: Type.Flying,
+      type2: Type.Dark,
+      category: Category.NonEvolving,
+      eggGroup1: EggGroup.Flying
+    },
+    {
+      name: PokemonName.Finizen,
+      dex: 963,
+      type: Type.Water,
+
+      eggGroup1: EggGroup.Field,
+      eggGroup2: EggGroup.Water2
+    },
+    {
+      name: PokemonName.Palafin,
+      dex: 964,
+      type: Type.Water,
+
+      eggGroup1: EggGroup.Field,
+      eggGroup2: EggGroup.Water2
+    },
+    {
+      name: PokemonName.Varoom,
+      dex: 965,
+      type: Type.Steel,
+      type2: Type.Poison,
+      eggGroup1: EggGroup.Mineral
+    },
+    {
+      name: PokemonName.Revavroom,
+      dex: 966,
+      type: Type.Steel,
+      type2: Type.Poison,
+      eggGroup1: EggGroup.Mineral
+    },
+    {
+      name: PokemonName.Cyclizar,
+      dex: 967,
+      type: Type.Dragon,
+      type2: Type.Normal,
+      category: Category.NonEvolving,
+      eggGroup1: EggGroup.Field
+    },
+    {
+      name: PokemonName.Orthworm,
+      dex: 968,
+      type: Type.Steel,
+      category: Category.NonEvolving,
+      eggGroup1: EggGroup.Field
+    },
+    {
+      name: PokemonName.Glimmet,
+      dex: 969,
+      type: Type.Rock,
+      type2: Type.Poison,
+      eggGroup1: EggGroup.Mineral
+    },
+    {
+      name: PokemonName.Glimmora,
+      dex: 970,
+      type: Type.Rock,
+      type2: Type.Poison,
+      eggGroup1: EggGroup.Mineral
+    },
+    {
+      name: PokemonName.Greavard,
+      dex: 971,
+      type: Type.Ghost,
+      eggGroup1: EggGroup.Mineral
+    },
+    {
+      name: PokemonName.Houndstone,
+      dex: 972,
+      type: Type.Ghost,
+      eggGroup1: EggGroup.Mineral
+    },
+    {
+      name: PokemonName.Flamigo,
+      dex: 973,
+      type: Type.Flying,
+      type2: Type.Fighting,
+      category: Category.NonEvolving,
+      eggGroup1: EggGroup.Flying
+    },
+    {
+      name: PokemonName.Cetoddle,
+      dex: 974,
+      type: Type.Ice,
+      eggGroup1: EggGroup.Field
+    },
+    {
+      name: PokemonName.Cetitan,
+      dex: 975,
+      type: Type.Ice,
+      eggGroup1: EggGroup.Field
+    },
+    {
+      name: PokemonName.Veluza,
+      dex: 976,
+      type: Type.Water,
+      type2: Type.Psychic,
+      category: Category.NonEvolving,
+      eggGroup1: EggGroup.Water2
+    },
+    {
+      name: PokemonName.Dondozo,
+      dex: 977,
+      type: Type.Water,
+      category: Category.NonEvolving,
+      eggGroup1: EggGroup.Water2
+    },
+    {
+      name: PokemonName.Tatsugiri,
+      dex: 978,
+      type: Type.Dragon,
+      type2: Type.Water,
+      category: Category.NonEvolving,
+      eggGroup1: EggGroup.Water2
+    },
+    {
+      name: PokemonName.Annihilape,
+      dex: 979,
+      type: Type.Fighting,
+      type2: Type.Ghost,
+      eggGroup1: EggGroup.Field
+    },
+    {
+      name: PokemonName.Clodsire,
+      dex: 980,
+      type: Type.Poison,
+      type2: Type.Ground,
+      eggGroup1: EggGroup.Water1,
+      eggGroup2: EggGroup.Field
+    },
+    {
+      name: PokemonName.Farigiraf,
+      dex: 981,
+      type: Type.Normal,
+      type2: Type.Psychic,
+      eggGroup1: EggGroup.Field
+    },
+    {
+      name: PokemonName.Dudunsparce,
+      dex: 982,
+      type: Type.Normal,
+      eggGroup1: EggGroup.Field
+    },
+    {
+      name: PokemonName.Kingambit,
+      dex: 983,
+      type: Type.Dark,
+      type2: Type.Steel,
+      eggGroup1: EggGroup.HumanLike
+    },
+    {
+      name: PokemonName.GreatTusk,
+      dex: 984,
+      type: Type.Ground,
+      type2: Type.Fighting,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.ScreamTail,
+      dex: 985,
+      type: Type.Fairy,
+      type2: Type.Psychic,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.BruteBonnet,
+      dex: 986,
+      type: Type.Grass,
+      type2: Type.Dark,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.FlutterMane,
+      dex: 987,
+      type: Type.Ghost,
+      type2: Type.Fairy,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.SlitherWing,
+      dex: 988,
+      type: Type.Bug,
+      type2: Type.Fighting,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.SandyShocks,
+      dex: 989,
+      type: Type.Electric,
+      type2: Type.Ground,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.IronTreads,
+      dex: 990,
+      type: Type.Ground,
+      type2: Type.Steel,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.IronBundle,
+      dex: 991,
+      type: Type.Ice,
+      type2: Type.Water,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.IronHands,
+      dex: 992,
+      type: Type.Fighting,
+      type2: Type.Electric,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.IronJugulis,
+      dex: 993,
+      type: Type.Dark,
+      type2: Type.Flying,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.IronMoth,
+      dex: 994,
+      type: Type.Fire,
+      type2: Type.Poison,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.IronThorns,
+      dex: 995,
+      type: Type.Rock,
+      type2: Type.Electric,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.Frigibax,
+      dex: 996,
+      type: Type.Dragon,
+      type2: Type.Ice,
+      eggGroup1: EggGroup.Dragon,
+      eggGroup2: EggGroup.Mineral
+    },
+    {
+      name: PokemonName.Arctibax,
+      dex: 997,
+      type: Type.Dragon,
+      type2: Type.Ice,
+      eggGroup1: EggGroup.Dragon,
+      eggGroup2: EggGroup.Mineral
+    },
+    {
+      name: PokemonName.Baxcalibur,
+      dex: 998,
+      type: Type.Dragon,
+      type2: Type.Ice,
+      eggGroup1: EggGroup.Dragon,
+      eggGroup2: EggGroup.Mineral
+    },
+    {
+      name: PokemonName.Gimmighoul,
+      dex: 999,
+      type: Type.Ghost,
+      eggGroup1: EggGroup.NoEggs,
+      mustHaveForm: true,
+      alternateForms: [
+        {
+          name: PokemonName.GimmighoulChest,
+          type: Type.Ghost
+        },
+        {
+          name: PokemonName.GimmighoulRoaming,
+          type: Type.Ghost
         }
-      },
-      {
-        formName: PokemonName.SquawkabillyWhite,
-        abilities: {
-          first: Ability.Intimidate,
-          second: Ability.Hustle,
-          hidden: Ability.SheerForce
+      ]
+    },
+    {
+      name: PokemonName.Gholdengo,
+      dex: 1000,
+      type: Type.Steel,
+      type2: Type.Ghost,
+
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.WoChien,
+      dex: 1001,
+      type: Type.Dark,
+      type2: Type.Grass,
+      category: [Category.NonEvolving, Category.Legendary],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.ChienPao,
+      dex: 1002,
+      type: Type.Dark,
+      type2: Type.Ice,
+      category: [Category.NonEvolving, Category.Legendary],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.TingLu,
+      dex: 1003,
+      type: Type.Dark,
+      type2: Type.Ground,
+      category: [Category.NonEvolving, Category.Legendary],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.ChiYu,
+      dex: 1004,
+      type: Type.Dark,
+      type2: Type.Fire,
+      category: [Category.NonEvolving, Category.Legendary],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.RoaringMoon,
+      dex: 1005,
+      type: Type.Dragon,
+      type2: Type.Dark,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.IronValiant,
+      dex: 1006,
+      type: Type.Fairy,
+      type2: Type.Fighting,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.Koraidon,
+      dex: 1007,
+      type: Type.Fighting,
+      type2: Type.Dragon,
+      category: [Category.NonEvolving, Category.Legendary, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.Miraidon,
+      dex: 1008,
+      type: Type.Electric,
+      type2: Type.Dragon,
+      category: [Category.NonEvolving, Category.Legendary, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.WalkingWake,
+      dex: 1009,
+      type: Type.Water,
+      type2: Type.Dragon,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.IronLeaves,
+      dex: 1010,
+      type: Type.Grass,
+      type2: Type.Psychic,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.Dipplin,
+      dex: 1011,
+      type: Type.Grass,
+      type2: Type.Dragon,
+      eggGroup1: EggGroup.Grass,
+      eggGroup2: EggGroup.Dragon
+    },
+    {
+      name: PokemonName.Poltchageist,
+      dex: 1012,
+      type: Type.Grass,
+      type2: Type.Ghost,
+      eggGroup1: EggGroup.Mineral,
+      eggGroup2: EggGroup.Amorphous
+    },
+    {
+      name: PokemonName.Sinistcha,
+      dex: 1013,
+      type: Type.Grass,
+      type2: Type.Ghost,
+      eggGroup1: EggGroup.Mineral,
+      eggGroup2: EggGroup.Amorphous
+    },
+    {
+      name: PokemonName.Okidogi,
+      dex: 1014,
+      type: Type.Poison,
+      type2: Type.Fighting,
+      category: [Category.NonEvolving, Category.Legendary],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.Munkidori,
+      dex: 1015,
+      type: Type.Poison,
+      type2: Type.Psychic,
+      category: [Category.NonEvolving, Category.Legendary],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.Fezandipiti,
+      dex: 1016,
+      type: Type.Poison,
+      type2: Type.Fairy,
+      category: [Category.NonEvolving, Category.Legendary],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.Ogerpon,
+      dex: 1017,
+      type: Type.Grass,
+      category: [Category.NonEvolving, Category.Legendary],
+      eggGroup1: EggGroup.NoEggs,
+      mustHaveForm: true,
+      alternateForms: [
+        {
+          name: PokemonName.OgerponTeal,
+          type: Type.Grass,
+          category: [Category.NonEvolving, Category.Legendary]
+        },
+        {
+          name: PokemonName.OgerponWellspring,
+          type: Type.Grass,
+          type2: Type.Water,
+          category: [Category.NonEvolving, Category.Legendary]
+        },
+        {
+          name: PokemonName.OgerponHearthflame,
+          type: Type.Grass,
+          type2: Type.Fire,
+          category: [Category.NonEvolving, Category.Legendary]
+        },
+        {
+          name: PokemonName.OgerponCornerstone,
+          type: Type.Grass,
+          type2: Type.Rock,
+          category: [Category.NonEvolving, Category.Legendary]
         }
-      }
-    ]
-  }),
-  new Pokemon({
-    name: PokemonName.Nacli,
-    dex: 932,
-    type: TypeName.Rock,
-    abilities: {
-      first: Ability.PurifyingSalt,
-      second: Ability.Sturdy,
-      hidden: Ability.ClearBody
-    },
-    eggGroups: [EggGroup.Mineral]
-  }),
-  new Pokemon({
-    name: PokemonName.Naclstack,
-    dex: 933,
-    type: TypeName.Rock,
-    abilities: {
-      first: Ability.PurifyingSalt,
-      second: Ability.Sturdy,
-      hidden: Ability.ClearBody
-    },
-    eggGroups: [EggGroup.Mineral]
-  }),
-  new Pokemon({
-    name: PokemonName.Garganacl,
-    dex: 934,
-    type: TypeName.Rock,
-    abilities: {
-      first: Ability.PurifyingSalt,
-      second: Ability.Sturdy,
-      hidden: Ability.ClearBody
-    },
-    eggGroups: [EggGroup.Mineral]
-  }),
-  new Pokemon({
-    name: PokemonName.Charcadet,
-    dex: 935,
-    type: TypeName.Fire,
-    abilities: {
-      first: Ability.FlashFire,
-      hidden: Ability.FlameBody
-    },
-    eggGroups: [EggGroup.HumanLike]
-  }),
-  new Pokemon({
-    name: PokemonName.Armarouge,
-    dex: 936,
-    type: TypeName.Fire,
-    type2: TypeName.Psychic,
-    abilities: {
-      first: Ability.FlashFire,
-      hidden: Ability.WeakArmor
-    },
-    eggGroups: [EggGroup.HumanLike]
-  }),
-  new Pokemon({
-    name: PokemonName.Ceruledge,
-    dex: 937,
-    type: TypeName.Fire,
-    type2: TypeName.Ghost,
-    abilities: {
-      first: Ability.FlashFire,
-      hidden: Ability.WeakArmor
-    },
-    eggGroups: [EggGroup.HumanLike]
-  }),
-  new Pokemon({
-    name: PokemonName.Tadbulb,
-    dex: 938,
-    type: TypeName.Electric,
-    abilities: {
-      first: Ability.OwnTempo,
-      second: Ability.Static,
-      hidden: Ability.Damp
-    },
-    eggGroups: [EggGroup.Water1]
-  }),
-  new Pokemon({
-    name: PokemonName.Bellibolt,
-    dex: 939,
-    type: TypeName.Electric,
-    abilities: {
-      first: Ability.Electromorphosis,
-      second: Ability.Static,
-      hidden: Ability.Damp
-    },
-    eggGroups: [EggGroup.Water1]
-  }),
-  new Pokemon({
-    name: PokemonName.Wattrel,
-    dex: 940,
-    type: TypeName.Electric,
-    type2: TypeName.Flying,
-    abilities: {
-      first: Ability.WindPower,
-      second: Ability.VoltAbsorb,
-      hidden: Ability.Competitive
-    },
-    eggGroups: [EggGroup.Water1, EggGroup.Flying]
-  }),
-  new Pokemon({
-    name: PokemonName.Kilowattrel,
-    dex: 941,
-    type: TypeName.Electric,
-    type2: TypeName.Flying,
-    abilities: {
-      first: Ability.WindPower,
-      second: Ability.VoltAbsorb,
-      hidden: Ability.Competitive
-    },
-    eggGroups: [EggGroup.Water1, EggGroup.Flying]
-  }),
-  new Pokemon({
-    name: PokemonName.Maschiff,
-    dex: 942,
-    type: TypeName.Dark,
-    abilities: {
-      first: Ability.Intimidate,
-      second: Ability.RunAway,
-      hidden: Ability.Stakeout
-    },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Mabosstiff,
-    dex: 943,
-    type: TypeName.Dark,
-    abilities: {
-      first: Ability.Intimidate,
-      second: Ability.GuardDog,
-      hidden: Ability.Stakeout
-    },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Shroodle,
-    dex: 944,
-    type: TypeName.Poison,
-    type2: TypeName.Normal,
-    abilities: {
-      first: Ability.Unburden,
-      second: Ability.Pickpocket,
-      hidden: Ability.Prankster
-    },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Grafaiai,
-    dex: 945,
-    type: TypeName.Poison,
-    type2: TypeName.Normal,
-    abilities: {
-      first: Ability.Unburden,
-      second: Ability.PoisonTouch,
-      hidden: Ability.Prankster
-    },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Bramblin,
-    dex: 946,
-    type: TypeName.Grass,
-    type2: TypeName.Ghost,
-    abilities: {
-      first: Ability.WindRider,
-      hidden: Ability.Infiltrator
-    },
-    eggGroups: [EggGroup.Grass]
-  }),
-  new Pokemon({
-    name: PokemonName.Brambleghast,
-    dex: 947,
-    type: TypeName.Grass,
-    type2: TypeName.Ghost,
-    abilities: {
-      first: Ability.WindRider,
-      hidden: Ability.Infiltrator
-    },
-    eggGroups: [EggGroup.Grass]
-  }),
-  new Pokemon({
-    name: PokemonName.Toedscool,
-    dex: 948,
-    type: TypeName.Ground,
-    type2: TypeName.Grass,
-    abilities: {
-      first: Ability.MyceliumMight
-    },
-    eggGroups: [EggGroup.Grass]
-  }),
-  new Pokemon({
-    name: PokemonName.Toedscruel,
-    dex: 949,
-    type: TypeName.Ground,
-    type2: TypeName.Grass,
-    abilities: {
-      first: Ability.MyceliumMight
-    },
-    eggGroups: [EggGroup.Grass]
-  }),
-  new Pokemon({
-    name: PokemonName.Klawf,
-    dex: 950,
-    type: TypeName.Rock,
-    category: Category.NonEvolve,
-    abilities: {
-      first: Ability.AngerShell,
-      second: Ability.ShellArmor,
-      hidden: Ability.Regenerator
-    },
-    eggGroups: [EggGroup.Water3]
-  }),
-  new Pokemon({
-    name: PokemonName.Capsakid,
-    dex: 951,
-    type: TypeName.Grass,
-    abilities: {
-      first: Ability.Chlorophyll,
-      second: Ability.Insomnia,
-      hidden: Ability.Klutz
-    },
-    eggGroups: [EggGroup.Grass]
-  }),
-  new Pokemon({
-    name: PokemonName.Scovillain,
-    dex: 952,
-    type: TypeName.Grass,
-    type2: TypeName.Fire,
-    abilities: {
-      first: Ability.Chlorophyll,
-      second: Ability.Insomnia,
-      hidden: Ability.Moody
-    },
-    eggGroups: [EggGroup.Grass]
-  }),
-  new Pokemon({
-    name: PokemonName.Rellor,
-    dex: 953,
-    type: TypeName.Bug,
-    abilities: {
-      first: Ability.CompoundEyes,
-      hidden: Ability.ShedSkin
-    },
-    eggGroups: [EggGroup.Bug]
-  }),
-  new Pokemon({
-    name: PokemonName.Rabsca,
-    dex: 954,
-    type: TypeName.Bug,
-    type2: TypeName.Psychic,
-    abilities: {
-      first: Ability.Synchronize,
-      hidden: Ability.Telepathy
-    },
-    eggGroups: [EggGroup.Bug]
-  }),
-  new Pokemon({
-    name: PokemonName.Flittle,
-    dex: 955,
-    type: TypeName.Psychic,
-    abilities: {
-      first: Ability.Anticipation,
-      second: Ability.Frisk,
-      hidden: Ability.SpeedBoost
-    },
-    eggGroups: [EggGroup.Flying]
-  }),
-  new Pokemon({
-    name: PokemonName.Espathra,
-    dex: 956,
-    type: TypeName.Psychic,
-    abilities: {
-      first: Ability.Opportunist,
-      second: Ability.Frisk,
-      hidden: Ability.SpeedBoost
-    },
-    eggGroups: [EggGroup.Flying]
-  }),
-  new Pokemon({
-    name: PokemonName.Tinkatink,
-    dex: 957,
-    type: TypeName.Fairy,
-    type2: TypeName.Steel,
-    abilities: {
-      first: Ability.MoldBreaker,
-      second: Ability.OwnTempo,
-      hidden: Ability.Pickpocket
-    },
-    eggGroups: [EggGroup.Fairy]
-  }),
-  new Pokemon({
-    name: PokemonName.Tinkatuff,
-    dex: 958,
-    type: TypeName.Fairy,
-    type2: TypeName.Steel,
-    abilities: {
-      first: Ability.MoldBreaker,
-      second: Ability.OwnTempo,
-      hidden: Ability.Pickpocket
-    },
-    eggGroups: [EggGroup.Fairy]
-  }),
-  new Pokemon({
-    name: PokemonName.Tinkaton,
-    dex: 959,
-    type: TypeName.Fairy,
-    type2: TypeName.Steel,
-    abilities: {
-      first: Ability.MoldBreaker,
-      second: Ability.OwnTempo,
-      hidden: Ability.Pickpocket
-    },
-    eggGroups: [EggGroup.Fairy]
-  }),
-  new Pokemon({
-    name: PokemonName.Wiglett,
-    dex: 960,
-    type: TypeName.Water,
-    abilities: {
-      first: Ability.Gooey,
-      second: Ability.Rattled,
-      hidden: Ability.SandVeil
-    },
-    eggGroups: [EggGroup.Water3]
-  }),
-  new Pokemon({
-    name: PokemonName.Wugtrio,
-    dex: 961,
-    type: TypeName.Water,
-    abilities: {
-      first: Ability.Gooey,
-      second: Ability.Rattled,
-      hidden: Ability.SandVeil
-    },
-    eggGroups: [EggGroup.Water3]
-  }),
-  new Pokemon({
-    name: PokemonName.Bombirdier,
-    dex: 962,
-    type: TypeName.Flying,
-    type2: TypeName.Dark,
-    category: Category.NonEvolve,
-    abilities: {
-      first: Ability.BigPecks,
-      second: Ability.KeenEye,
-      hidden: Ability.RockyPayload
-    },
-    eggGroups: [EggGroup.Flying]
-  }),
-  new Pokemon({
-    name: PokemonName.Finizen,
-    dex: 963,
-    type: TypeName.Water,
-    abilities: {
-      first: Ability.WaterVeil
-    },
-    eggGroups: [EggGroup.Field, EggGroup.Water2]
-  }),
-  new Pokemon({
-    name: PokemonName.Palafin,
-    dex: 964,
-    type: TypeName.Water,
-    abilities: {
-      first: Ability.ZeroToHero
-    },
-    eggGroups: [EggGroup.Field, EggGroup.Water2]
-  }),
-  new Pokemon({
-    name: PokemonName.Varoom,
-    dex: 965,
-    type: TypeName.Steel,
-    type2: TypeName.Poison,
-    abilities: {
-      first: Ability.Overcoat,
-      hidden: Ability.SlowStart
-    },
-    eggGroups: [EggGroup.Mineral]
-  }),
-  new Pokemon({
-    name: PokemonName.Revavroom,
-    dex: 966,
-    type: TypeName.Steel,
-    type2: TypeName.Poison,
-    abilities: {
-      first: Ability.Overcoat,
-      hidden: Ability.Filter
-    },
-    eggGroups: [EggGroup.Mineral]
-  }),
-  new Pokemon({
-    name: PokemonName.Cyclizar,
-    dex: 967,
-    type: TypeName.Dragon,
-    type2: TypeName.Normal,
-    category: Category.NonEvolve,
-    abilities: {
-      first: Ability.ShedSkin,
-      hidden: Ability.Regenerator
-    },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Orthworm,
-    dex: 968,
-    type: TypeName.Steel,
-    category: Category.NonEvolve,
-    abilities: {
-      first: Ability.EarthEater,
-      hidden: Ability.SandVeil
-    },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Glimmet,
-    dex: 969,
-    type: TypeName.Rock,
-    type2: TypeName.Poison,
-    abilities: {
-      first: Ability.ToxicDebris,
-      hidden: Ability.Corrosion
-    },
-    eggGroups: [EggGroup.Mineral]
-  }),
-  new Pokemon({
-    name: PokemonName.Glimmora,
-    dex: 970,
-    type: TypeName.Rock,
-    type2: TypeName.Poison,
-    abilities: {
-      first: Ability.ToxicDebris,
-      hidden: Ability.Corrosion
-    },
-    eggGroups: [EggGroup.Mineral]
-  }),
-  new Pokemon({
-    name: PokemonName.Greavard,
-    dex: 971,
-    type: TypeName.Ghost,
-    abilities: {
-      first: Ability.Pickup,
-      hidden: Ability.Fluffy
-    },
-    eggGroups: [EggGroup.Mineral]
-  }),
-  new Pokemon({
-    name: PokemonName.Houndstone,
-    dex: 972,
-    type: TypeName.Ghost,
-    abilities: {
-      first: Ability.SandRush,
-      hidden: Ability.Fluffy
-    },
-    eggGroups: [EggGroup.Mineral]
-  }),
-  new Pokemon({
-    name: PokemonName.Flamigo,
-    dex: 973,
-    type: TypeName.Flying,
-    type2: TypeName.Fighting,
-    category: Category.NonEvolve,
-    abilities: {
-      first: Ability.Scrappy,
-      second: Ability.TangledFeet,
-      hidden: Ability.Costar
-    },
-    eggGroups: [EggGroup.Flying]
-  }),
-  new Pokemon({
-    name: PokemonName.Cetoddle,
-    dex: 974,
-    type: TypeName.Ice,
-    abilities: {
-      first: Ability.ThickFat,
-      second: Ability.SnowCloak,
-      hidden: Ability.SheerForce
-    },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Cetitan,
-    dex: 975,
-    type: TypeName.Ice,
-    abilities: {
-      first: Ability.ThickFat,
-      second: Ability.SlushRush,
-      hidden: Ability.SheerForce
-    },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Veluza,
-    dex: 976,
-    type: TypeName.Water,
-    type2: TypeName.Psychic,
-    category: Category.NonEvolve,
-    abilities: {
-      first: Ability.MoldBreaker,
-      hidden: Ability.Sharpness
-    },
-    eggGroups: [EggGroup.Water2]
-  }),
-  new Pokemon({
-    name: PokemonName.Dondozo,
-    dex: 977,
-    type: TypeName.Water,
-    category: Category.NonEvolve,
-    abilities: {
-      first: Ability.Unaware,
-      second: Ability.Oblivious,
-      hidden: Ability.WaterVeil
-    },
-    eggGroups: [EggGroup.Water2]
-  }),
-  new Pokemon({
-    name: PokemonName.Tatsugiri,
-    dex: 978,
-    type: TypeName.Dragon,
-    type2: TypeName.Water,
-    category: Category.NonEvolve,
-    abilities: {
-      first: Ability.Commander,
-      hidden: Ability.StormDrain
-    },
-    eggGroups: [EggGroup.Water2]
-  }),
-  new Pokemon({
-    name: PokemonName.Annihilape,
-    dex: 979,
-    type: TypeName.Fighting,
-    type2: TypeName.Ghost,
-    abilities: {
-      first: Ability.VitalSpirit,
-      second: Ability.InnerFocus,
-      hidden: Ability.Defiant
-    },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Clodsire,
-    dex: 980,
-    type: TypeName.Poison,
-    type2: TypeName.Ground,
-    abilities: {
-      first: Ability.PoisonPoint,
-      second: Ability.WaterAbsorb,
-      hidden: Ability.Unaware
-    },
-    eggGroups: [EggGroup.Water1, EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Farigiraf,
-    dex: 981,
-    type: TypeName.Normal,
-    type2: TypeName.Psychic,
-    abilities: {
-      first: Ability.CudChew,
-      second: Ability.ArmorTail,
-      hidden: Ability.SapSipper
-    },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Dudunsparce,
-    dex: 982,
-    type: TypeName.Normal,
-    abilities: {
-      first: Ability.SereneGrace,
-      second: Ability.RunAway,
-      hidden: Ability.Rattled
-    },
-    eggGroups: [EggGroup.Field]
-  }),
-  new Pokemon({
-    name: PokemonName.Kingambit,
-    dex: 983,
-    type: TypeName.Dark,
-    type2: TypeName.Steel,
-    abilities: {
-      first: Ability.Defiant,
-      second: Ability.SupremeOverlord,
-      hidden: Ability.Pressure
-    },
-    eggGroups: [EggGroup.HumanLike]
-  }),
-  new Pokemon({
-    name: PokemonName.GreatTusk,
-    dex: 984,
-    type: TypeName.Ground,
-    type2: TypeName.Fighting,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.Protosynthesis
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.ScreamTail,
-    dex: 985,
-    type: TypeName.Fairy,
-    type2: TypeName.Psychic,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.Protosynthesis
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.BruteBonnet,
-    dex: 986,
-    type: TypeName.Grass,
-    type2: TypeName.Dark,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.Protosynthesis
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.FlutterMane,
-    dex: 987,
-    type: TypeName.Ghost,
-    type2: TypeName.Fairy,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.Protosynthesis
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.SlitherWing,
-    dex: 988,
-    type: TypeName.Bug,
-    type2: TypeName.Fighting,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.Protosynthesis
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.SandyShocks,
-    dex: 989,
-    type: TypeName.Electric,
-    type2: TypeName.Ground,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.Protosynthesis
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.IronTreads,
-    dex: 990,
-    type: TypeName.Ground,
-    type2: TypeName.Steel,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.QuarkDrive
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.IronBundle,
-    dex: 991,
-    type: TypeName.Ice,
-    type2: TypeName.Water,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.QuarkDrive
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.IronHands,
-    dex: 992,
-    type: TypeName.Fighting,
-    type2: TypeName.Electric,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.QuarkDrive
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.IronJugulis,
-    dex: 993,
-    type: TypeName.Dark,
-    type2: TypeName.Flying,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.QuarkDrive
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.IronMoth,
-    dex: 994,
-    type: TypeName.Fire,
-    type2: TypeName.Poison,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.QuarkDrive
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.IronThorns,
-    dex: 995,
-    type: TypeName.Rock,
-    type2: TypeName.Electric,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.QuarkDrive
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.Frigibax,
-    dex: 996,
-    type: TypeName.Dragon,
-    type2: TypeName.Ice,
-    abilities: {
-      first: Ability.ThermalExchange,
-      hidden: Ability.IceBody
-    },
-    eggGroups: [EggGroup.Dragon, EggGroup.Mineral]
-  }),
-  new Pokemon({
-    name: PokemonName.Arctibax,
-    dex: 997,
-    type: TypeName.Dragon,
-    type2: TypeName.Ice,
-    abilities: {
-      first: Ability.ThermalExchange,
-      hidden: Ability.IceBody
-    },
-    eggGroups: [EggGroup.Dragon, EggGroup.Mineral]
-  }),
-  new Pokemon({
-    name: PokemonName.Baxcalibur,
-    dex: 998,
-    type: TypeName.Dragon,
-    type2: TypeName.Ice,
-    abilities: {
-      first: Ability.ThermalExchange,
-      hidden: Ability.IceBody
-    },
-    eggGroups: [EggGroup.Dragon, EggGroup.Mineral]
-  }),
-  new Pokemon({
-    name: PokemonName.Gimmighoul,
-    dex: 999,
-    type: TypeName.Ghost,
-    abilities: {
-      first: Ability.Rattled
-    },
-    eggGroups: [EggGroup.NoEggs],
-    defaultForm: PokemonName.GimmighoulChest,
-    forms: [
-      {
-        formName: PokemonName.GimmighoulRoaming,
-        abilities: {
-          first: Ability.RunAway
+      ]
+    },
+    {
+      name: PokemonName.Archaludon,
+      dex: 1018,
+      type: Type.Steel,
+      type2: Type.Dragon,
+      eggGroup1: EggGroup.Mineral,
+      eggGroup2: EggGroup.Dragon
+    },
+    {
+      name: PokemonName.Hydrapple,
+      dex: 1019,
+      type: Type.Grass,
+      type2: Type.Dragon,
+      eggGroup1: EggGroup.Grass,
+      eggGroup2: EggGroup.Dragon
+    },
+    {
+      name: PokemonName.GougingFire,
+      dex: 1020,
+      type: Type.Fire,
+      type2: Type.Dragon,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.RagingBolt,
+      dex: 1021,
+      type: Type.Electric,
+      type2: Type.Dragon,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.IronBoulder,
+      dex: 1022,
+      type: Type.Rock,
+      type2: Type.Psychic,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.IronCrown,
+      dex: 1023,
+      type: Type.Steel,
+      type2: Type.Psychic,
+      category: [Category.NonEvolving, Category.Paradox],
+      eggGroup1: EggGroup.NoEggs
+    },
+    {
+      name: PokemonName.Terapagos,
+      dex: 1024,
+      type: Type.Normal,
+      category: [Category.NonEvolving, Category.Legendary],
+      eggGroup1: EggGroup.NoEggs,
+      mustHaveForm: true,
+      alternateForms: [
+        {
+          name: PokemonName.TerapagosNormal,
+          type: Type.Normal,
+          category: [Category.NonEvolving, Category.Legendary]
+        },
+        {
+          name: PokemonName.TerapagosTerastal,
+          type: Type.Normal,
+          category: [Category.NonEvolving, Category.Legendary]
+        },
+        {
+          name: PokemonName.TerapagosStellar,
+          type: Type.Normal,
+          category: [Category.NonEvolving, Category.Legendary]
         }
-      }
-    ]
-  }),
-  new Pokemon({
-    name: PokemonName.Gholdengo,
-    dex: 1000,
-    type: TypeName.Steel,
-    type2: TypeName.Ghost,
-    abilities: {
-      first: Ability.GoodAsGold
+      ]
     },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.WoChien,
-    dex: 1001,
-    type: TypeName.Dark,
-    type2: TypeName.Grass,
-    category: [Category.Legendary, Category.NonEvolve],
-    abilities: {
-      first: Ability.TabletsOfRuin
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.ChienPao,
-    dex: 1002,
-    type: TypeName.Dark,
-    type2: TypeName.Ice,
-    category: [Category.Legendary, Category.NonEvolve],
-    abilities: {
-      first: Ability.SwordOfRuin
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.TingLu,
-    dex: 1003,
-    type: TypeName.Dark,
-    type2: TypeName.Ground,
-    category: [Category.Legendary, Category.NonEvolve],
-    abilities: {
-      first: Ability.VesselOfRuin
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.ChiYu,
-    dex: 1004,
-    type: TypeName.Dark,
-    type2: TypeName.Fire,
-    category: [Category.Legendary, Category.NonEvolve],
-    abilities: {
-      first: Ability.BeadsOfRuin
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.RoaringMoon,
-    dex: 1005,
-    type: TypeName.Dragon,
-    type2: TypeName.Dark,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.Protosynthesis
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.IronValiant,
-    dex: 1006,
-    type: TypeName.Fairy,
-    type2: TypeName.Fighting,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.QuarkDrive
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.Koraidon,
-    dex: 1007,
-    type: TypeName.Fighting,
-    type2: TypeName.Dragon,
-    category: [Category.Legendary, Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.OrichalcumPulse
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.Miraidon,
-    dex: 1008,
-    type: TypeName.Electric,
-    type2: TypeName.Dragon,
-    category: [Category.Legendary, Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.HadronEngine
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.WalkingWake,
-    dex: 1009,
-    type: TypeName.Water,
-    type2: TypeName.Dragon,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.Protosynthesis
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.IronLeaves,
-    dex: 1010,
-    type: TypeName.Grass,
-    type2: TypeName.Psychic,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.QuarkDrive
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.Dipplin,
-    dex: 1011,
-    type: TypeName.Grass,
-    type2: TypeName.Dragon,
-    abilities: {
-      first: Ability.SupersweetSyrup,
-      second: Ability.Gluttony,
-      hidden: Ability.StickyHold
-    },
-    eggGroups: [EggGroup.Grass, EggGroup.Dragon]
-  }),
-  new Pokemon({
-    name: PokemonName.Poltchageist,
-    dex: 1012,
-    type: TypeName.Grass,
-    type2: TypeName.Ghost,
-    abilities: {
-      first: Ability.Hospitality,
-      hidden: Ability.Heatproof
-    },
-    eggGroups: [EggGroup.Mineral, EggGroup.Amorphous]
-  }),
-  new Pokemon({
-    name: PokemonName.Sinistcha,
-    dex: 1013,
-    type: TypeName.Grass,
-    type2: TypeName.Ghost,
-    abilities: {
-      first: Ability.Hospitality,
-      hidden: Ability.Heatproof
-    },
-    eggGroups: [EggGroup.Mineral, EggGroup.Amorphous]
-  }),
-  new Pokemon({
-    name: PokemonName.Okidogi,
-    dex: 1014,
-    type: TypeName.Poison,
-    type2: TypeName.Fighting,
-    category: [Category.Legendary, Category.NonEvolve],
-    abilities: {
-      first: Ability.ToxicChain,
-      hidden: Ability.GuardDog
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.Munkidori,
-    dex: 1015,
-    type: TypeName.Poison,
-    type2: TypeName.Psychic,
-    category: [Category.Legendary, Category.NonEvolve],
-    abilities: {
-      first: Ability.ToxicChain,
-      hidden: Ability.Frisk
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.Fezandipiti,
-    dex: 1016,
-    type: TypeName.Poison,
-    type2: TypeName.Fairy,
-    category: [Category.Legendary, Category.NonEvolve],
-    abilities: {
-      first: Ability.ToxicChain,
-      hidden: Ability.Technician
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.Ogerpon,
-    dex: 1017,
-    type: TypeName.Grass,
-    category: [Category.Legendary, Category.NonEvolve],
-    abilities: {
-      first: Ability.Defiant
-    },
-    eggGroups: [EggGroup.NoEggs],
-    defaultForm: PokemonName.OgerponTeal,
-    forms: [
-      {
-        formName: PokemonName.OgerponWellspring,
-        type: TypeName.Grass,
-        type2: TypeName.Water,
-        abilities: {
-          first: Ability.WaterAbsorb
-        }
-      },
-      {
-        formName: PokemonName.OgerponHearthflame,
-        type: TypeName.Grass,
-        type2: TypeName.Fire,
-        abilities: {
-          first: Ability.MoldBreaker
-        }
-      },
-      {
-        formName: PokemonName.OgerponCornerstone,
-        type: TypeName.Grass,
-        type2: TypeName.Rock,
-        abilities: {
-          first: Ability.Sturdy
-        }
-      }
-    ]
-  }),
-  new Pokemon({
-    name: PokemonName.Archaludon,
-    dex: 1018,
-    type: TypeName.Steel,
-    type2: TypeName.Dragon,
-    abilities: {
-      first: Ability.Stamina,
-      second: Ability.Sturdy,
-      hidden: Ability.Stalwart
-    },
-    eggGroups: [EggGroup.Mineral, EggGroup.Dragon]
-  }),
-  new Pokemon({
-    name: PokemonName.Hydrapple,
-    dex: 1019,
-    type: TypeName.Grass,
-    type2: TypeName.Dragon,
-    abilities: {
-      first: Ability.SupersweetSyrup,
-      second: Ability.Regenerator,
-      hidden: Ability.StickyHold
-    },
-    eggGroups: [EggGroup.Grass, EggGroup.Dragon]
-  }),
-  new Pokemon({
-    name: PokemonName.GougingFire,
-    dex: 1020,
-    type: TypeName.Fire,
-    type2: TypeName.Dragon,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.Protosynthesis
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.RagingBolt,
-    dex: 1021,
-    type: TypeName.Electric,
-    type2: TypeName.Dragon,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.Protosynthesis
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.IronBoulder,
-    dex: 1022,
-    type: TypeName.Rock,
-    type2: TypeName.Psychic,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.QuarkDrive
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.IronCrown,
-    dex: 1023,
-    type: TypeName.Steel,
-    type2: TypeName.Psychic,
-    category: [Category.Paradox, Category.NonEvolve],
-    abilities: {
-      first: Ability.QuarkDrive
-    },
-    eggGroups: [EggGroup.NoEggs]
-  }),
-  new Pokemon({
-    name: PokemonName.Terapagos,
-    dex: 1024,
-    type: TypeName.Normal,
-    category: [Category.Legendary, Category.NonEvolve],
-    abilities: {
-      first: Ability.TeraShift
-    },
-    eggGroups: [EggGroup.NoEggs],
-    defaultForm: PokemonName.TerapagosNormal,
-    forms: [
-      {
-        formName: PokemonName.TerapagosTerastal,
-        abilities: {
-          first: Ability.TeraShell
-        }
-      },
-      {
-        formName: PokemonName.TerapagosStellar,
-        abilities: {
-          first: Ability.TeraformZero
-        }
-      }
-    ]
-  }),
-  new Pokemon({
-    name: PokemonName.Pecharunt,
-    dex: 1025,
-    type: TypeName.Poison,
-    type2: TypeName.Ghost,
-    category: [Category.Mythical, Category.NonEvolve],
-    abilities: {
-      first: Ability.PoisonPuppeteer
-    },
-    eggGroups: [EggGroup.NoEggs]
-  })
-];
+    {
+      name: PokemonName.Pecharunt,
+      dex: 1025,
+      type: Type.Poison,
+      type2: Type.Ghost,
+      category: [Category.NonEvolving, Category.Mythical],
+      eggGroup1: EggGroup.NoEggs
+    }
+  ]);

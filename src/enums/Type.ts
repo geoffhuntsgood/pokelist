@@ -1,4 +1,4 @@
-export enum TypeName {
+export enum Type {
   Bug = "Bug",
   Dark = "Dark",
   Dragon = "Dragon",
@@ -16,5 +16,5 @@ export enum TypeName {
   Psychic = "Psychic",
   Rock = "Rock",
   Steel = "Steel",
-  Water = "Water",
+  Water = "Water"
 }

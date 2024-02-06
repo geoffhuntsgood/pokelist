@@ -1,11 +1,9 @@
-import { TypeName } from "../enums";
+import { Types } from "../classes";
 
 export const TypeBadge = ({
-  type1,
-  type2
+  type
 }: {
-  type1: TypeName;
-  type2?: TypeName;
+  type: Types
 }) => {
   const colors = {
     Bug: "#A8B81F",
@@ -38,18 +36,18 @@ export const TypeBadge = ({
       width: "49%"
     },
     primary: {
-      backgroundColor: colors[type1]
+      backgroundColor: colors[type.type1]
     },
     secondary: {
-      backgroundColor: type2 ? colors[type2] : "white"
+      backgroundColor: type.type2 ? colors[type.type2] : "white"
     }
   };
 
   return (
     <>
-      <span style={{ ...styles.badge, ...styles.primary }}>{type1}</span>
-      {type2 && (
-        <span style={{ ...styles.badge, ...styles.secondary }}>{type2}</span>
+      <span style={{ ...styles.badge, ...styles.primary }}>{type.type1}</span>
+      {type.type2 && (
+        <span style={{ ...styles.badge, ...styles.secondary }}>{type.type2}</span>
       )}
     </>
   );

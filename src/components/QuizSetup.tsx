@@ -1,124 +1,93 @@
-import { Box, Button, Checkbox, FormControlLabel, Grid } from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import * as api from "../api/pokemonApi";
 import tagLine from "../assets/img/catchemall.png";
 import logo from "../assets/img/logo.png";
 import { Pokemon } from "../classes/Pokemon";
-import { Category, EggGroup, TypeName } from "../enums";
-import {
-  allPokemonList,
-  getNonEvolvers,
-  getPokemonByGen
-} from "../resources/pokemon/pokemonLists";
-import { QuizButtons } from "./QuizButtons";
+import { Category, EggGroup, Type } from "../enums";
+import { QuizCheckboxes } from "./QuizCheckboxes";
 
 export const QuizSetup = () => {
   const navigate = useNavigate();
-  const [category, setCategory] = useState("");
-  const [subCategory, setSubCategory] = useState("");
-  const [options, setOptions] = useState(
-    [] as { value: string; name: string }[]
-  );
-  const [includeOtherCategories, setIncludeOtherCategories] = useState(false);
+
+  const mapEntries = (values: (Category | Type | EggGroup | string)[]) => {
+    return Object.fromEntries(values.map((value: string) => {
+      return [value, false];
+    }));
+  };
+
+  const setFalse = (state: { [k: string]: boolean }) => {
+    Object.keys(state).forEach((key: string) => {
+      state[key] = false;
+    });
+  };
+
+  const [categoryState, setCategoryState] = useState(mapEntries(Object.values(Category)));
+  const [genState, setGenState] = useState(mapEntries(["1", "2", "3", "4", "5", "6", "7", "8", "9"]));
+  const [typeState, setTypeState] = useState(mapEntries(Object.values(Type)));
+  const [eggGroupState, setEggGroupState] = useState(mapEntries(Object.values(EggGroup)));
+  const [otherState, setOtherState] = useState(mapEntries(["Name 'em all!", "Include alternate forms", "Include regional variants"]));
+  const [ready, setReady] = useState(false);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    if (otherState["Name 'em all!"]) {
+      setFalse(categoryState);
+      setFalse(genState);
+      setFalse(typeState);
+      setFalse(eggGroupState);
+    }
+  }, [otherState]);
+
+  useEffect(() => {
+    setReady(
+      Object.values(categoryState).some(x => x) ||
+      Object.values(genState).some(x => x) ||
+      Object.values(typeState).some(x => x) ||
+      Object.values(eggGroupState).some(x => x) ||
+      otherState["Name 'em all!"]
+    );
+  }, [categoryState, genState, typeState, eggGroupState, otherState]);
 
   const startQuiz = () => {
     let pokemon: Pokemon[] = [];
-    let displayText = "";
 
-    switch (category) {
-      case "all":
-        pokemon = allPokemonList;
-        displayText = "Gotta name 'em all!";
-        break;
-      case "category":
-        if (subCategory === Category.NonEvolve) {
-          pokemon = getNonEvolvers(includeOtherCategories);
-        } else {
-          pokemon = allPokemonList.filter((pokemon: Pokemon) => {
-            return (
-              pokemon.category === subCategory ||
-              pokemon.category?.includes(subCategory as Category)
-            );
-          });
-        }
-        displayText = `Name the ${subCategory} Pokémon!`;
-        break;
-      case "generation":
-        pokemon = getPokemonByGen(parseInt(subCategory));
-        displayText = `Name the Generation ${subCategory} Pokémon!`;
-        break;
-      case "type":
-        pokemon = allPokemonList.filter((pokemon) => {
-          return pokemon.type === subCategory || pokemon.type2 === subCategory;
-        });
-        displayText = `Name the ${subCategory}-Type Pokémon!`;
-        break;
-      case "eggGroup":
-        pokemon = allPokemonList.filter((pokemon) => {
-          return pokemon.eggGroups.includes(subCategory as EggGroup);
-        });
-        displayText = `Name Pokémon in the ${subCategory} Egg Group!`;
-        break;
+    if (otherState["Name 'em all!"]) {
+      pokemon = api.allPokemon;
+    } else {
+      Object.keys(genState).forEach((key: string) => {
+        if (genState[key]) pokemon = pokemon.concat(api.getByGen(parseInt(key)));
+      });
+
+      Object.keys(categoryState).forEach((key: string) => {
+        if (categoryState[key]) pokemon = pokemon.concat(api.getByCategory(key as Category));
+      });
+
+      Object.keys(typeState).forEach((key: string) => {
+        if (typeState[key]) pokemon = pokemon.concat(api.getByType(key as Type));
+      });
+
+      Object.keys(eggGroupState).forEach((key: string) => {
+        if (eggGroupState[key]) pokemon = pokemon.concat(api.getByEggGroup(key as EggGroup));
+      });
     }
-    navigate("/quiz/pokemon", { state: { pokemon, displayText } });
-  };
 
-  const setQuizCategory = (value: string): void => {
-    setSubCategory("");
-    setCategory(value);
-  };
-
-  const setOtherCategories = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setIncludeOtherCategories(event.target.checked);
-  };
-
-  const baseOptions = [
-    { value: "all", name: "All of them!" },
-    { value: "category", name: "Category" },
-    { value: "generation", name: "Generation" },
-    { value: "type", name: "Type" },
-    { value: "eggGroup", name: "Egg Group" }
-  ];
-
-  useEffect(() => {
-    switch (category) {
-      case "category":
-        setOptions(
-          Object.entries(Category).map((value: [string, Category]) => ({
-            value: value[1],
-            name: value[1]
-          }))
-        );
-        break;
-      case "generation":
-        setOptions(
-          ["1", "2", "3", "4", "5", "6", "7", "8", "9"].map((gen: string) => ({
-            value: gen,
-            name: gen
-          }))
-        );
-        break;
-      case "type":
-        setOptions(
-          Object.keys(TypeName).map((key: string) => ({
-            value: key,
-            name: key
-          }))
-        );
-        break;
-      case "eggGroup":
-        setOptions(
-          Object.entries(EggGroup).map((value: [string, EggGroup]) => ({
-            value: value[0],
-            name: value[1]
-          }))
-        );
-        break;
-      default:
-        setOptions([]);
+    if (otherState["Include alternate forms"]) {
+      pokemon = api.includeAlternateForms(pokemon);
     }
-  }, [category]);
+
+    if (otherState["Include regional variants"]) {
+      pokemon = api.includeRegionalVariants(pokemon);
+    }
+
+    if (pokemon.length > 0) {
+      navigate("/quiz/pokemon", { state: { pokemon } });
+    } else {
+      setError(true);
+    }
+  };
 
   const pageMotion = {
     initial: { opacity: 0, y: 0 },
@@ -141,8 +110,8 @@ export const QuizSetup = () => {
       }
     },
     background: {
-      height: "90vh",
-      width: "90vw",
+      height: "95vh",
+      width: "95vw",
       margin: "0 auto",
       paddingTop: "20px",
       backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -166,59 +135,23 @@ export const QuizSetup = () => {
             <img src={tagLine} width={500} height={100} />
           </Grid>
 
-          <QuizButtons
-            value={category}
-            onChangeFunc={setQuizCategory}
-            options={baseOptions}
-          />
+          <QuizCheckboxes label="Category" state={categoryState} setStateFunc={setCategoryState} />
+          <QuizCheckboxes label="Generation" state={genState} setStateFunc={setGenState} />
+          <QuizCheckboxes label="Type" state={typeState} setStateFunc={setTypeState} />
+          <QuizCheckboxes label="Egg Group" state={eggGroupState} setStateFunc={setEggGroupState} />
+          <QuizCheckboxes label="Other" state={otherState} setStateFunc={setOtherState} />
 
-          {options.length > 9 && (
-            <>
-              <QuizButtons
-                value={subCategory}
-                onChangeFunc={setSubCategory}
-                options={options.slice(0, options.length / 2)}
-              />
-              <QuizButtons
-                value={subCategory}
-                onChangeFunc={setSubCategory}
-                options={options.slice(options.length / 2, options.length)}
-              />
-            </>
-          )}
-          {options.length <= 9 && (
-            <QuizButtons
-              value={subCategory}
-              onChangeFunc={setSubCategory}
-              options={options}
-            />
-          )}
-
-          {(category === "all" ||
-            (category !== null && subCategory !== "")) && (
-              <Grid item xs={12}>
-                {subCategory === Category.NonEvolve && (
-                  <FormControlLabel
-                    label="Include other categories? (Legendaries, Mythicals, etc.)"
-                    sx={{ ...styles.button, ...styles.checkbox }}
-                    control={
-                      <Checkbox
-                        sx={styles.checkbox}
-                        checked={includeOtherCategories}
-                        onChange={setOtherCategories}
-                      />
-                    }
-                  />
-                )}
-                <Button
-                  sx={styles.button}
-                  variant="contained"
-                  onClick={startQuiz}
-                >
-                  Let's Go!
-                </Button>
-              </Grid>
-            )}
+          {ready &&
+            <Grid item xs={12}>
+              <Button
+                sx={styles.button}
+                variant="contained"
+                onClick={startQuiz}
+              >
+                Let's Go!
+              </Button>
+            </Grid>
+          }
         </Grid>
       </motion.div>
     </Box>

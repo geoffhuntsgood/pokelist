@@ -1,11 +1,11 @@
 export enum Category {
-  Baby = "Baby",
-  Fossil = "Fossil",
   Legendary = "Legendary",
   Mythical = "Mythical",
-  NonEvolve = "Non-Evolving",
-  Paradox = "Paradox",
-  Starter = "Starter",
   UltraBeast = "Ultra Beast",
-  UniqueAbility = "Unique Ability"
+  Paradox = "Paradox",
+  Baby = "Baby",
+  Fossil = "Fossil",
+  MegaEvolves = "Has Mega Evolution",
+  NonEvolving = "Non-Evolving",
+  Starter = "Starter"
 }
