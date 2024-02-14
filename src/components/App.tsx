@@ -10,7 +10,7 @@ const App = () => {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<QuizSetup />} />
-        <Route path="/quiz/pokemon" element={<PokemonQuiz />} />
+        <Route path="/pokeQuiz" element={<PokemonQuiz />} />
       </Routes>
     </AnimatePresence>
   );

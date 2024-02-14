@@ -27,14 +27,16 @@ table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
+  border-top: 0 solid black;
 }
 
 th {
   padding: 10px;
   background-color: deepskyblue;
   border: 2px solid deepskyblue;
+  border-top: 0 solid black;
   position: sticky;
-  top: 0;
+  top: -3px;
 }
 
 td {

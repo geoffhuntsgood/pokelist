@@ -1,5 +1,6 @@
 import { AlternateForm, Pokemon } from "../classes";
 import { Category, EggGroup, Type } from "../enums";
+import { RegionName } from "../enums/RegionName";
 import { gen1Pokemon } from "../resources/pokemon/gen1Pokemon";
 import { gen2Pokemon } from "../resources/pokemon/gen2Pokemon";
 import { gen3Pokemon } from "../resources/pokemon/gen3Pokemon";
@@ -65,7 +66,7 @@ export const getByGen = (gen: number): Pokemon[] => {
 };
 
 export const getByType = (type: Type, pokeList: Pokemon[] = allPokemon): Pokemon[] => {
-  return pokeList.filter((pokemon: Pokemon) => pokemon.type.type1 === type || pokemon.type.type2 === type);
+  return pokeList.filter((pokemon: Pokemon) => pokemon.type === type || pokemon.type2 === type);
 };
 
 export const getByCategory = (category: Category, pokeList: Pokemon[] = allPokemon): Pokemon[] => {
@@ -73,78 +74,21 @@ export const getByCategory = (category: Category, pokeList: Pokemon[] = allPokem
 };
 
 export const getByEggGroup = (eggGroup: EggGroup, pokeList: Pokemon[] = allPokemon): Pokemon[] => {
-  return pokeList.filter(
-    (pokemon: Pokemon) => pokemon.eggGroups.group1 === eggGroup || pokemon.eggGroups.group2 === eggGroup
-  );
+  return pokeList.filter((pokemon: Pokemon) => pokemon.eggGroup1 === eggGroup || pokemon.eggGroup2 === eggGroup);
 };
 
-export const includeAlternateForms = (pokeList: Pokemon[] = allPokemon): Pokemon[] => {
-  return pokeList.flatMap((pokemon: Pokemon) => {
-    let toMap: Pokemon[] = [];
-    let index = pokeList.indexOf(pokemon);
-    if (!pokemon.mustHaveForm) toMap.splice(index, 0, pokemon);
-    index++;
+export const getHasAlternateForm = (pokeList: Pokemon[] = allPokemon): Pokemon[] => {
+  return pokeList.filter((pokemon: Pokemon) => pokemon.alternateForms);
+};
 
-    const forms = pokemon.alternateForms || [];
-    forms.forEach((form: AlternateForm) => {
-      toMap.splice(index, 0, {
-        simpleName: form.simpleName,
-        name: form.name,
-        dex: pokemon.dex,
-        type: form.type,
-        category: form.category,
-        abilities: form.abilities || pokemon.abilities,
-        eggGroups: pokemon.eggGroups
-      });
-      index++;
+export const getHasRegionalVariant = (region?: RegionName, pokeList: Pokemon[] = allPokemon): Pokemon[] => {
+  return pokeList.filter((pokemon: Pokemon) => {
+    return pokemon.regionalVariants?.some((variant: AlternateForm) => {
+      return region ? variant.name.includes(region) : true;
     });
-    return toMap;
   });
 };
 
-export const includeRegionalVariants = (pokeList: Pokemon[] = allPokemon): Pokemon[] => {
-  return pokeList.flatMap((pokemon: Pokemon) => {
-    let toMap: Pokemon[] = [];
-    let index = pokeList.indexOf(pokemon);
-    toMap.splice(index, 0, pokemon);
-    index++;
-
-    const variants = pokemon.regionalVariants || [];
-    variants.forEach((variant: AlternateForm) => {
-      toMap.splice(index, 0, {
-        simpleName: variant.simpleName,
-        name: variant.name,
-        dex: pokemon.dex,
-        type: variant.type || pokemon.type,
-        category: variant.category,
-        abilities: variant.abilities || pokemon.abilities,
-        eggGroups: pokemon.eggGroups
-      });
-      index++;
-    });
-    return toMap;
-  });
-};
-
-export const includeMegaEvolutions = (pokeList: Pokemon[] = allPokemon): Pokemon[] => {
-  return pokeList.flatMap((pokemon: Pokemon) => {
-    let toMap: Pokemon[] = [];
-    let index = pokeList.indexOf(pokemon);
-    toMap.splice(index, 0, pokemon);
-    index++;
-
-    const megas = pokemon.megaEvolutions || [];
-    megas.forEach((mega: AlternateForm) => {
-      toMap.splice(index, 0, {
-        simpleName: mega.simpleName,
-        name: mega.name,
-        dex: pokemon.dex,
-        type: mega.type || pokemon.type,
-        abilities: mega.abilities || pokemon.abilities,
-        eggGroups: pokemon.eggGroups
-      });
-      index++;
-    });
-    return toMap;
-  });
+export const getHasMegaEvolution = (pokeList: Pokemon[] = allPokemon): Pokemon[] => {
+  return pokeList.filter((pokemon: Pokemon) => pokemon.megaEvolutions);
 };

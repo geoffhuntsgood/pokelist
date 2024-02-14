@@ -143,7 +143,14 @@ export const gen1Pokemon = (): Pokemon[] =>
       dex: 15,
       type: Type.Bug,
       type2: Type.Poison,
-      eggGroup1: EggGroup.Bug
+      eggGroup1: EggGroup.Bug,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaBeedrill,
+          type: Type.Bug,
+          type2: Type.Poison
+        }
+      ]
     },
     {
       name: PokemonName.Pidgey,
@@ -164,7 +171,14 @@ export const gen1Pokemon = (): Pokemon[] =>
       dex: 18,
       type: Type.Normal,
       type2: Type.Flying,
-      eggGroup1: EggGroup.Flying
+      eggGroup1: EggGroup.Flying,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaPidgeot,
+          type: Type.Normal,
+          type2: Type.Flying
+        }
+      ]
     },
     {
       name: PokemonName.Rattata,
@@ -720,6 +734,13 @@ export const gen1Pokemon = (): Pokemon[] =>
         {
           name: PokemonName.GalarianSlowbro,
           type: Type.Poison,
+          type2: Type.Psychic
+        }
+      ],
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaSlowbro,
+          type: Type.Water,
           type2: Type.Psychic
         }
       ]

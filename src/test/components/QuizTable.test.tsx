@@ -1,15 +1,17 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import { allPokemon } from "../../api/pokemonApi";
+import { Pokemon } from "../../classes";
 import { QuizTable } from "../../components/QuizTable";
-import { PokemonName, Type } from "../../enums";
+import { EggGroup, PokemonName, Type } from "../../enums";
 
 
 describe("QuizTable component rendering", () => {
   const typeCheck = `${Type.Grass}${Type.Poison}`;
+  const defaultPokemon = new Pokemon(PokemonName.Ditto, 0, Type.Normal, EggGroup.Amorphous);
 
-  test("Initialization with less than 10 items and one shown item", () => {
-    render(<QuizTable showItems={["bulbasaur"]} timedOut={false} data={allPokemon.slice(0, 2)} />);
+  test("Initialization with one shown item", () => {
+    render(<QuizTable showItems={["bulbasaur"]} timedOut={false} pokemon={allPokemon.slice(0, 2)} lastPokemon={allPokemon[0]} />);
     expect(screen.getAllByRole("table")).toHaveLength(1);
     const cells = screen.getAllByRole("cell");
     expect(cells).toHaveLength(6);
@@ -19,31 +21,31 @@ describe("QuizTable component rendering", () => {
     expect(cells[3].textContent).toEqual("2");
     expect(cells[4].textContent).toEqual("");
     expect(cells[5].textContent).toEqual(typeCheck);
+    expect(screen.getByAltText("bulbasaur")).toBeInTheDocument();
   });
 
-  test("Initialization with less than 200 items", () => {
-    render(<QuizTable showItems={[]} timedOut={false} data={allPokemon.slice(0, 151)} />);
-    expect(screen.getAllByRole("table")).toHaveLength(2);
+  test("Initialization with special case: Nidoran", () => {
+    render(<QuizTable showItems={["nidoran"]} timedOut={false} pokemon={allPokemon.slice(0, 2)} lastPokemon={allPokemon[28]} />);
+    expect(screen.getAllByRole("table")).toHaveLength(1);
     const cells = screen.getAllByRole("cell");
-    expect(cells).toHaveLength(450);
+    expect(cells).toHaveLength(6);
     expect(cells[0].textContent).toEqual("1");
     expect(cells[1].textContent).toEqual("");
     expect(cells[2].textContent).toEqual(typeCheck);
-    expect(cells[447].textContent).toEqual("151");
-    expect(cells[448].textContent).toEqual("");
-    expect(cells[449].textContent).toEqual(Type.Psychic);
+    expect(screen.getByAltText("female nidoran")).toBeInTheDocument();
+    expect(screen.getByAltText("male nidoran")).toBeInTheDocument();
   });
 
-  test("Initialization with more than 200 items and timed out", () => {
-    render(<QuizTable showItems={[]} timedOut={true} data={allPokemon.slice(0, 251)} />);
-    expect(screen.getAllByRole("table")).toHaveLength(3);
+  test("Initialization with no shown items and timed out", () => {
+    render(<QuizTable showItems={[]} timedOut={true} pokemon={allPokemon.slice(0, 2)} lastPokemon={defaultPokemon} />);
+    expect(screen.getAllByRole("table")).toHaveLength(1);
     const cells = screen.getAllByRole("cell");
-    expect(cells).toHaveLength(747);
+    expect(cells).toHaveLength(6);
     expect(cells[0].textContent).toEqual("1");
     expect(cells[1].textContent).toEqual(PokemonName.Bulbasaur);
     expect(cells[2].textContent).toEqual(typeCheck);
-    expect(cells[744].textContent).toEqual("251");
-    expect(cells[745].textContent).toEqual(PokemonName.Celebi);
-    expect(cells[746].textContent).toEqual(`${Type.Psychic}${Type.Grass}`);
+    expect(cells[3].textContent).toEqual("2");
+    expect(cells[4].textContent).toEqual(PokemonName.Ivysaur);
+    expect(cells[5].textContent).toEqual(typeCheck);
   });
 });

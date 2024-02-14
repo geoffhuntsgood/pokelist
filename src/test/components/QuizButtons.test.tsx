@@ -1,20 +1,18 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, test, vi } from "vitest";
-import { QuizButtons } from "../../components/QuizCheckbox";
+import { QuizButtons } from "../../components/QuizButtons";
 
 describe("QuizButtons component rendering", () => {
   const goldenrod = "#DAA520";
-  const deepskyblue = "#00BFFF";
+  const navy = "#000080";
   const handleClick = vi.fn();
-  const options = [
-    { value: "value1", name: "name1" },
-    { value: "value2", name: "name2" }
-  ];
+
+  const rendering = (state: string) => {
+    return <QuizButtons state={state} setStateFunc={handleClick} options={["name1", "name2"]} />
+  };
 
   test("Render with test options", () => {
-    render(
-      <QuizButtons value="test" onChangeFunc={handleClick} options={options} />
-    );
+    render(rendering("test"));
     const buttons = screen.getAllByRole("button");
     expect(buttons).toHaveLength(2);
     expect(buttons[0]).toHaveTextContent("name1");
@@ -24,15 +22,9 @@ describe("QuizButtons component rendering", () => {
   });
 
   test("Render with option selected", async () => {
-    render(
-      <QuizButtons
-        value="value1"
-        onChangeFunc={handleClick}
-        options={options}
-      />
-    );
+    render(rendering("name1"));
     const button = screen.getAllByRole("button")[0];
-    expect(button).toHaveStyle({ backgroundColor: deepskyblue });
+    expect(button).toHaveStyle({ backgroundColor: navy });
     fireEvent.click(button);
     expect(handleClick).toHaveBeenCalledTimes(1);
   });

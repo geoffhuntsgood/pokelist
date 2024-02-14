@@ -1,5 +1,7 @@
 import { test, expect, describe } from "vitest";
 import { displayTime, sanitizeText } from "../../utils/utils";
+import { AlternateForm } from "../../classes";
+import { PokemonName, Type } from "../../enums";
 
 describe("displayTime tests", () => {
   test("Seconds only", () => {
@@ -18,5 +20,12 @@ describe("displayTime tests", () => {
 describe("sanitizeText tests", () => {
   test("Remove all non-alphanumeric and set to lowercase", () => {
     expect(sanitizeText("!%@(-  a~sDF>7|")).toEqual("asdf7");
+  });
+});
+
+describe("AlternateForm coverage test", () => {
+  test("constructor", () => {
+    const alternate = new AlternateForm(PokemonName.Bulbasaur, Type.Grass);
+    expect(alternate).toHaveProperty("name", PokemonName.Bulbasaur);
   });
 });

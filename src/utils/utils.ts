@@ -10,5 +10,5 @@ export const displayTime = (time: number): string => {
 };
 
 export const sanitizeText = (text: string): string => {
-  return text.replace(new RegExp(/[^A-Za-z0-9]/g), "").toLowerCase();
+  return text.replace(new RegExp(/é/g), "e").replace(new RegExp(/[^A-Za-z0-9]/g), "").toLowerCase();
 };

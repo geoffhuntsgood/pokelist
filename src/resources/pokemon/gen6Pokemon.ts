@@ -552,7 +552,14 @@ export const gen6Pokemon = (): Pokemon[] =>
       type: Type.Rock,
       type2: Type.Fairy,
       category: [Category.NonEvolving, Category.Mythical],
-      eggGroup1: EggGroup.NoEggs
+      eggGroup1: EggGroup.NoEggs,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaDiancie,
+          type: Type.Rock,
+          type2: Type.Fairy
+        }
+      ]
     },
     {
       name: PokemonName.Hoopa,

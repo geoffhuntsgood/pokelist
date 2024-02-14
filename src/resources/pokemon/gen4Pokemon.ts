@@ -325,7 +325,14 @@ export const gen4Pokemon = (): Pokemon[] =>
       dex: 428,
       type: Type.Normal,
       eggGroup1: EggGroup.Field,
-      eggGroup2: EggGroup.HumanLike
+      eggGroup2: EggGroup.HumanLike,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaLopunny,
+          type: Type.Normal,
+          type2: Type.Fighting
+        }
+      ]
     },
     {
       name: PokemonName.Mismagius,
@@ -676,7 +683,14 @@ export const gen4Pokemon = (): Pokemon[] =>
       type: Type.Psychic,
       type2: Type.Fighting,
       eggGroup1: EggGroup.HumanLike,
-      eggGroup2: EggGroup.Amorphous
+      eggGroup2: EggGroup.Amorphous,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaGallade,
+          type: Type.Psychic,
+          type2: Type.Fighting
+        }
+      ]
     },
     {
       name: PokemonName.Probopass,

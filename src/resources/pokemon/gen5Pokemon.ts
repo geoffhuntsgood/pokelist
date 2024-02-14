@@ -264,7 +264,14 @@ export const gen5Pokemon = (): Pokemon[] =>
       dex: 531,
       type: Type.Normal,
       category: Category.NonEvolving,
-      eggGroup1: EggGroup.Fairy
+      eggGroup1: EggGroup.Fairy,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaAudino,
+          type: Type.Normal,
+          type2: Type.Fairy
+        }
+      ]
     },
     {
       name: PokemonName.Timburr,

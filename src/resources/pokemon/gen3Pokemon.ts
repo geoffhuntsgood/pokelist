@@ -25,7 +25,14 @@ export const gen3Pokemon = (): Pokemon[] =>
       type: Type.Grass,
       category: Category.Starter,
       eggGroup1: EggGroup.Monster,
-      eggGroup2: EggGroup.Dragon
+      eggGroup2: EggGroup.Dragon,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaSceptile,
+          type: Type.Grass,
+          type2: Type.Dragon
+        }
+      ]
     },
     {
       name: PokemonName.Torchic,
@@ -81,7 +88,14 @@ export const gen3Pokemon = (): Pokemon[] =>
       type2: Type.Ground,
       category: Category.Starter,
       eggGroup1: EggGroup.Monster,
-      eggGroup2: EggGroup.Water1
+      eggGroup2: EggGroup.Water1,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaSwampert,
+          type: Type.Water,
+          type2: Type.Ground
+        }
+      ]
     },
     {
       name: PokemonName.Poochyena,
@@ -398,7 +412,14 @@ export const gen3Pokemon = (): Pokemon[] =>
       type: Type.Dark,
       type2: Type.Ghost,
       category: Category.NonEvolving,
-      eggGroup1: EggGroup.HumanLike
+      eggGroup1: EggGroup.HumanLike,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaSableye,
+          type: Type.Dark,
+          type2: Type.Ghost
+        }
+      ]
     },
     {
       name: PokemonName.Mawile,
@@ -545,7 +566,14 @@ export const gen3Pokemon = (): Pokemon[] =>
       dex: 319,
       type: Type.Water,
       type2: Type.Dark,
-      eggGroup1: EggGroup.Water2
+      eggGroup1: EggGroup.Water2,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaSharpedo,
+          type: Type.Water,
+          type2: Type.Dark
+        }
+      ]
     },
     {
       name: PokemonName.Wailmer,
@@ -573,7 +601,14 @@ export const gen3Pokemon = (): Pokemon[] =>
       dex: 323,
       type: Type.Fire,
       type2: Type.Ground,
-      eggGroup1: EggGroup.Field
+      eggGroup1: EggGroup.Field,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaCamerupt,
+          type: Type.Fire,
+          type2: Type.Ground
+        }
+      ]
     },
     {
       name: PokemonName.Torkoal,
@@ -654,7 +689,14 @@ export const gen3Pokemon = (): Pokemon[] =>
       type: Type.Dragon,
       type2: Type.Flying,
       eggGroup1: EggGroup.Flying,
-      eggGroup2: EggGroup.Dragon
+      eggGroup2: EggGroup.Dragon,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaAltaria,
+          type: Type.Dragon,
+          type2: Type.Fairy
+        }
+      ]
     },
     {
       name: PokemonName.Zangoose,
@@ -885,7 +927,13 @@ export const gen3Pokemon = (): Pokemon[] =>
       dex: 362,
       type: Type.Ice,
       eggGroup1: EggGroup.Fairy,
-      eggGroup2: EggGroup.Mineral
+      eggGroup2: EggGroup.Mineral,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaGlalie,
+          type: Type.Ice
+        }
+      ]
     },
     {
       name: PokemonName.Spheal,
@@ -962,7 +1010,14 @@ export const gen3Pokemon = (): Pokemon[] =>
       dex: 373,
       type: Type.Dragon,
       type2: Type.Flying,
-      eggGroup1: EggGroup.Dragon
+      eggGroup1: EggGroup.Dragon,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaSalamence,
+          type: Type.Dragon,
+          type2: Type.Flying
+        }
+      ]
     },
     {
       name: PokemonName.Beldum,
@@ -983,7 +1038,14 @@ export const gen3Pokemon = (): Pokemon[] =>
       dex: 376,
       type: Type.Steel,
       type2: Type.Psychic,
-      eggGroup1: EggGroup.Mineral
+      eggGroup1: EggGroup.Mineral,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaMetagross,
+          type: Type.Steel,
+          type2: Type.Psychic
+        }
+      ]
     },
     {
       name: PokemonName.Regirock,
@@ -1068,7 +1130,14 @@ export const gen3Pokemon = (): Pokemon[] =>
       type: Type.Dragon,
       type2: Type.Flying,
       category: [Category.NonEvolving, Category.Legendary],
-      eggGroup1: EggGroup.NoEggs
+      eggGroup1: EggGroup.NoEggs,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaRayquaza,
+          type: Type.Dragon,
+          type2: Type.Flying
+        }
+      ]
     },
     {
       name: PokemonName.Jirachi,

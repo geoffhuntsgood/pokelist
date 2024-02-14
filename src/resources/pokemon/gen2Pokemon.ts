@@ -431,7 +431,14 @@ export const gen2Pokemon = (): Pokemon[] =>
       dex: 208,
       type: Type.Steel,
       type2: Type.Ground,
-      eggGroup1: EggGroup.Mineral
+      eggGroup1: EggGroup.Mineral,
+      megaEvolutions: [
+        {
+          name: PokemonName.MegaSteelix,
+          type: Type.Steel,
+          type2: Type.Ground
+        }
+      ]
     },
     {
       name: PokemonName.Snubbull,

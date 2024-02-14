@@ -6,19 +6,21 @@ import { Pokemon } from "../classes/Pokemon";
 import { QuizTable } from "./QuizTable";
 import { Timer } from "./Timer";
 import { sanitizeText } from "../utils/utils";
+import { EggGroup, PokemonName, Type } from "../enums";
 
 export const PokemonQuiz = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const pokemon = location.state.pokemon;
-  const displayText = location.state.displayText;
+  const pokemon: Pokemon[] = location.state.pokemon;
+  const displayText: string = location.state.displayText;
 
   const [showItems, setShowItems] = useState([] as string[]);
   const [input, setInput] = useState("");
   const [timedOut, setTimedOut] = useState(false);
   const [best, setBest] = useState("");
   const [paused, setPaused] = useState(false);
+  const [lastPokemon, setLastPokemon] = useState(new Pokemon(PokemonName.Ditto, 0, Type.Normal, EggGroup.Amorphous));
 
   useEffect(() => {
     if (showItems.length === pokemon.length) {
@@ -28,10 +30,9 @@ export const PokemonQuiz = () => {
 
   const getInputText = (input: string) => {
     const sanitized = sanitizeText(input);
-    if (
-      pokemon.find((item: Pokemon) => item.simpleName === sanitized) &&
-      !showItems.includes(sanitized)
-    ) {
+    const found = pokemon.find((item: Pokemon) => item.simpleName === sanitized);
+    if (found && !showItems.includes(sanitized)) {
+      setLastPokemon(found);
       setShowItems(
         sanitized === "nidoran"
           ? showItems.concat(sanitized).concat(sanitized)
@@ -149,7 +150,8 @@ export const PokemonQuiz = () => {
         <QuizTable
           showItems={showItems}
           timedOut={timedOut}
-          data={pokemon}
+          pokemon={pokemon}
+          lastPokemon={lastPokemon}
         />
       </motion.span>
     </Box>
