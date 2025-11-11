@@ -1,13 +1,10 @@
-import React from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import App from "./components/App.tsx";
+import App from "./App.tsx";
 import "./index.css";
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <BrowserRouter basename={"/pokelist"}>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
 );
