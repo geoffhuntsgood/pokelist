@@ -1,4 +1,4 @@
-export * from "./Category";
-export * from "./EggGroup";
-export * from "./PokemonName";
+export * from "./MoveCategory";
+export * from "./PokemonCategory";
 export * from "./Type";
+

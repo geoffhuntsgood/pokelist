@@ -1,19 +1,16 @@
-import { AlternateForm } from ".";
-import { Category, EggGroup, PokemonName, Type } from "../enums";
+import { PokemonCategory, Type } from "../enums";
 
 export class Pokemon {
   constructor(
-    public readonly name: PokemonName,
     public readonly dex: number,
+    public readonly name: string,
+    public readonly displayName: string,
     public readonly type: Type,
-    public readonly eggGroup1: EggGroup,
     public readonly type2?: Type,
-    public readonly eggGroup2?: EggGroup,
-    public readonly category?: Category | Category[],
-    public readonly mustHaveForm?: boolean,
-    public readonly alternateForms?: AlternateForm[],
-    public readonly regionalVariants?: AlternateForm[],
-    public readonly megaEvolutions?: AlternateForm[],
-    public simpleName?: string,
+    public readonly isVariant?: boolean,
+    public readonly noDefaultForm?: boolean,
+    public readonly category?: PokemonCategory,
+    public readonly category2?: PokemonCategory,
+    public readonly variants?: string[]
   ) {}
 }

@@ -1,6 +1,5 @@
 {
   "name": "pokelist",
-  "homepage": "/pokelist",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -13,35 +12,33 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.15.3",
-    "@mui/material": "^5.13.6",
-    "framer-motion": "^10.17.9",
-    "react": "^18.2.0",
-    "react-confetti": "^6.1.0",
-    "react-countdown-circle-timer": "^3.2.1",
-    "react-dom": "^18.2.0",
-    "react-router": "^6.21.1",
-    "react-router-dom": "^6.21.1",
-    "react-transition-group": "^4.4.5",
-    "styled-components": "^6.1.6"
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.4",
+    "@mui/material": "^7.3.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-rewards": "^2.1.0",
+    "react-timer-hook": "^4.0.5"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.2.0",
-    "@testing-library/react": "^14.1.2",
-    "@types/react": "^18.0.37",
-    "@types/react-dom": "^18.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.59.0",
-    "@typescript-eslint/parser": "^5.59.0",
-    "@vitejs/plugin-react": "^4.0.0",
-    "@vitest/coverage-v8": "^0.34.1",
-    "eslint": "^8.38.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.3.4",
-    "jsdom": "^23.2.0",
-    "typescript": "^5.0.2",
-    "vite": "^4.3.9",
-    "vitest": "^0.34.1"
+    "@eslint/js": "^9.33.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.0",
+    "@vitest/coverage-v8": "^4.0.7",
+    "eslint": "^9.33.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "jsdom": "^27.1.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.46.3",
+    "vite": "^7.1.2",
+    "vitest": "^4.0.7"
+  },
+  "prettier": {
+    "trailingComma": "none"
   }
 }

@@ -1,65 +1,50 @@
+@font-face {
+  font-family: Jersey10;
+  src: url("./font/Jersey10.ttf");
+}
+
+@font-face {
+  font-family: PokemonGb;
+  src: url("./font/PokemonGb.ttf");
+}
+
+@keyframes pauseTimer {
+  0% {
+    color: white;
+  }
+  50% {
+    color: #fbc02d;
+  }
+  100% {
+    color: white;
+  }
+}
+
+
 :root {
-  height: 100%;
-
-  font-family: "Inter", sans-serif;
-  line-height: 1.5;
-
-  color: rgba(255, 255, 255, 0.87);
-  background-image: url("assets/img/pokemonBackground.jpg");
-  background-size: 100vw 110vh;
+  background-color: rgb(0, 0, 50);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  text-align: center;
+  margin: 0;
+  overflow-y: hidden;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
-.red {
-  color: red;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  border-top: 0 solid black;
-}
-
-th {
-  padding: 10px;
-  background-color: deepskyblue;
-  border: 2px solid deepskyblue;
-  border-top: 0 solid black;
-  position: sticky;
-  top: -3px;
-}
-
-td {
-  line-height: 2rem;
-  background-color: #03045E;
-  border: 2px solid deepskyblue;
-}
-
-.big-table-item {
-  width: 55%;
-}
-
-/* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: darkblue;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgb(200, 200, 200);
 }

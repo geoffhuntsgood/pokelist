@@ -16,5 +16,6 @@ export enum Type {
   Psychic = "Psychic",
   Rock = "Rock",
   Steel = "Steel",
+  Varies = "Varies",
   Water = "Water"
 }
