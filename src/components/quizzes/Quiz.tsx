@@ -115,16 +115,20 @@ export const Quiz = ({
               <ChangeCircleRounded />
             </IconButton>
           </Tooltip>
-          <Tooltip title="Give up?">
-            <IconButton onClick={end} disabled={done}>
-              <Cancel />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title={isRunning ? "pause" : "continue"}>
-            <IconButton onClick={flipTimer} disabled={done}>
-              {isRunning ? <PauseCircle /> : <PlayCircle />}
-            </IconButton>
-          </Tooltip>
+          {!done && (
+            <>
+              <Tooltip title="Give up?">
+                <IconButton onClick={end} disabled={done}>
+                  <Cancel />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title={isRunning ? "pause" : "continue"}>
+                <IconButton onClick={flipTimer} disabled={done}>
+                  {isRunning ? <PauseCircle /> : <PlayCircle />}
+                </IconButton>
+              </Tooltip>
+            </>
+          )}
         </Grid>
       </Grid>
 

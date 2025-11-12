@@ -5,6 +5,9 @@ import type { Ability, Move, Pokemon } from "../../classes";
 import { MoveCategory, PokemonCategory, Type } from "../../enums";
 import {
   getAbilitiesByGen,
+  getMovesByCat,
+  getMovesByGen,
+  getMovesByType,
   getPokemonByCat,
   getPokemonByGen,
   getPokemonByType
@@ -77,12 +80,11 @@ export const PreQuiz = ({
     let moves: Move[] = [];
 
     if (group === "gen") {
-      // moves = getMovesByGen(gen);
-      moves = [];
+      moves = getMovesByGen(gen);
     } else if (group === "type") {
-      // moves = getMovesByType(type);
+      moves = getMovesByType(type as Type);
     } else if (group === "cat") {
-      // moves = getMovesByCat(moveCat);
+      moves = getMovesByCat(moveCat as MoveCategory);
     }
 
     return moves;
@@ -144,7 +146,7 @@ export const PreQuiz = ({
           label="Type"
           value={type}
           handleChange={setType}
-          selectItems={Object.keys(Type)}
+          selectItems={Object.keys(Type).filter((t: string) => t !== "Varies")}
         />
       )}
       {group === "cat" && (
