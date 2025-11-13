@@ -125,19 +125,12 @@ export const theme = createTheme({
   typography: {
     fontFamily: "Jersey10",
     fontSize: 24,
-    h1: {
-      fontFamily: "PokemonGb",
-      fontSize: "3.5rem",
-      fontWeight: "bold",
-      margin: "0 auto",
-      padding: "2rem 0",
-      textAlign: "center"
-    },
     h2: {
       fontFamily: "PokemonGb",
       fontSize: "2rem",
       fontWeight: "bold",
       margin: "0 auto",
+      padding: "10px 0",
       textAlign: "center"
     },
     h3: {

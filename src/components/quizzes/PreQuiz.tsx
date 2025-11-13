@@ -111,7 +111,7 @@ export const PreQuiz = ({
     <Grid container spacing={1} display="flex" justifyContent="center">
       <Grid size={12}>
         <Tooltip title="<- Select Pokémon, Moves, or Abilities ->">
-          <Typography variant="h1" color="textSecondary">
+          <Typography variant="h2" color="textSecondary">
             <IconButton onClick={() => cyclePick("l")}>
               <ArrowCircleLeft />
             </IconButton>

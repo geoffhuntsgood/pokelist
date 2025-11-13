@@ -132,7 +132,7 @@ export const Quiz = ({
         </Grid>
       </Grid>
 
-      {!isRunning && !done && <PKTypography header text="Paused!" />}
+      {!isRunning && !done && <PKTypography text="Paused!" />}
 
       <Box sx={styles.box}>
         <Grid container spacing={1} justifyContent="center">

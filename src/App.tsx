@@ -12,8 +12,7 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <PKTypography header text="Pokélist" />
-      <PKTypography text="Gotta name 'em all!" />
+      <PKTypography text="Pokélist: Gotta name 'em all!" />
       <hr />
 
       {items.length > 0 && (
