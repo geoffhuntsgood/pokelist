@@ -85,6 +85,20 @@ export const theme = createTheme({
         }
       }
     },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          fontSize: "3rem"
+        }
+      }
+    },
+    MuiTabs: {
+      styleOverrides: {
+        root: {
+          marginBottom: "15px"
+        }
+      }
+    },
     MuiTable: {
       styleOverrides: {
         root: {
@@ -134,6 +148,13 @@ export const theme = createTheme({
       textAlign: "center"
     },
     h3: {
+      fontFamily: "PokemonGb",
+      fontSize: "1rem",
+      position: "relative",
+      margin: "1.5rem",
+      float: "right"
+    },
+    h4: {
       fontSize: "1rem"
     }
   },

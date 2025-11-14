@@ -1,6 +1,11 @@
-import { ArrowCircleLeft, ArrowCircleRight } from "@mui/icons-material";
-import { Grid, IconButton, Tooltip, Typography } from "@mui/material";
-import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
+import { Grid, Tab, Tabs } from "@mui/material";
+import {
+  useEffect,
+  useState,
+  type Dispatch,
+  type SetStateAction,
+  type SyntheticEvent
+} from "react";
 import type { Ability, Move, Pokemon } from "../../classes";
 import { MoveCategory, PokemonCategory, Type } from "../../enums";
 import {
@@ -34,11 +39,8 @@ export const PreQuiz = ({
   const gens = ["All", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   const aGens = ["All", "3", "4", "5", "6", "7", "8", "9"];
 
-  const cyclePick = (direction: "l" | "r") => {
-    const picks = ["Pokémon", "Moves", "Abilities"];
-    let index = picks.indexOf(pick);
-    index = direction === "l" ? index - 1 : index + 1;
-    setPick(picks[(index + picks.length) % picks.length]);
+  const handlePick = (_: SyntheticEvent, newValue: string) => {
+    setPick(newValue);
   };
 
   const getLabel = () => {
@@ -110,17 +112,11 @@ export const PreQuiz = ({
   return (
     <Grid container spacing={1} display="flex" justifyContent="center">
       <Grid size={12}>
-        <Tooltip title="<- Select Pokémon, Moves, or Abilities ->">
-          <Typography variant="h2" color="textSecondary">
-            <IconButton onClick={() => cyclePick("l")}>
-              <ArrowCircleLeft />
-            </IconButton>
-            {pick}
-            <IconButton onClick={() => cyclePick("r")}>
-              <ArrowCircleRight />
-            </IconButton>
-          </Typography>
-        </Tooltip>
+        <Tabs value={pick} onChange={handlePick} variant="fullWidth">
+          <Tab value="Pokémon" label="Pokémon" />
+          <Tab value="Moves" label="Moves" />
+          <Tab value="Abilities" label="Abilities" />
+        </Tabs>
       </Grid>
 
       {(pick === "Pokémon" || pick === "Moves") && (

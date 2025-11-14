@@ -57,11 +57,11 @@ export const QuizTable = ({
                     <>
                       {index === 0 ? (
                         <>
-                          <Typography variant="h3">Variants:</Typography>
-                          <Typography variant="h3">{v}</Typography>
+                          <Typography variant="h4">Variants:</Typography>
+                          <Typography variant="h4">{v}</Typography>
                         </>
                       ) : (
-                        <Typography variant="h3">{v}</Typography>
+                        <Typography variant="h4">{v}</Typography>
                       )}
                     </>
                   ))}
@@ -89,7 +89,7 @@ export const QuizTable = ({
 
     return useMemo(
       () => (
-        <TableRow key={m.displayName}>
+        <TableRow key={`${m.displayName}-${Math.random()}`}>
           <TableCell>{m.num}</TableCell>
           <TableCell>{memoName}</TableCell>
           <TableCell>

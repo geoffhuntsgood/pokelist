@@ -5,6 +5,7 @@ import {
   PlayCircle
 } from "@mui/icons-material";
 import { Box, Grid, IconButton, Tooltip, Typography } from "@mui/material";
+import axios from "axios";
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { useStopwatch } from "react-timer-hook";
 import type { Ability, Move, Pokemon } from "../../classes";
@@ -26,6 +27,7 @@ export const Quiz = ({
   const { width } = useWindowDimensions();
 
   const [headers, setHeaders] = useState<HeaderList>(["", "", ""]);
+  const [bestTime, setBestTime] = useState("No record yet");
   const [foundItems, setFoundItems] = useState<string[]>([]);
   const [divider, setDivider] = useState(0);
   const [done, setDone] = useState(false);
@@ -43,6 +45,24 @@ export const Quiz = ({
   const end = () => {
     pause();
     setDone(true);
+
+    const updateBestTime = async () => {
+      try {
+        const timeString = `${String(hours).padStart(2, "0")}:${String(
+          minutes
+        ).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+        const response = await axios.get(
+          `https://geoff-express.onrender.com/set-best-time/${label}/${timeString}`
+        );
+        if (response.status === 201) {
+          setBestTime(`New record! ${timeString}`);
+        }
+      } catch (error) {
+        setBestTime("Couldn't set the new record :(");
+      }
+    };
+
+    updateBestTime();
   };
 
   const flipTimer = () => {
@@ -72,6 +92,28 @@ export const Quiz = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [foundItems]);
 
+  useEffect(() => {
+    const fetchBestTime = async () => {
+      try {
+        const response = await axios.get(
+          `https://geoff-express.onrender.com/best-time/${label}`
+        );
+        const data = response.data;
+        if (data) {
+          setBestTime(
+            data.includes("999")
+              ? "No record yet"
+              : `Current record: ${data.split("~")[1]}`
+          );
+        }
+      } catch (error) {
+        setBestTime("Can't get best time");
+      }
+    };
+
+    fetchBestTime();
+  }, []);
+
   const styles = {
     box: {
       margin: "2rem auto",
@@ -99,7 +141,11 @@ export const Quiz = ({
           </Typography>
         </Grid>
 
-        <Grid size={4}></Grid>
+        <Grid size={4}>
+             <Typography color="textSecondary" variant="h3">
+            {bestTime}
+          </Typography>
+        </Grid>
         <Grid size={4}>
           <PKInput
             label={label}
