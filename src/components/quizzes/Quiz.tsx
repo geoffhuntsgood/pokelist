@@ -59,6 +59,7 @@ export const Quiz = ({
         }
       } catch (error) {
         setBestTime("Couldn't set the new record :(");
+        console.error(error);
       }
     };
 
@@ -108,10 +109,12 @@ export const Quiz = ({
         }
       } catch (error) {
         setBestTime("Can't get best time");
+        console.error(error);
       }
     };
 
     fetchBestTime();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const styles = {
@@ -142,7 +145,7 @@ export const Quiz = ({
         </Grid>
 
         <Grid size={4}>
-             <Typography color="textSecondary" variant="h3">
+          <Typography color="textSecondary" variant="h3">
             {bestTime}
           </Typography>
         </Grid>
