@@ -132,7 +132,14 @@ export const Quiz = ({
   return (
     <>
       <Grid container spacing={1} justifyContent="center">
-        <Grid size={12}>
+        {width <= 900 && (
+          <Grid size={4}>
+            <Typography color="textSecondary" variant="h3">
+              {bestTime}
+            </Typography>
+          </Grid>
+        )}
+        <Grid size={width < 900 ? 8 : 12}>
           <Typography
             color="textPrimary"
             variant="h2"
@@ -144,12 +151,14 @@ export const Quiz = ({
           </Typography>
         </Grid>
 
-        <Grid size={4}>
-          <Typography color="textSecondary" variant="h3">
-            {bestTime}
-          </Typography>
-        </Grid>
-        <Grid size={4}>
+        {width > 900 && (
+          <Grid size={4}>
+            <Typography color="textSecondary" variant="h3">
+              {bestTime}
+            </Typography>
+          </Grid>
+        )}
+        <Grid size={width > 900 ? 4 : 8}>
           <PKInput
             label={label}
             items={items}
@@ -185,7 +194,7 @@ export const Quiz = ({
 
       <Box sx={styles.box}>
         <Grid container spacing={1} justifyContent="center">
-          {width <= 800 && (
+          {width <= 900 && (
             <Grid size={12}>
               <QuizTable
                 headers={headers}
@@ -195,7 +204,7 @@ export const Quiz = ({
               />
             </Grid>
           )}
-          {width > 800 && divider > 0 && (
+          {width > 900 && divider > 0 && (
             <>
               <Grid size={5}>
                 <QuizTable

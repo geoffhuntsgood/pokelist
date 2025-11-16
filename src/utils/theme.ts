@@ -85,13 +85,6 @@ export const theme = createTheme({
         }
       }
     },
-    MuiTab: {
-      styleOverrides: {
-        root: {
-          fontSize: "3rem"
-        }
-      }
-    },
     MuiTabs: {
       styleOverrides: {
         root: {
@@ -150,9 +143,7 @@ export const theme = createTheme({
     h3: {
       fontFamily: "PokemonGb",
       fontSize: "1rem",
-      position: "relative",
-      margin: "1.5rem",
-      float: "right"
+      margin: "1.5rem"
     },
     h4: {
       fontSize: "1rem"

@@ -12,15 +12,15 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <PKTypography text="Pokélist: Gotta name 'em all!" />
-      <hr />
+      {items.length === 0 && (
+        <>
+          <PKTypography text="Pokélist: Gotta name 'em all!" />
+          <hr />
+        </>
+      )}
 
       {items.length > 0 && (
-        <Quiz
-          label={label}
-          items={items}
-          setItems={setItems}
-        />
+        <Quiz label={label} items={items} setItems={setItems} />
       )}
 
       {items.length === 0 && (
