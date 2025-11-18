@@ -454,7 +454,7 @@ export const mgen4: Generation = {
     },
     {
       num: 419,
-      name: "avalance",
+      name: "avalanche",
       displayName: "Avalanche",
       type: Type.Ice,
       cat: MoveCategory.Physical

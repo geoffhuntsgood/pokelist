@@ -63,7 +63,9 @@ export const Quiz = ({
       }
     };
 
-    updateBestTime();
+    if (foundItems.length === items.length) {
+      updateBestTime();
+    }
   };
 
   const flipTimer = () => {
